@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language &amp; Numeracy Assessment — TiNAAK</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2747;--navy-mid:#163560;--teal:#0FA3A3;--teal-lt:#12BFBF;--steel:#5A6572;--ice:#F4F6F9;--white:#fff;--text:#1A2B40;--border:rgba(15,39,71,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:var(--ice);color:var(--text);min-height:100vh}
+.site-header{background:var(--navy);padding:18px 40px;display:flex;align-items:center;gap:12px}
+.wordmark{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:800;color:#fff}
+.wordmark span{color:var(--teal)}
+.badge{margin-left:auto;font-size:.7rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:3px 8px}
+.container{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.progress-wrap{background:#D8DDE6;border-radius:4px;height:5px;margin-bottom:32px}
+.progress-bar{height:5px;background:var(--teal);border-radius:4px;transition:width .4s ease}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:36px 40px;margin-bottom:24px}
+@media(max-width:600px){.card{padding:24px 20px}}
+.eyebrow{font-family:"Montserrat",sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+h1{font-family:"Montserrat",sans-serif;font-size:1.7rem;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:12px}
+.lead{font-size:1rem;color:var(--steel);line-height:1.65}
+.notice{border-left:3px solid var(--teal);background:#EAF7F7;padding:14px 18px;border-radius:0 5px 5px 0;font-size:.88rem;line-height:1.55;color:var(--text);margin-bottom:24px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:540px){.field-row{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:5px}
+.req{color:var(--teal)}
+input,select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.92rem;color:var(--text);background:#fff;transition:border-color .18s}
+input:focus,select:focus{outline:none;border-color:var(--teal)}
+.q-block{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.q-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.q-num{font-family:"Montserrat",sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:6px}
+.q-text{font-size:.97rem;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:14px}
+.q-context{font-size:.88rem;color:var(--steel);font-style:italic;margin-bottom:12px;line-height:1.5;border-left:2px solid var(--border);padding-left:12px}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt-label{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:10px 14px;border:1.5px solid var(--border);border-radius:5px;transition:all .15s;font-size:.9rem;line-height:1.4;width:100%}
+.opt-label:hover{border-color:var(--teal);background:#EAF7F7}
+.opt-label input[type=radio]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+.opt-label.selected{border-color:var(--teal);background:#EAF7F7}
+.opt-key{font-weight:700;color:var(--teal);min-width:18px;flex-shrink:0}
+.opt-text{flex:1;min-width:0}
+.section-head{background:var(--navy);color:#fff;padding:14px 20px;border-radius:6px;font-family:"Montserrat",sans-serif;font-size:.88rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.s-num{background:var(--teal);color:var(--navy);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0}
+.timer-bar{display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;padding:12px 20px;border-radius:6px;margin-bottom:24px;font-family:"Montserrat",sans-serif;font-size:.82rem;font-weight:700}
+.t-label{color:rgba(255,255,255,.6);font-weight:400}
+.t-val{color:var(--teal-lt);font-size:1.05rem;min-width:52px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;border:none;transition:all .18s}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-lt)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-loading{position:relative;color:transparent!important}
+.btn-loading::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.steps{display:flex;gap:0;margin-bottom:32px}
+.step{flex:1;text-align:center;position:relative}
+.step::before{content:"";position:absolute;top:14px;left:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.step:first-child::before{display:none}
+.step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;position:relative;z-index:1}
+.step.active .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step.done .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step-label{font-size:.7rem;color:var(--steel);font-family:"Montserrat",sans-serif}
+.step.active .step-label{color:var(--navy);font-weight:700}
+.page{display:none}.page.active{display:block}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:24px}
+@media(max-width:500px){.result-grid{grid-template-columns:1fr}}
+.result-box{border-radius:8px;padding:20px 18px;text-align:center}
+.result-box.good{background:#EAF7F7;border:2px solid var(--teal)}
+.result-box.ok{background:#FFF8E7;border:2px solid #E8A020}
+.result-box.low{background:#FFF0F0;border:2px solid #E05050}
+.result-box .rb-label{font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.result-box.good .rb-label{color:var(--teal)}
+.result-box.ok .rb-label{color:#B87800}
+.result-box.low .rb-label{color:#C03030}
+.result-box .rb-score{font-family:"Montserrat",sans-serif;font-size:2rem;font-weight:800}
+.result-box.good .rb-score{color:var(--teal)}
+.result-box.ok .rb-score{color:#B87800}
+.result-box.low .rb-score{color:#C03030}
+.result-box .rb-desc{font-size:.8rem;color:var(--steel);margin-top:4px}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wordmark">T<span>i</span>NAAK Integrated Services LLP</div>
+  <div class="badge">Assessment Portal</div>
+</header>
+<div class="container">
+  <div class="steps">
+    <div class="step active" id="step1"><div class="step-dot">1</div><div class="step-label">Details</div></div>
+    <div class="step" id="step2"><div class="step-dot">2</div><div class="step-label">Language</div></div>
+    <div class="step" id="step3"><div class="step-dot">3</div><div class="step-label">Numeracy</div></div>
+    <div class="step" id="step4"><div class="step-dot">4</div><div class="step-label">Result</div></div>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+
+  <!-- PAGE 1: Details -->
+  <div class="page active" id="page1">
+    <div class="card">
+      <div class="eyebrow">Language &amp; Numeracy Assessment</div>
+      <h1>Professional Readiness Check</h1>
+      <p class="lead" style="margin-bottom:24px">This assessment covers professional English comprehension and business numeracy — skills required for client-facing, documentation and reporting roles. It takes approximately 15–20 minutes. Work independently.</p>
+      <div class="notice">This assessment applies to all client-facing and report-producing network roles. Results are shared with T<span style="color:var(--teal)">i</span>NAAK's team only.</div>
+      <div class="field-row">
+        <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="name" placeholder="Your full name" autocomplete="name"></div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="email" placeholder="your@email.com" autocomplete="email"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Phone</label><input type="tel" id="phone" placeholder="+91 98xxx xxxxx"></div>
+        <div class="field"><label>Applying For / Track</label><input type="text" id="applyingFor" placeholder="e.g. FM Specialist, Associate, Career role"></div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="startBtn" type="button">Begin Assessment &#x2192;</button>
+        <span style="font-size:.82rem;color:var(--steel)">8 language + 7 numeracy questions &nbsp;&middot;&nbsp; ~15 minutes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Language -->
+  <div class="page" id="page2">
+    <div class="timer-bar">
+      <span class="t-label">Elapsed:</span>
+      <span class="t-val" id="timerDisplay">00:00</span>
+      <span style="margin-left:auto;font-size:.75rem;color:rgba(255,255,255,.6)">Part 1 of 2 — Language</span>
+    </div>
+    <div class="card">
+      <div class="section-head"><div class="s-num">A</div>Professional English Comprehension</div>
+      <p class="lead" style="margin-bottom:24px">Read each question carefully. Select the best answer.</p>
+      <div id="langContainer"></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="nextBtn2" type="button">Continue to Numeracy &#x2192;</button>
+        <span id="langNote" style="font-size:.82rem;color:#C03030;display:none"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Numeracy -->
+  <div class="page" id="page3">
+    <div class="timer-bar">
+      <span class="t-label">Elapsed:</span>
+      <span class="t-val" id="timerDisplay2">00:00</span>
+      <span style="margin-left:auto;font-size:.75rem;color:rgba(255,255,255,.6)">Part 2 of 2 — Numeracy</span>
+    </div>
+    <div class="card">
+      <div class="section-head"><div class="s-num">B</div>Business Numeracy</div>
+      <p class="lead" style="margin-bottom:24px">No calculator. Work the answers mentally or on paper. Select the correct answer.</p>
+      <div id="numContainer"></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="submitBtn" type="button">Submit Assessment &#x2192;</button>
+        <span id="numNote" style="font-size:.82rem;color:#C03030;display:none"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: Result -->
+  <div class="page" id="page4">
+    <div class="card">
+      <div class="eyebrow">Assessment Complete</div>
+      <h1>Your Result</h1>
+      <div class="result-grid" id="resultGrid"></div>
+      <p style="margin-top:24px;font-size:.9rem;color:var(--steel);line-height:1.65">Your result has been sent to T<span style="color:var(--teal)">i</span>NAAK at <strong>network@tinaak.com</strong>. We will be in touch within 5 working days. Questions: <a href="mailto:network@tinaak.com" style="color:var(--teal)">network@tinaak.com</a></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const WORKER = "https://tinaak-forms-worker.judge-raman.workers.dev";
+
+/* ── Pre-fill from URL params or localStorage session ── */
+(function() {
+  try {
+    const urlP = new URLSearchParams(window.location.search);
+    const sess = JSON.parse(localStorage.getItem("tinaak_assess") || "{}");
+    const nameEl  = document.getElementById("name");
+    const emailEl = document.getElementById("email");
+    const applyEl = document.getElementById("applyingFor");
+    if (nameEl)  nameEl.value  = urlP.get("name")  || sess.name  || "";
+    if (emailEl) emailEl.value = urlP.get("email") || sess.email || "";
+    if (applyEl && (urlP.get("role") || sess.role))
+      applyEl.value = urlP.get("role") || sess.role || "";
+  } catch(e) {}
+})();
+
+function checkStartReady() {
+  const ok = (document.getElementById("name")||{value:""}).value.trim().length > 0 &&
+             (document.getElementById("email")||{value:""}).value.trim().length > 0;
+  const btn = document.getElementById("startBtn");
+  if (btn) btn.disabled = !ok;
+}
+setInterval(checkStartReady, 300);
+document.addEventListener("DOMContentLoaded", checkStartReady);
+
+const LANG_QS = [
+  {id:1, text:'Choose the sentence that is written correctly:',
+   opts:{a:'The facility manager, along with his team, are responsible for the maintenance.',b:'The facility manager, along with his team, is responsible for the maintenance.',c:'The facility manager along with his team are responsible for the maintenance.'}, correct:'b'},
+  {id:2, text:'Which word best completes this sentence? "The vendor __________ to submit the compliance documents by Friday."',
+   opts:{a:'agreed',b:'agreeing',c:'has agreed'}, correct:'c'},
+  {id:3, text:'Read this extract: "The audit identified three non-conformities. Two were minor; one was a major finding that required immediate corrective action." What does the extract tell us about the major non-conformity?',
+   opts:{a:'It required a corrective action to be taken immediately',b:'It was one of two minor non-conformities',c:'It was identified after the audit was completed'}, correct:'a'},
+  {id:4, text:'Which of the following is the most professional way to begin an escalation email to a senior manager?',
+   opts:{a:'"Hi, just wanted to let you know about a problem we are having..."',b:'"I am writing to bring to your attention a vendor performance issue that has persisted for three weeks despite formal notice."',c:'"There is a big problem and I think you should know about it ASAP."'}, correct:'b'},
+  {id:5, text:'Choose the correctly punctuated sentence:',
+   opts:{a:'The contract covers three services: housekeeping, security and maintenance.',b:'The contract covers three services; housekeeping, security and maintenance.',c:'The contract covers three services. Housekeeping security and maintenance.'}, correct:'a'},
+  {id:6, text:'A document states: "All work shall be completed by the end of Q3, subject to client sign-off on the revised scope." What does "subject to" mean in this context?',
+   opts:{a:'Provided that / conditional upon',b:'In spite of',c:'After completion of'}, correct:'a'},
+  {id:7, text:'Which of the following is the correct plural of "memorandum"?',
+   opts:{a:'memorandums',b:'memoranda',c:'Both are acceptable in professional usage'}, correct:'c'},
+  {id:8, text:'Read: "The monthly inspection score has improved from 78% to 91% over the last quarter, reflecting the team\'s consistent effort and adherence to the revised SOP." What is the primary cause cited for the improvement?',
+   opts:{a:'Hiring new staff',b:'Revising the inspection scoring method',c:'Consistent team effort and adherence to the revised SOP'}, correct:'c'},
+];
+
+const NUM_QS = [
+  {id:1, text:'A housekeeping team of 12 staff works 6 days a week. How many total man-days does the team work in a 4-week month?',
+   opts:{a:'288',b:'240',c:'288 man-days (12 × 6 × 4)'}, correct:'c'},
+  {id:2, text:'A vendor invoice is ₹1,18,000 including 18% GST. What is the base amount before GST?',
+   opts:{a:'₹1,00,000',b:'₹1,00,000 (₹1,18,000 ÷ 1.18)',c:'₹96,000'}, correct:'a'},
+  {id:3, text:'Your monthly consumables budget is ₹45,000. In Month 1 you spent ₹38,200; in Month 2 you spent ₹47,800. What is your cumulative variance against budget at the end of Month 2?',
+   opts:{a:'₹2,800 over budget',b:'₹4,000 under budget',c:'₹2,800 under budget (spent ₹86,000 vs ₹90,000 budget)'}, correct:'c'},
+  {id:4, text:'A maintenance contract has a mobilisation fee of ₹25,000 and a monthly charge of ₹18,500 for 12 months. What is the total annual cost?',
+   opts:{a:'₹2,22,000',b:'₹2,47,000',c:'₹2,47,000 (₹25,000 + 12 × ₹18,500)'}, correct:'c'},
+  {id:5, text:'You need to order cleaning supplies. The supplier offers a 12% discount on orders over ₹20,000. Your order value before discount is ₹24,500. What do you pay?',
+   opts:{a:'₹21,560',b:'₹21,560 (₹24,500 × 0.88)',c:'₹22,000'}, correct:'a'},
+  {id:6, text:'A security guard costs ₹22,000 per month. The agency charges a 15% management fee on top. What is the total monthly cost for one guard?',
+   opts:{a:'₹25,300',b:'₹25,300 (₹22,000 × 1.15)',c:'₹24,500'}, correct:'b'},
+  {id:7, text:'An office uses 4 AC units that each consume 1.5 kW. They run for 8 hours a day for 22 working days in a month. At ₹8 per unit of electricity, what is the monthly electricity cost for these ACs?',
+   opts:{a:'₹8,448',b:'₹10,560',c:'₹8,448 (4 × 1.5 × 8 × 22 × ₹8)'}, correct:'c'},
+];
+
+const langAnswers = {}, numAnswers = {};
+let startTime = null, timerInt = null;
+
+function fmt(s){return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function startTimer(dispId){
+  startTime=Date.now();
+  timerInt=setInterval(()=>{
+    const el=document.getElementById(dispId);
+    if(el) el.textContent=fmt(Math.floor((Date.now()-startTime)/1000));
+  },1000);
+}
+function getElapsed(){return startTime?Math.round((Date.now()-startTime)/60000):0}
+
+function setPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+  [1,2,3,4].forEach(i=>{const el=document.getElementById('step'+i);if(!el)return;el.classList.toggle('active',i===n);el.classList.toggle('done',i<n);});
+  document.getElementById('progressBar').style.width=(((n-1)/3)*100)+'%';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function buildQs(qs, containerId, answers, prefix){
+  const c=document.getElementById(containerId); c.innerHTML='';
+  qs.forEach(q=>{
+    const div=document.createElement('div'); div.className='q-block';
+    div.innerHTML=`<div class="q-num">${prefix} Question ${q.id} of ${qs.length}</div>
+    <div class="q-text">${q.text}</div>
+    <div class="options">${Object.entries(q.opts).map(([k,v])=>`
+      <label class="opt-label" data-val="${k}">
+        <input type="radio" name="${prefix}q${q.id}" value="${k}">
+        <span class="opt-key">${k.toUpperCase()}</span>
+        <span class="opt-text">${v}</span>
+      </label>`).join('')}</div>`;
+    div.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{
+      answers[q.id]=inp.value;
+      div.querySelectorAll('.opt-label').forEach(l=>l.classList.remove('selected'));
+      inp.closest('.opt-label').classList.add('selected');
+    }));
+    c.appendChild(div);
+  });
+}
+
+document.getElementById('startBtn').addEventListener('click',()=>{
+  if(!document.getElementById('name').value.trim()||!document.getElementById('email').value.trim()){alert('Please enter your name and email.');return;}
+  buildQs(LANG_QS,'langContainer',langAnswers,'A');
+  startTimer('timerDisplay');
+  setPage(2);
+});
+
+document.getElementById('nextBtn2').addEventListener('click',()=>{
+  const missing=LANG_QS.filter(q=>!langAnswers[q.id]);
+  const note=document.getElementById('langNote');
+  if(missing.length){note.style.display='inline';note.textContent='Please answer all '+LANG_QS.length+' language questions.';return;}
+  note.style.display='none';
+  buildQs(NUM_QS,'numContainer',numAnswers,'B');
+  document.getElementById('timerDisplay2').textContent=document.getElementById('timerDisplay').textContent;
+  setPage(3);
+});
+
+document.getElementById('submitBtn').addEventListener('click',async()=>{
+  const missing=NUM_QS.filter(q=>!numAnswers[q.id]);
+  const note=document.getElementById('numNote');
+  if(missing.length){note.style.display='inline';note.textContent='Please answer all '+NUM_QS.length+' numeracy questions.';return;}
+  note.style.display='none';
+  clearInterval(timerInt);
+
+  const btn=document.getElementById('submitBtn');btn.disabled=true;btn.classList.add('btn-loading');btn.textContent='Submitting...';
+
+  const payload={
+    name:document.getElementById('name').value.trim(),
+    email:document.getElementById('email').value.trim(),
+    phone:document.getElementById('phone').value.trim(),
+    applyingFor:document.getElementById('applyingFor').value.trim(),
+    langAnswers, numAnswers,
+    timeTaken:getElapsed(),
+  };
+
+  try{
+    const res=await fetch(WORKER+'/assess/language',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await res.json();
+    showResult(data.result);
+    setPage(4);
+  }catch{
+    btn.classList.remove('btn-loading');btn.disabled=false;btn.textContent='Submit Assessment &#x2192;';
+    alert('Submission error. Please email network@tinaak.com.');
+  }
+});
+
+function scoreClass(pct){return pct>=75?'good':pct>=55?'ok':'low'}
+function showResult(result){
+  const grid=document.getElementById('resultGrid');
+  if(!result){grid.innerHTML='<div class="result-box good"><div class="rb-label">Submitted</div><div class="rb-score">&#x2713;</div><div class="rb-desc">Result sent to T<span style="color:var(--teal)">i</span>NAAK</div></div>';return;}
+  const {lang,num,combined}=result;
+  grid.innerHTML=[
+    {label:'Language',score:`${lang.correct} / ${lang.total}`,pct:lang.pct,desc:`${lang.pct}% correct`},
+    {label:'Numeracy',score:`${num.correct} / ${num.total}`,pct:num.pct,desc:`${num.pct}% correct`},
+    {label:'Combined',score:`${combined.correct} / ${combined.total}`,pct:combined.pct,desc:`${combined.pct}% overall`},
+  ].map(b=>`<div class="result-box ${scoreClass(b.pct)}">
+    <div class="rb-label">${b.label}</div>
+    <div class="rb-score">${b.score}</div>
+    <div class="rb-desc">${b.desc}</div>
+  </div>`).join('');
+}
+</script>
+</body>
+</html>

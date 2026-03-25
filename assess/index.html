@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TiNAAK Assessment Centre</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0F2747;--navy-mid:#163560;--navy-deep:#070F1C;
+  --teal:#0FA3A3;--teal-lt:#12BFBF;
+  --steel:#5A6572;--ice:#F4F6F9;--warm:#FAF8F5;
+  --white:#fff;--text:#1A2B40;--border:rgba(15,39,71,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:var(--ice);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+
+/* Header */
+.header{background:var(--navy);padding:0 40px}
+.header-inner{max-width:1000px;margin:0 auto;padding:18px 0;display:flex;align-items:center;gap:12px}
+.wordmark{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:800;color:#fff}
+.wordmark span{color:var(--teal)}
+.badge{margin-left:auto;font-size:.7rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:3px 8px}
+
+/* Hero */
+.hero{background:var(--navy-deep);padding:48px 40px 40px}
+.hero-inner{max-width:1000px;margin:0 auto}
+.hero-eyebrow{font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.hero-title{font-family:"Montserrat",sans-serif;font-size:2rem;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.15}
+.hero-sub{font-size:1rem;color:#7A9CC0;line-height:1.65;max-width:600px}
+
+/* Candidate bar */
+.candidate-bar{background:var(--navy-mid);border-top:1px solid rgba(255,255,255,.08)}
+.candidate-bar-inner{max-width:1000px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.candidate-info{font-size:.88rem;color:#8AAAC4}
+.candidate-info strong{color:#fff;font-family:"Montserrat",sans-serif}
+.reset-link{font-size:.78rem;color:var(--teal);cursor:pointer;text-decoration:underline;margin-left:auto}
+#candidateBar{display:none}
+
+/* Name entry */
+.name-entry{max-width:1000px;margin:28px auto;padding:0 40px}
+.name-card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:28px 32px;display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap}
+.name-card .field{flex:1;min-width:200px}
+.name-card label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.name-card input{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.92rem;color:var(--text);background:#fff;transition:border-color .18s}
+.name-card input:focus{outline:none;border-color:var(--teal)}
+.btn-start{padding:12px 24px;background:var(--teal);color:#fff;border:none;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .18s}
+.btn-start:hover{background:var(--teal-lt)}
+
+/* Main content */
+.main{max-width:1000px;margin:0 auto;padding:32px 40px 60px;flex:1}
+
+/* Role header */
+.role-header{margin-bottom:28px}
+.role-label{font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.role-name{font-family:"Montserrat",sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy)}
+.role-desc{font-size:.9rem;color:var(--steel);margin-top:4px}
+
+/* Progress overview */
+.progress-overview{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--navy);border-radius:8px 8px 0 0;padding:16px 20px;margin-bottom:0}
+@media(max-width:700px){.progress-overview{grid-template-columns:repeat(2,1fr)}}
+.prog-item{text-align:center}
+.prog-num{font-family:"Montserrat",sans-serif;font-size:1.4rem;font-weight:800;color:var(--teal)}
+.prog-lbl{font-size:.7rem;color:#7A9CC0;margin-top:2px}
+
+/* Test cards */
+.tests-grid{display:flex;flex-direction:column;gap:16px;margin-top:16px}
+.test-card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:24px 28px;display:flex;align-items:center;gap:20px;border-left:5px solid var(--border);transition:border-color .18s;text-decoration:none;color:inherit}
+.test-card:hover{border-left-color:var(--teal)}
+.test-card.required{border-left-color:var(--navy)}
+.test-card.completed{border-left-color:var(--teal);background:#FAFFFE}
+.test-card.locked{opacity:.55;pointer-events:none}
+
+.test-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:800;flex-shrink:0}
+.test-icon.pending{background:var(--ice);color:var(--navy)}
+.test-icon.completed{background:var(--teal);color:#fff}
+.test-icon.required{background:var(--navy);color:#fff}
+
+.test-body{flex:1;min-width:0}
+.test-name{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:3px}
+.test-desc{font-size:.88rem;color:var(--steel);line-height:1.5}
+.test-meta{font-size:.78rem;color:var(--steel);margin-top:6px;display:flex;gap:16px;flex-wrap:wrap}
+.test-meta span{display:flex;align-items:center;gap:4px}
+
+.test-action{flex-shrink:0}
+.btn-take{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;border:none;transition:all .18s;text-decoration:none}
+.btn-take.start{background:var(--navy);color:#fff}
+.btn-take.start:hover{background:var(--navy-mid)}
+.btn-take.resume{background:var(--teal);color:#fff}
+.btn-take.resume:hover{background:var(--teal-lt)}
+.btn-take.done{background:#EAF7F7;color:var(--teal);pointer-events:none}
+
+/* Score chip */
+.score-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-family:"Montserrat",sans-serif;font-size:.78rem;font-weight:700}
+.score-chip.good{background:#EAF7F7;color:var(--teal)}
+.score-chip.ok{background:#FFF8E7;color:#B87800}
+.score-chip.low{background:#FFF0F0;color:#C03030}
+.score-chip.done{background:#EAF7F7;color:var(--teal)}
+
+/* Section breakdown */
+.section-breakdown{margin-top:12px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+@media(max-width:650px){.section-breakdown{grid-template-columns:repeat(3,1fr)}}
+.sec-box{padding:8px 6px;border-radius:5px;text-align:center;font-size:.7rem;font-family:"Montserrat",sans-serif;font-weight:700}
+.sec-box.good{background:#EAF7F7;color:var(--teal)}
+.sec-box.ok{background:#FFF8E7;color:#B87800}
+.sec-box.low{background:#FFF0F0;color:#C03030}
+.sec-box .sec-pct{font-size:.95rem;display:block;margin-bottom:2px}
+.sec-box .sec-lbl{font-size:.6rem;font-weight:400;color:inherit;opacity:.8}
+
+/* All tests list */
+.all-tests-header{font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin:36px 0 16px}
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0}
+
+/* Notice */
+.notice{border-left:3px solid var(--teal);background:#EAF7F7;padding:14px 18px;border-radius:0 5px 5px 0;font-size:.88rem;line-height:1.55;color:var(--text);margin-bottom:24px}
+
+/* Footer */
+footer{background:var(--navy-deep);padding:20px 40px;margin-top:auto}
+footer p{max-width:1000px;margin:0 auto;font-size:.78rem;color:#4A6080;text-align:center}
+footer a{color:var(--teal)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="wordmark">T<span>i</span>NAAK Integrated Services LLP</div>
+    <div class="badge">Assessment Centre</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">T<span style="color:var(--teal)">i</span>NAAK Network Onboarding</div>
+    <h1 class="hero-title">Assessment Centre</h1>
+    <p class="hero-sub">Complete the assessments relevant to your application. Your results are sent directly to T<span style="color:var(--teal)">i</span>NAAK's team and stored on this device so you can return at any time to complete remaining tests.</p>
+  </div>
+</div>
+
+<!-- Candidate bar (shown after name entry) -->
+<div class="candidate-bar" id="candidateBar">
+  <div class="candidate-bar-inner">
+    <div class="candidate-info">Logged in as: <strong id="candidateName">—</strong></div>
+    <div class="candidate-info" id="candidateRole" style="display:none">Role: <strong id="candidateRoleName">—</strong></div>
+    <div class="reset-link" onclick="resetSession()">Not you? Clear session</div>
+  </div>
+</div>
+
+<!-- Name entry (shown before session established) -->
+<div class="name-entry" id="nameEntry">
+  <div class="name-card">
+    <div class="field">
+      <label for="inputName">Your Full Name <span style="color:var(--teal)">*</span></label>
+      <input type="text" id="inputName" placeholder="Enter your full name" autocomplete="name">
+    </div>
+    <div class="field">
+      <label for="inputEmail">Email Address <span style="color:var(--teal)">*</span></label>
+      <input type="email" id="inputEmail" placeholder="your@email.com" autocomplete="email">
+    </div>
+    <button class="btn-start" onclick="startSession()">Start &#x2192;</button>
+  </div>
+</div>
+
+<div class="main" id="mainContent" style="display:none">
+
+  <!-- Role context (when URL params present) -->
+  <div id="roleSection" style="display:none">
+    <div class="role-header">
+      <div class="role-label">Your Assessment Set</div>
+      <div class="role-name" id="roleName">—</div>
+      <div class="role-desc" id="roleDesc">Complete the tests listed below. Required tests must be completed for your application to be processed.</div>
+    </div>
+    <div class="notice" id="roleNotice">Your assessment link has been pre-configured for your role. Complete the required tests at your own pace — results are saved on this device so you can return if needed.</div>
+  </div>
+
+  <!-- Assigned tests -->
+  <div id="assignedSection" style="display:none">
+    <div class="all-tests-header" id="assignedHeader">YOUR ASSIGNED TESTS</div>
+    <div class="tests-grid" id="assignedGrid"></div>
+    <hr class="divider">
+  </div>
+
+  <!-- All available tests -->
+  <div id="allSection">
+    <div class="all-tests-header" id="allHeader">ALL AVAILABLE ASSESSMENTS</div>
+    <div class="tests-grid" id="allGrid"></div>
+  </div>
+
+</div>
+
+<footer>
+  <p>TiNAAK Integrated Services LLP &nbsp;·&nbsp; <a href="https://tinaak.com">tinaak.com</a> &nbsp;·&nbsp; <a href="mailto:network@tinaak.com">network@tinaak.com</a> &nbsp;·&nbsp; +91 99999 98522<br>
+  Your assessment data is stored on this device and emailed to T<span style="color:var(--teal)">i</span>NAAK. It is not stored on any server.</p>
+</footer>
+
+<script>
+/* ══════════════════════════════════════════════════════════════
+   TEST CATALOGUE
+══════════════════════════════════════════════════════════════ */
+const ALL_TESTS = [
+  {
+    id: "competency-fm",
+    name: "Facility Management Competency",
+    desc: "60 questions across 5 sections: Operations, Statutory Compliance, Vendor Management, FM Numeracy, and Governance.",
+    questions: 60, time: "45–50 min", sections: 5,
+    url: "competency.html?domain=fm",
+    icon: "FM",
+    domains: ["fm-associate","fm-manager","fm-specialist","facility-manager","maintenance-supervisor","housekeeping-supervisor"],
+  },
+  {
+    id: "competency-hr",
+    name: "HR & Payroll Competency",
+    desc: "60 questions across 5 sections: Labour Codes, Payroll Processing, HRBP Practice, HR Compliance, and HR Numeracy.",
+    questions: 60, time: "45–50 min", sections: 5,
+    url: "competency.html?domain=hr",
+    icon: "HR",
+    domains: ["hr-manager","hr-executive","payroll-manager","payroll-executive","hrbp","hr-specialist"],
+  },
+  {
+    id: "competency-admin",
+    name: "Administration Competency",
+    desc: "60 questions across 5 sections: Office Management, Procurement, Compliance, Admin Numeracy, and Professional Practice.",
+    questions: 60, time: "40–45 min", sections: 5,
+    url: "competency.html?domain=admin",
+    icon: "AD",
+    domains: ["admin-manager","office-manager","admin-executive","front-office","corporate-services","ea"],
+  },
+  {
+    id: "competency-fitouts",
+    name: "Fit-Outs & Projects Competency",
+    desc: "60 questions across 5 sections: BOQ & Tendering, Project Management, Site Supervision, Contracts, and Regulatory.",
+    questions: 60, time: "45–50 min", sections: 5,
+    url: "competency.html?domain=fitouts",
+    icon: "FO",
+    domains: ["fit-out-pm","project-manager","site-supervisor","design-coordinator"],
+  },
+  {
+    id: "language",
+    name: "Language & Numeracy",
+    desc: "25 questions: professional English comprehension and business numeracy for client-facing and reporting roles.",
+    questions: 25, time: "20–25 min", sections: 2,
+    url: "language-numeracy.html",
+    icon: "LN",
+    domains: ["all"],
+  },
+  {
+    id: "spreadsheet",
+    name: "Spreadsheet Proficiency",
+    desc: "Scenario-based Excel and Google Sheets knowledge test plus self-reported skill assessment across 10 proficiency areas.",
+    questions: 20, time: "20–25 min", sections: 2,
+    url: "spreadsheet.html",
+    icon: "XL",
+    domains: ["fm-manager","hr-manager","admin-manager","office-manager","payroll-manager","payroll-executive","admin-executive","all-finance","fit-out-pm"],
+  },
+  {
+    id: "profile",
+    name: "Professional Profile",
+    desc: "Work-style scales and situational response questions. No right or wrong answers — helps TiNAAK match you to the right engagement.",
+    questions: 14, time: "15 min", sections: 2,
+    url: "profile.html",
+    icon: "PP",
+    domains: ["all"],
+  },
+];
+
+/* Role-to-test mapping — keyed by URL ?role= parameter */
+const ROLE_TESTS = {
+  "fm-associate":         { label:"FM Associate Specialist", required:["competency-fm","language","profile"], optional:["spreadsheet"] },
+  "fm-manager":           { label:"FM Manager / Head of Facilities", required:["competency-fm","language","spreadsheet","profile"], optional:[] },
+  "fm-specialist":        { label:"FM Consultant / Specialist", required:["competency-fm","language","profile"], optional:["spreadsheet"] },
+  "hr-manager":           { label:"HR Manager / HRBP", required:["competency-hr","language","spreadsheet","profile"], optional:[] },
+  "hr-executive":         { label:"HR / Payroll Executive", required:["competency-hr","language","profile"], optional:["spreadsheet"] },
+  "payroll-manager":      { label:"Payroll Manager", required:["competency-hr","language","spreadsheet","profile"], optional:[] },
+  "payroll-executive":    { label:"Payroll Executive", required:["competency-hr","language","profile"], optional:["spreadsheet"] },
+  "admin-manager":        { label:"Admin / Office Manager", required:["competency-admin","language","spreadsheet","profile"], optional:[] },
+  "admin-executive":      { label:"Admin Executive", required:["competency-admin","language","profile"], optional:["spreadsheet"] },
+  "front-office":         { label:"Front Office Executive", required:["competency-admin","language","profile"], optional:[] },
+  "fit-out-pm":           { label:"Fit-Out Project Manager", required:["competency-fitouts","language","spreadsheet","profile"], optional:[] },
+  "site-supervisor":      { label:"Site Supervisor", required:["competency-fitouts","language","profile"], optional:[] },
+  "psn-vendor":           { label:"Preferred Supplier Network — Vendor", required:["profile"], optional:["language"] },
+  "associate-specialist": { label:"Associate Specialist", required:["language","profile"], optional:["competency-fm","competency-hr","competency-admin","competency-fitouts","spreadsheet"] },
+  "san-partner":          { label:"Strategic Alliance Partner", required:["profile"], optional:["language"] },
+  "general":              { label:"General Application", required:["language","profile"], optional:["competency-fm","competency-hr","competency-admin","competency-fitouts","spreadsheet"] },
+};
+
+/* ══════════════════════════════════════════════════════════════
+   SESSION STATE (localStorage)
+══════════════════════════════════════════════════════════════ */
+const LS_KEY = "tinaak_assess";
+
+function getSession() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }
+  catch { return {}; }
+}
+function saveSession(s) {
+  localStorage.setItem(LS_KEY, JSON.stringify(s));
+}
+function resetSession() {
+  if (confirm("This will clear your stored assessment results on this device. Your submitted results have already been sent to TiNAAK and are not affected. Continue?")) {
+    localStorage.removeItem(LS_KEY);
+    location.reload();
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   URL PARAMETER PARSING
+══════════════════════════════════════════════════════════════ */
+function getParams() {
+  const p = new URLSearchParams(window.location.search);
+  return {
+    role:  p.get("role") || "",
+    tests: p.get("tests") ? p.get("tests").split(",").map(t=>t.trim()) : [],
+    name:  p.get("name") || "",
+    email: p.get("email") || "",
+  };
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SESSION MANAGEMENT
+══════════════════════════════════════════════════════════════ */
+function startSession() {
+  const name  = document.getElementById("inputName").value.trim();
+  const email = document.getElementById("inputEmail").value.trim();
+  if (!name || !email) { alert("Please enter your name and email to continue."); return; }
+
+  const s = getSession();
+  s.name  = name;
+  s.email = email;
+  if (!s.completed) s.completed = {};
+  saveSession(s);
+  renderPage();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RENDER
+══════════════════════════════════════════════════════════════ */
+function renderPage() {
+  const s    = getSession();
+  const p    = getParams();
+
+  // If URL has name/email, pre-populate session
+  if (p.name && !s.name) { s.name = decodeURIComponent(p.name); }
+  if (p.email && !s.email) { s.email = decodeURIComponent(p.email); }
+  if (p.name || p.email) saveSession(s);
+
+  if (!s.name || !s.email) {
+    // Show name entry
+    document.getElementById("nameEntry").style.display = "block";
+    if (p.name) document.getElementById("inputName").value = decodeURIComponent(p.name);
+    if (p.email) document.getElementById("inputEmail").value = decodeURIComponent(p.email);
+    return;
+  }
+
+  // Session established — show main content
+  document.getElementById("nameEntry").style.display = "none";
+  document.getElementById("candidateBar").style.display = "block";
+  document.getElementById("candidateName").textContent = s.name;
+  document.getElementById("mainContent").style.display = "block";
+
+  // Determine role and test set
+  const role = p.role || s.role || "";
+  if (role) s.role = role;
+  saveSession(s);
+
+  const roleConfig = ROLE_TESTS[role];
+
+  // Build assigned vs all test lists
+  let assignedIds = [];
+  if (p.tests.length > 0) {
+    assignedIds = p.tests;
+  } else if (roleConfig) {
+    assignedIds = [...roleConfig.required, ...roleConfig.optional];
+  }
+
+  if (roleConfig) {
+    document.getElementById("roleSection").style.display = "block";
+    document.getElementById("roleName").textContent = roleConfig.label;
+    document.getElementById("candidateRole").style.display = "inline";
+    document.getElementById("candidateRoleName").textContent = roleConfig.label;
+    document.getElementById("roleNotice").innerHTML =
+      `<strong>Required tests:</strong> ${roleConfig.required.length} &nbsp;·&nbsp; <strong>Optional:</strong> ${roleConfig.optional.length} &nbsp;·&nbsp; Complete required tests for your application to be processed.`;
+  }
+
+  const completed = s.completed || {};
+  const totalTests = assignedIds.length > 0 ? assignedIds.length : ALL_TESTS.length;
+  const completedCount = assignedIds.length > 0
+    ? assignedIds.filter(id => completed[id]).length
+    : ALL_TESTS.filter(t => completed[t.id]).length;
+
+  // Render assigned section
+  if (assignedIds.length > 0) {
+    document.getElementById("assignedSection").style.display = "block";
+    document.getElementById("allHeader").textContent = "OTHER AVAILABLE ASSESSMENTS";
+    const assignedTests = assignedIds
+      .map(id => ALL_TESTS.find(t => t.id === id))
+      .filter(Boolean);
+    renderTestGrid("assignedGrid", assignedTests, completed, roleConfig);
+    // All tests not in assigned
+    const remaining = ALL_TESTS.filter(t => !assignedIds.includes(t.id));
+    renderTestGrid("allGrid", remaining, completed, null);
+  } else {
+    document.getElementById("allHeader").textContent = "ALL AVAILABLE ASSESSMENTS";
+    renderTestGrid("allGrid", ALL_TESTS, completed, null);
+  }
+}
+
+function renderTestGrid(gridId, tests, completed, roleConfig) {
+  const grid = document.getElementById(gridId);
+  if (!tests.length) { grid.innerHTML = ""; return; }
+
+  const s = getSession();
+  grid.innerHTML = tests.map(t => {
+    const c = completed[t.id];
+    const isRequired = roleConfig && roleConfig.required.includes(t.id);
+    const isCompleted = !!c;
+
+    let cardClass = isCompleted ? "completed" : isRequired ? "required" : "";
+    let iconClass = isCompleted ? "completed" : isRequired ? "required" : "pending";
+
+    let actionHtml = "";
+    let scoreHtml  = "";
+
+    if (isCompleted) {
+      if (c.pct !== undefined) {
+        const cls = c.pct >= 70 ? "good" : c.pct >= 50 ? "ok" : "low";
+        scoreHtml = `<div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+          <span class="score-chip ${cls}">&#x2713; ${c.pct}% — ${c.correct}/${c.total}</span>
+          <span style="font-size:.78rem;color:var(--steel)">Completed ${c.date||""}</span>
+        </div>`;
+        // Section breakdown if available
+        if (c.sections) {
+          const domainMeta = DOMAIN_META_LITE[t.id];
+          if (domainMeta) {
+            scoreHtml += `<div class="section-breakdown">
+              ${domainMeta.sections.map((label, i) => {
+                const sc = c.sections[i+1];
+                if (!sc) return "";
+                const cls2 = sc.pct >= 70 ? "good" : sc.pct >= 50 ? "ok" : "low";
+                return `<div class="sec-box ${cls2}"><span class="sec-pct">${sc.pct}%</span><span class="sec-lbl">${label}</span></div>`;
+              }).join("")}
+            </div>`;
+          }
+        }
+      } else {
+        scoreHtml = `<div style="margin-top:10px"><span class="score-chip done">&#x2713; Submitted ${c.date||""}</span></div>`;
+      }
+      actionHtml = `<span class="btn-take done">&#x2713; Done</span>`;
+    } else {
+      const url = buildTestUrl(t, s);
+      actionHtml = `<a href="${url}" class="btn-take ${isRequired ? "resume" : "start"}">
+        ${isRequired ? "Begin Required Test" : "Begin"} &#x2192;
+      </a>`;
+    }
+
+    return `
+      <div class="test-card ${cardClass}">
+        <div class="test-icon ${iconClass}">${t.icon}</div>
+        <div class="test-body">
+          <div class="test-name">${t.name}${isRequired ? ' <span style="font-size:.7rem;color:var(--teal);font-family:Montserrat,sans-serif;font-weight:700;letter-spacing:.05em;text-transform:uppercase">REQUIRED</span>' : ""}</div>
+          <div class="test-desc">${t.desc}</div>
+          <div class="test-meta">
+            <span>&#x23F1; ${t.time}</span>
+            <span>&#x2753; ${t.questions} questions</span>
+            ${t.sections > 1 ? `<span>&#x25A6; ${t.sections} sections</span>` : ""}
+          </div>
+          ${scoreHtml}
+        </div>
+        <div class="test-action">${actionHtml}</div>
+      </div>`;
+  }).join("");
+}
+
+/* ── Minimal domain meta for section labels on result display ── */
+const DOMAIN_META_LITE = {
+  "competency-fm": { sections: ["Operations","Compliance","Vendors","Numeracy","Governance"] },
+  "competency-hr": { sections: ["Labour Codes","Payroll","HRBP","HR Compliance","Analytics"] },
+  "competency-admin": { sections: ["Office Mgmt","Procurement","Compliance","Numeracy","Practice"] },
+  "competency-fitouts": { sections: ["BOQ","Programme","Site QC","Contracts","Regulatory"] },
+};
+
+function buildTestUrl(t, session) {
+  const base = t.url;
+  const params = new URLSearchParams();
+  if (session.name)  params.set("name", session.name);
+  if (session.email) params.set("email", session.email);
+  if (session.role)  params.set("role", session.role);
+  params.set("returnTo", encodeURIComponent(window.location.href.split("?")[0]));
+  return base + (base.includes("?") ? "&" : "?") + params.toString();
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LISTEN FOR RESULTS POSTED BACK FROM ASSESSMENT PAGES
+   Assessment pages call: window.opener?.postMessage or
+   localStorage directly after submission.
+   We also read a tinaak_assess_last_result key on page load.
+══════════════════════════════════════════════════════════════ */
+function checkPendingResult() {
+  try {
+    const pending = localStorage.getItem("tinaak_assess_pending_result");
+    if (!pending) return;
+    const r = JSON.parse(pending);
+    const s = getSession();
+    if (!s.completed) s.completed = {};
+    s.completed[r.testId] = r;
+    saveSession(s);
+    localStorage.removeItem("tinaak_assess_pending_result");
+  } catch (e) { /* ignore */ }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   INIT
+══════════════════════════════════════════════════════════════ */
+checkPendingResult();
+renderPage();
+</script>
+</body>
+</html>

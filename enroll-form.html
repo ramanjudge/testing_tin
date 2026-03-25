@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Enroll in the TiNAAK Strategic Alliance Network — comprehensive application form for vendors, consultants and business development partners."/>
+<meta name="robots" content="noindex, follow"/>
+<title>Enrollment Application | TiNAAK Strategic Alliance Network</title>
+  <meta property="og:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@tinaak_in"/>
+<meta name="twitter:title" content="Apply — TiNAAK Strategic Alliance Network"/>
+<meta name="twitter:description" content="Apply as a supplier, specialist or BD partner. Join a curated professional network built on documented standards."/>
+<meta name="twitter:image" content="https://tinaak.com/assets/og-image.png"/><link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://tinaak.com/enroll-form.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+.enroll-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 120px 5% 80px;
+}
+.enroll-intro {
+  background: var(--navy);
+  padding: 44px; margin-bottom: 48px;
+}
+.enroll-intro h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px; font-weight: 800;
+  color: var(--white); margin-bottom: 10px;
+}
+.enroll-intro p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.8; }
+.track-selector {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2px; margin-bottom: 48px;
+}
+.track-btn {
+  padding: 28px 24px;
+  background: var(--ice); border: 2px solid transparent;
+  cursor: pointer; transition: all 0.2s;
+  font-family: 'Montserrat', sans-serif;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; gap: 0;
+}
+.track-btn:hover { border-color: var(--teal); background: var(--white); }
+.track-btn.active { border-color: var(--teal); background: var(--white); }
+.track-btn-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 10px;
+  display: block; width: 100%; text-align: center;
+}
+.track-btn-title {
+  font-size: 15px; font-weight: 800; color: var(--navy);
+  display: block; width: 100%; text-align: center;
+  line-height: 1.2; margin-bottom: 6px;
+}
+.track-btn-sub {
+  font-size: 12px; color: var(--steel); line-height: 1.45;
+  display: block; width: 100%; text-align: center;
+}
+
+.form-section {
+  border-top: 1px solid var(--border);
+  padding-top: 36px; margin-bottom: 36px;
+}
+.form-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--navy); margin-bottom: 28px;
+  display: flex; align-items: center; gap: 12px;
+}
+.form-section-title::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.conditional { display: none; }
+.conditional.shown { display: block; }
+
+.expertise-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6px;
+}
+/* Expertise & geo items share same custom checkbox pattern as .checkbox-item */
+.expertise-item, .geo-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; min-height: 52px;
+  background: var(--white);
+  border: 1.5px solid rgba(15,39,71,0.15);
+  cursor: pointer; transition: border-color 0.2s, background 0.15s;
+  user-select: none;
+}
+.expertise-item:hover, .geo-item:hover {
+  border-color: var(--teal);
+  background: rgba(15,163,163,0.04);
+}
+.expertise-item:has(input:checked),
+.geo-item:has(input:checked) {
+  border-color: var(--teal);
+  background: rgba(15,163,163,0.04);
+}
+.expertise-item:has(input:checked) span,
+.geo-item:has(input:checked) span { color: var(--navy); }
+
+/* Hide native input */
+.expertise-item input, .geo-item input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+/* Custom box — same as .cb-box */
+.expertise-item .cb-box, .geo-item .cb-box {
+  width: 18px; height: 18px; flex-shrink: 0;
+  border: 2px solid rgba(15,39,71,0.25);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+  border-radius: 2px;
+}
+.expertise-item input:checked + .cb-box,
+.geo-item input:checked + .cb-box {
+  background: var(--teal); border-color: var(--teal);
+}
+.expertise-item input:checked + .cb-box::after,
+.geo-item input:checked + .cb-box::after {
+  content: '';
+  width: 5px; height: 9px;
+  border: 2px solid var(--white); border-top: none; border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+  display: block;
+}
+.expertise-item span, .geo-item span {
+  font-family: 'Lato', sans-serif;
+  font-size: 13.5px; color: var(--text); line-height: 1.4;
+}
+
+.geo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+
+.declaration-box {
+  background: var(--ice); padding: 24px;
+  border: 1px solid var(--border); margin-bottom: 32px;
+}
+.declaration-box label {
+  display: flex; gap: 14px; align-items: flex-start;
+  font-size: 13px; color: var(--steel); line-height: 1.7;
+  cursor: pointer;
+}
+.declaration-box input { accent-color: var(--navy); margin-top: 3px; flex-shrink: 0; }
+
+.submit-wrap { text-align: center; padding-top: 8px; }
+.submit-wrap p { font-size: 12px; color: var(--steel); margin-top: 16px; }
+.submit-wrap a { color: var(--teal); }
+
+@media (max-width: 900px) {
+  .expertise-grid { grid-template-columns: 1fr 1fr; }
+  .geo-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .track-selector { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .geo-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<div id="scroll-progress"></div>
+<h1 class="sr-only">T<span style="color:var(--teal)">i</span>NAAK Strategic Alliance Network — Enrolment Application</h1>
+
+<nav id="site-nav"></nav>
+
+<div id="main-content" class="enroll-wrap">
+
+  <div class="enroll-intro">
+    <div class="section-eyebrow" style="color:var(--teal);margin-bottom:12px;">
+      <span><span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> Strategic Alliance Network</span>
+    </div>
+    <h2>Enrollment Application</h2>
+    <p>Complete the form below for your chosen track. All applications are reviewed personally by our team. We will respond within 5 working days. Fields marked * are required.</p>
+  </div>
+
+  <!-- TRACK SELECTOR -->
+  <div class="form-section-title" style="margin-bottom:16px;">Select Your Track *</div>
+  <div class="track-selector" id="trackSelector">
+    <div class="track-btn" onclick="setTrack('supplier')" id="btn-supplier">
+      <div class="track-btn-label">Track 01</div>
+      <div class="track-btn-title">Preferred Supplier</div>
+      <div class="track-btn-sub">Vendors &amp; service providers</div>
+    </div>
+    <div class="track-btn" onclick="setTrack('specialist')" id="btn-specialist">
+      <div class="track-btn-label">Track 02</div>
+      <div class="track-btn-title">Associate Specialist</div>
+      <div class="track-btn-sub">Freelance consultants &amp; professionals</div>
+    </div>
+    <div class="track-btn" onclick="setTrack('partner')" id="btn-partner">
+      <div class="track-btn-label">Track 03</div>
+      <div class="track-btn-title">Strategic Alliance Partner</div>
+      <div class="track-btn-sub">Business development professionals</div>
+    </div>
+  </div>
+
+  <form id="enrollForm">
+    <input type="hidden" id="selectedTrack" aria-label="Selected enrolment track" name="track" value=""/>
+
+    <!-- SECTION A: PERSONAL / COMPANY INFO -->
+    <div class="form-section">
+      <div class="form-section-title">A — Your Details</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Your full name" required/>
+        </div>
+        <div class="form-group">
+          <label for="designation">Designation / Title</label>
+          <input type="text" id="designation" name="designation" placeholder="e.g. Director, Independent Consultant"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Business Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required/>
+        </div>
+        <div class="form-group">
+          <label for="phone">Mobile Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98XXX XXXXX" required/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="linkedin">LinkedIn Profile URL</label>
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile"/>
+        </div>
+        <div class="form-group">
+          <label for="website">Company / Personal Website</label>
+          <input type="url" id="website" name="website" placeholder="https://yourwebsite.com"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="baseCity">Base City / Location *</label>
+        <input type="text" id="baseCity" name="baseCity" placeholder="e.g. Gurugram, Delhi, Mumbai" required/>
+      </div>
+    </div>
+
+    <!-- SECTION B: COMPANY INFO (Supplier track) -->
+    <div class="form-section conditional" id="section-company">
+      <div class="form-section-title">B — Company Information</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="companyName">Company / Firm Name *</label>
+          <input type="text" id="companyName" name="companyName" placeholder="Registered company name"/>
+        </div>
+        <div class="form-group">
+          <label for="companyType">Entity Type</label>
+          <select id="companyType" name="companyType">
+            <option value="">Select type</option>
+            <option>Pvt Ltd</option>
+            <option>LLP</option>
+            <option>Partnership Firm</option>
+            <option>Proprietorship</option>
+            <option>Individual</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="gst">GST Number</label>
+          <input type="text" id="gst" name="gst" placeholder="15-digit GSTIN"/>
+        </div>
+        <div class="form-group">
+          <label for="pan">PAN Number *</label>
+          <input type="text" id="pan" name="pan" placeholder="10-character PAN"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="yearsFounded">Year Established</label>
+          <input type="number" id="yearsFounded" name="yearsFounded" placeholder="e.g. 2015" min="1950" max="2025"/>
+        </div>
+        <div class="form-group">
+          <label for="teamSize">Team Size</label>
+          <select id="teamSize" name="teamSize">
+            <option value="">Select</option>
+            <option>Solo / Freelance</option>
+            <option>2–10</option>
+            <option>11–50</option>
+            <option>51–200</option>
+            <option>200+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="insurance">Professional / Liability Insurance</label>
+        <select id="insurance" name="insurance">
+          <option value="">Select</option>
+          <option>Yes — currently insured</option>
+          <option>No — but willing to arrange</option>
+          <option>Not applicable</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SECTION C: SUPPLIER CATEGORIES -->
+    <div class="form-section conditional" id="section-supplier-cats">
+      <div class="form-section-title">C — Supply Categories</div>
+      <div class="form-group">
+        <label>Primary Service / Supply Categories * (select all that apply)</label>
+        <div class="expertise-grid" style="margin-top:8px;">
+          <label class="expertise-item"><input type="checkbox" name="cats" value="housekeeping-consumables"/><span class="cb-box"></span><span>Housekeeping &amp; Hygiene Products</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="pantry-supplies"/><span class="cb-box"></span><span>Pantry &amp; Breakroom Supplies</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="safety-ppe"/><span class="cb-box"></span><span>Safety &amp; PPE Equipment</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="facility-equipment"/><span class="cb-box"></span><span>Facility Tools &amp; Equipment</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="stationery"/><span class="cb-box"></span><span>Stationery &amp; Office Supplies</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="pest-control"/><span class="cb-box"></span><span>Pest Control Services</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="security-equipment"/><span class="cb-box"></span><span>Security Equipment &amp; Systems</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="transport"/><span class="cb-box"></span><span>Employee Transport Services</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="signage-branding"/><span class="cb-box"></span><span>Signage &amp; Branding</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="av-it"/><span class="cb-box"></span><span>AV, IT &amp; Office Technology</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="furniture-interiors"/><span class="cb-box"></span><span>Furniture &amp; Interior Products</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="digitisation"/><span class="cb-box"></span><span>Document Digitisation &amp; Records</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="uniforms-workwear"/><span class="cb-box"></span><span>Uniforms &amp; Workwear</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="horticulture"/><span class="cb-box"></span><span>Horticulture &amp; Landscaping</span></label>
+          <label class="expertise-item"><input type="checkbox" name="cats" value="other-supply"/><span class="cb-box"></span><span>Other (describe below)</span></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="supplierCapacity">Monthly Supply Capacity / Scale</label>
+        <textarea id="supplierCapacity" name="supplierCapacity" rows="3" placeholder="Describe your typical order volumes, lead times and geographic reach..."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION D: SPECIALIST EXPERTISE -->
+    <div class="form-section conditional" id="section-specialist-exp">
+      <div class="form-section-title">C — Professional Expertise</div>
+      <div class="form-group">
+        <label>Domain Expertise * (select all that apply)</label>
+        <div class="expertise-grid" style="margin-top:8px;">
+          <label class="expertise-item"><input type="checkbox" name="domain" value="fm-operations"/><span class="cb-box"></span><span>Facility Management Operations</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="hr-admin"/><span class="cb-box"></span><span>HR &amp; Administration</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="labour-compliance"/><span class="cb-box"></span><span>Labour &amp; Statutory Compliance</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="payroll"/><span class="cb-box"></span><span>Payroll Processing &amp; Systems</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="security-mgmt"/><span class="cb-box"></span><span>Security Management</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="fit-outs-pm"/><span class="cb-box"></span><span>Fit-Outs &amp; Project Management</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="iso-audit"/><span class="cb-box"></span><span>ISO Auditing &amp; Certification</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="training-l&d"/><span class="cb-box"></span><span>Training &amp; L&amp;D Delivery</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="ehs"/><span class="cb-box"></span><span>EHS &amp; Safety Management</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="graphic-design"/><span class="cb-box"></span><span>Graphic &amp; Brand Design</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="2d3d-design"/><span class="cb-box"></span><span>2D / 3D Design &amp; Visualisation</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="digital-marketing"/><span class="cb-box"></span><span>Digital Marketing &amp; Content</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="legal-contracts"/><span class="cb-box"></span><span>Legal &amp; Contracts</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="it-systems"/><span class="cb-box"></span><span>IT Systems &amp; Software</span></label>
+          <label class="expertise-item"><input type="checkbox" name="domain" value="other-specialist"/><span class="cb-box"></span><span>Other (describe below)</span></label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="yearsExperience">Years of Professional Experience *</label>
+          <select id="yearsExperience" name="yearsExperience">
+            <option value="">Select</option>
+            <option>2–5 years</option>
+            <option>5–10 years</option>
+            <option>10–15 years</option>
+            <option>15–20 years</option>
+            <option>20+ years</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="availability">Availability</label>
+          <select id="availability" name="availability">
+            <option value="">Select</option>
+            <option>Full-time available (between roles)</option>
+            <option>Part-time / weekends</option>
+            <option>Project-based only</option>
+            <option>Retainer arrangements preferred</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dayRate">Indicative Day Rate / Project Rate (₹)</label>
+        <input type="text" id="dayRate" name="dayRate" placeholder="e.g. ₹8,000/day or ₹50,000/project — approximate is fine"/>
+      </div>
+      <div class="form-group">
+        <label for="certifications">Professional Certifications</label>
+        <input type="text" id="certifications" name="certifications" placeholder="e.g. ISO Internal Auditor, Six Sigma Green Belt, SHRM, PMP..."/>
+      </div>
+    </div>
+
+    <!-- SECTION E: BD PARTNER INFO -->
+    <div class="form-section conditional" id="section-partner-info">
+      <div class="form-section-title">C — Alliance Partner Profile</div>
+      <div class="form-group">
+        <label>Sectors Where You Have Active Relationships * (select all that apply)</label>
+        <div class="expertise-grid" style="margin-top:8px;">
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="corporate-re"/><span class="cb-box"></span><span>Corporate Real Estate / Admin</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="hr-procurement"/><span class="cb-box"></span><span>HR &amp; Procurement Heads</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="manufacturing"/><span class="cb-box"></span><span>Manufacturing &amp; Industrial</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="ites-tech"/><span class="cb-box"></span><span>ITES / Technology</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="fmcg"/><span class="cb-box"></span><span>FMCG &amp; Consumer Goods</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="healthcare"/><span class="cb-box"></span><span>Healthcare &amp; Pharma</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="retail"/><span class="cb-box"></span><span>Retail &amp; Commercial</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="startups"/><span class="cb-box"></span><span>Startups &amp; Growth Companies</span></label>
+          <label class="expertise-item"><input type="checkbox" name="sectors" value="other-sector"/><span class="cb-box"></span><span>Other</span></label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="currentEmployment">Current Employment Status</label>
+          <select id="currentEmployment" name="currentEmployment">
+            <option value="">Select</option>
+            <option>Currently employed — seeking supplemental income</option>
+            <option>Between roles — available full-time</option>
+            <option>Self-employed / Consultant</option>
+            <option>Retired — selectively active</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="commissionExpectation">Commission Structure Preference</label>
+          <select id="commissionExpectation" name="commissionExpectation">
+            <option value="">Select</option>
+            <option>Percentage of first-year contract value</option>
+            <option>Fixed fee per converted client</option>
+            <option>Ongoing monthly commission</option>
+            <option>Open to discussion</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="conflictDeclaration">Conflict of Interest Declaration</label>
+        <textarea id="conflictDeclaration" name="conflictDeclaration" rows="3" placeholder="Please declare any current employers, clients or affiliations that could represent a conflict of interest with TiNAAK's services..."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION F: GEOGRAPHY -->
+    <div class="form-section">
+      <div class="form-section-title">D — Geography</div>
+      <div class="form-group">
+        <label>Regions You Operate In / Can Cover *</label>
+        <div class="geo-grid" style="margin-top:8px;">
+          <label class="geo-item"><input type="checkbox" name="geo" value="gurugram"/><span class="cb-box"></span><span>Gurugram / NCR</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="delhi"/><span class="cb-box"></span><span>Delhi</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="noida-greater"/><span class="cb-box"></span><span>Noida / Greater Noida</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="faridabad"/><span class="cb-box"></span><span>Faridabad</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="mumbai"/><span class="cb-box"></span><span>Mumbai</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="pune"/><span class="cb-box"></span><span>Pune</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="bangalore"/><span class="cb-box"></span><span>Bengaluru</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="hyderabad"/><span class="cb-box"></span><span>Hyderabad</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="chennai"/><span class="cb-box"></span><span>Chennai</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="kolkata"/><span class="cb-box"></span><span>Kolkata</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="ahmedabad"/><span class="cb-box"></span><span>Ahmedabad</span></label>
+          <label class="geo-item"><input type="checkbox" name="geo" value="pan-india"/><span class="cb-box"></span><span>Pan-India</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION G: UPLOADS & PORTFOLIO -->
+    <div class="form-section">
+      <div class="form-section-title">E — Documents &amp; Portfolio</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>CV / Resume</label>
+          <div class="upload-area">
+            <input type="file" accept=".pdf,.doc,.docx" name="cvFile" style="display:none" id="cvFile"/>
+            <p onclick="document.getElementById('cvFile').click()" style="cursor:pointer;"><strong>Click to upload</strong> or drag and drop<br>PDF, DOC, DOCX — max 5MB</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Company Registration / GST Certificate</label>
+          <div class="upload-area">
+            <input type="file" accept=".pdf,.jpg,.png" name="regDoc" style="display:none" id="regDoc"/>
+            <p onclick="document.getElementById('regDoc').click()" style="cursor:pointer;"><strong>Click to upload</strong> or drag and drop<br>PDF, JPG, PNG — max 5MB</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Portfolio / Work Samples <span style="font-weight:400;color:var(--steel);text-transform:none;letter-spacing:0;">(designers, 2D/3D artists, trainers — attach samples or links)</span></label>
+        <div class="upload-area">
+          <input type="file" accept=".pdf,.zip,.jpg,.png,.pptx" multiple name="portfolio" style="display:none" id="portfolioFile"/>
+          <p onclick="document.getElementById('portfolioFile').click()" style="cursor:pointer;"><strong>Click to upload up to 3 files</strong> — PDF, ZIP, JPG, PNG, PPTX — max 10MB total</p>
+        </div>
+        <div class="form-note">Alternatively, include portfolio links in the message field below.</div>
+      </div>
+    </div>
+
+    <!-- SECTION H: REFERENCES & MESSAGE -->
+    <div class="form-section">
+      <div class="form-section-title">F — References &amp; Message</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ref1Name">Professional Reference 1 — Name</label>
+          <input type="text" id="ref1Name" name="ref1Name" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label for="ref1Contact">Reference 1 — Contact</label>
+          <input type="text" id="ref1Contact" name="ref1Contact" placeholder="Email or phone"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="ref2Name">Professional Reference 2 — Name</label>
+          <input type="text" id="ref2Name" name="ref2Name" placeholder="Full name"/>
+        </div>
+        <div class="form-group">
+          <label for="ref2Contact">Reference 2 — Contact</label>
+          <input type="text" id="ref2Contact" name="ref2Contact" placeholder="Email or phone"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Tell Us About Yourself *</label>
+        <textarea id="message" name="message" rows="5" placeholder="Describe your background, what you offer, any specific clients or sectors you have experience with, and why you'd like to join the TiNAAK network..." required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="howFound">How Did You Hear About This?</label>
+        <select id="howFound" name="howFound">
+          <option value="">Select</option>
+          <option>LinkedIn</option>
+          <option>Google Search</option>
+          <option>Referral from a contact</option>
+          <option>T<span style="color:var(--teal)">i</span>NAAK website</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- CODE OF CONDUCT -->
+    <div style="margin-bottom:24px;border:1px solid var(--border);border-radius:4px;overflow:hidden;">
+      <button type="button" onclick="toggleConduct()" id="conductToggle"
+        style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:var(--light);border:none;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--navy);text-align:left;">
+        <span>T<span style="color:var(--teal)">i</span>NAAK Code of Conduct for Network Partners</span>
+        <span id="conductIcon" style="font-size:18px;line-height:1;color:var(--teal);">+</span>
+      </button>
+      <div id="conductBody" style="display:none;padding:20px 18px;background:#fff;font-size:13px;color:var(--steel);line-height:1.8;border-top:1px solid var(--border);">
+        <p style="margin:0 0 12px;font-weight:700;color:var(--navy);">By joining the T<span style="color:var(--teal)">i</span>NAAK Strategic Alliance Network, you commit to the following:</p>
+        <p style="margin:0 0 10px;"><strong style="color:var(--navy);">1. Professional Integrity.</strong> You will conduct yourself with honesty and professionalism in all engagements facilitated through T<span style="color:var(--teal)">i</span>NAAK — with clients, colleagues, and end users.</p>
+        <p style="margin:0 0 10px;"><strong style="color:var(--navy);">2. Confidentiality.</strong> You will not disclose client identities, site details, commercial terms, or any information obtained through T<span style="color:var(--teal)">i</span>NAAK engagements to third parties without prior written consent.</p>
+        <p style="margin:0 0 10px;"><strong style="color:var(--navy);">3. Quality of Delivery.</strong> You will deliver services to the standard agreed at the time of engagement. Where issues arise, you will communicate proactively and work towards resolution.</p>
+        <p style="margin:0 0 10px;"><strong style="color:var(--navy);">4. No Direct Solicitation.</strong> You will not approach T<span style="color:var(--teal)">i</span>NAAK clients, introduced through network engagements, for direct commercial relationships during or within 12 months of an active engagement.</p>
+        <p style="margin:0 0 10px;"><strong style="color:var(--navy);">5. Legal Compliance.</strong> You will comply with all applicable laws, regulations, and licensing requirements relevant to your area of work.</p>
+        <p style="margin:0;font-style:italic;font-size:12px;">A detailed Partner Agreement will be provided prior to your first formal engagement. This code governs conduct from the point of network acceptance.</p>
+      </div>
+    </div>
+
+    <!-- DECLARATIONS -->
+    <div class="declaration-box">
+      <label>
+        <input type="checkbox" id="declarationAccuracy" required/><span class="cb-box"></span>
+        <span>I confirm that all information provided in this application is accurate and complete. I understand that misrepresentation will result in immediate disqualification and removal from the T<span style="color:var(--teal)">i</span>NAAK network.</span>
+      </label>
+    </div>
+    <div class="declaration-box">
+      <label>
+        <input type="checkbox" id="declarationConduct" required/><span class="cb-box"></span>
+        <span>I have read and agree to T<span style="color:var(--teal)">i</span>NAAK's Code of Conduct for network partners, and understand that acceptance into the network is subject to satisfactory verification and a personal interview.</span>
+      </label>
+    </div>
+
+    <div class="submit-wrap" id="submitWrap">
+      <button type="button" class="btn-primary" onclick="submitEnroll()" style="padding:16px 48px;font-size:12px;">
+        Submit Application
+      </button>
+      <p>By submitting you agree to T<span style="color:var(--teal)">i</span>NAAK processing your data for the purpose of this application. We do not share your information with third parties.</p>
+    </div>
+
+  </form>
+
+  <div class="success-box" id="successBox">
+    <h3>Application Received</h3>
+    <p>Thank you for applying to the T<span style="color:var(--teal)">i</span>NAAK Strategic Alliance Network. Our team will review your application and respond within 5 working days at the email address you provided.</p>
+  </div>
+</div>
+
+<a id="whatsapp-fab" href="https://wa.me/919999998522?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20TiNAAK%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat with TiNAAK on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div id="mobile-cta-bar" role="complementary" aria-label="Quick contact">
+  <a href="contact.html" class="mcta-primary">Get In Touch</a>
+  <a href="tel:+919999998522" class="mcta-secondary">Call Now</a>
+</div>
+<footer id="site-footer"></footer>
+<script src="shared.js"></script>
+<script>
+function toggleConduct() {
+  const body = document.getElementById('conductBody');
+  const icon = document.getElementById('conductIcon');
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  icon.textContent = open ? '+' : '×';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  injectNav('network.html');
+  injectFooter();
+  initScrollProgress();
+  initWhatsAppFAB();
+});
+
+// Pre-select track from URL param
+const urlParams = new URLSearchParams(window.location.search);
+const trackParam = urlParams.get('track');
+if (trackParam) setTrack(trackParam);
+
+function setTrack(track) {
+  document.getElementById('selectedTrack').value = track;
+  document.querySelectorAll('.track-btn').forEach(b => b.classList.remove('active'));
+  const btn = document.getElementById('btn-' + track);
+  if (btn) btn.classList.add('active');
+
+  // Hide all conditional sections
+  document.querySelectorAll('.conditional').forEach(s => s.classList.remove('shown'));
+
+  if (track === 'supplier') {
+    document.getElementById('section-company').classList.add('shown');
+    document.getElementById('section-supplier-cats').classList.add('shown');
+  } else if (track === 'specialist') {
+    document.getElementById('section-specialist-exp').classList.add('shown');
+  } else if (track === 'partner') {
+    document.getElementById('section-partner-info').classList.add('shown');
+  }
+}
+
+function submitEnroll() {
+  const track = document.getElementById('selectedTrack').value;
+  if (!track) { alert('Please select a track before submitting.'); return; }
+
+  V.clearAll(document.getElementById('enrollForm'));
+
+  const ok = V.run([
+    {el: document.getElementById('fullName'), checks: [{fn: (v)=>V.required(v), msg:'Please enter your full name'}]},
+    {el: document.getElementById('email'),    checks: [{fn: (v)=>V.required(v), msg:'Email is required'}, {fn: (v)=>V.email(v), msg:'Please enter a valid email address'}]},
+    {el: document.getElementById('phone'),    checks: [{fn: (v)=>V.required(v), msg:'Phone is required'}, {fn: (v)=>V.phone(v), msg:'Please enter a valid phone number'}]},
+    {el: document.getElementById('linkedin'), checks: [{fn: (v)=>V.linkedin(v), msg:'Please enter a valid LinkedIn URL (linkedin.com/in/yourprofile)'}]},
+    {el: document.getElementById('message'),  checks: [{fn: (v)=>V.required(v), msg:'Please tell us about yourself'}]}
+  ]);
+  if (!ok) return;
+
+  const cvEl = document.getElementById('cvFile');
+  if (cvEl && cvEl.files[0]) {
+    if (!V.fileSize(cvEl.files[0], 5)) { V.err(cvEl, 'CV must be under 5MB'); return; }
+    if (!V.fileType(cvEl.files[0], ['.pdf','.doc','.docx'])) { V.err(cvEl, 'CV must be PDF, DOC or DOCX'); return; }
+  }
+  const regEl = document.getElementById('regDoc');
+  if (regEl && regEl.files[0]) {
+    if (!V.fileSize(regEl.files[0], 5)) { V.err(regEl, 'Registration document must be under 5MB'); return; }
+    if (!V.fileType(regEl.files[0], ['.pdf','.jpg','.jpeg','.png'])) { V.err(regEl, 'Registration document must be PDF, JPG or PNG'); return; }
+  }
+  const portEl = document.getElementById('portfolioFile');
+  if (portEl && portEl.files.length > 0) {
+    for (const f of portEl.files) {
+      if (!V.fileSize(f, 10)) { V.err(portEl, 'Portfolio files must be under 10MB total'); return; }
+      if (!V.fileType(f, ['.pdf','.zip','.jpg','.jpeg','.png','.pptx'])) { V.err(portEl, 'Portfolio must be PDF, ZIP, JPG, PNG or PPTX'); return; }
+    }
+  }
+
+  const decAccuracy = document.getElementById('declarationAccuracy').checked;
+  const decConduct = document.getElementById('declarationConduct').checked;
+  if (!decAccuracy || !decConduct) { alert('Please confirm both declarations before submitting.'); return; }
+
+  const name = document.getElementById('fullName').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  const cats = [...document.querySelectorAll('input[name="cats"]:checked')].map(e => e.value).join(', ');
+  const domains = [...document.querySelectorAll('input[name="domain"]:checked')].map(e => e.value).join(', ');
+  const sectors = [...document.querySelectorAll('input[name="sectors"]:checked')].map(e => e.value).join(', ');
+  const geos = [...document.querySelectorAll('input[name="geo"]:checked')].map(e => e.value).join(', ');
+  const trackLabels = { supplier: 'Preferred Supplier Network', specialist: 'Associate Specialist', partner: 'Strategic Alliance Partner' };
+
+  const btn = document.querySelector('#enrollForm .btn-primary') || document.querySelector('#enrollForm button[onclick]');
+  if(btn){ btn.textContent = 'Submitting…'; btn.disabled = true; }
+
+  const fd = new FormData();
+  fd.append('name', name);
+  fd.append('email', email);
+  fd.append('phone', phone);
+  fd.append('track', trackLabels[track]);
+  fd.append('base_city', document.getElementById('baseCity').value);
+  fd.append('linkedin', document.getElementById('linkedin').value);
+  fd.append('supply_categories', cats);
+  fd.append('domain_expertise', domains);
+  fd.append('sectors', sectors);
+  fd.append('geography', geos);
+  fd.append('message', message);
+  fd.append('reference_1', `${document.getElementById('ref1Name').value} — ${document.getElementById('ref1Contact').value}`);
+  fd.append('reference_2', `${document.getElementById('ref2Name').value} — ${document.getElementById('ref2Contact').value}`);
+  fd.append('how_found', document.getElementById('howFound').value);
+
+  const cvFile = document.getElementById('cvFile').files[0];
+  if (cvFile) fd.append('cv', cvFile);
+
+  const regFile = document.getElementById('regDoc').files[0];
+  if (regFile) fd.append('reg_doc', regFile);
+
+  const portfolioFiles = document.getElementById('portfolioFile').files;
+  for (let i = 0; i < Math.min(portfolioFiles.length, 3); i++) {
+    fd.append('portfolio', portfolioFiles[i]);
+  }
+
+  fetch('https://tinaak-forms-worker.judge-raman.workers.dev/network', {
+    method: 'POST',
+    body: fd
+  })
+  .then(r => r.json())
+  .then(res => {
+    if(res.success){
+      document.getElementById('enrollForm').style.display = 'none';
+      document.getElementById('successBox').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      if(btn){ btn.textContent = 'Submit Application'; btn.disabled = false; }
+      alert('Something went wrong. Please try again or email us directly at network@tinaak.com');
+    }
+  })
+  .catch(() => {
+    if(btn){ btn.textContent = 'Submit Application'; btn.disabled = false; }
+    alert('Could not submit — please check your connection or email us directly at network@tinaak.com');
+  });
+}
+</script>
+</body>
+</html>

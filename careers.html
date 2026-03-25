@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Careers at TiNAAK Integrated Services — open roles in facility management, interim staffing, HR, recruitment, finance and business development. Gurugram, Delhi NCR."/>
+<meta name="robots" content="index, follow"/>
+<title>Careers at TiNAAK | Facility Management, HR & Operations Jobs | Gurugram Delhi NCR</title><link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://tinaak.com/careers.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://tinaak.com/careers.html"/>
+<meta property="og:title" content="Careers at TiNAAK Integrated Services"/>
+<meta property="og:description" content="Join a growing professional services firm. Roles in facility management, HR, interim staffing coordination, recruitment and business development."/>
+<meta property="og:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@tinaak_in"/>
+<meta name="twitter:title" content="Careers at TiNAAK Integrated Services"/>
+<meta name="twitter:description" content="Roles in FM, HR, recruitment and business development — early-stage with real scope. Gurugram and Delhi NCR."/>
+<meta name="twitter:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:site_name" content="TiNAAK Integrated Services"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ── WHY JOIN ── */
+#why-join { padding:100px 5%; }
+.wj-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:52px; }
+.wj-card { background:var(--ice); padding:36px 28px; transition:background 0.2s; }
+/* wj-card hover handled in shared.css */
+.wj-icon { font-size:28px; margin-bottom:16px; display:block; }
+.wj-title { font-family:'Montserrat',sans-serif; font-size:15px; font-weight:700; color:var(--navy); margin-bottom:10px; }
+.wj-desc { font-size:14px; color:var(--steel); line-height:1.85; }
+
+/* ── OPEN ROLES ── */
+#open-roles { background:var(--ice); padding:100px 5%; }
+.roles-list { display:flex; flex-direction:column; gap:2px; margin-top:48px; }
+
+/* Role card — collapsed state */
+.role-card {
+  background:var(--white);
+  border-bottom:1px solid var(--border);
+}
+.role-header {
+  padding:28px 36px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  cursor:pointer;
+  transition:background 0.18s;
+  user-select:none;
+}
+.role-header:hover { background:rgba(15,39,71,0.025); }
+.role-header-left { flex:1; min-width:0; }
+.role-title {
+  font-family:'Montserrat',sans-serif;
+  font-size:17px; font-weight:800;
+  color:var(--navy); margin-bottom:10px;
+}
+.role-meta { display:flex; gap:8px; flex-wrap:wrap; }
+.role-tag {
+  font-family:'Montserrat',sans-serif;
+  font-size:9px; font-weight:700;
+  letter-spacing:0.16em; text-transform:uppercase;
+  padding:4px 10px;
+  background:rgba(15,163,163,0.07);
+  color:var(--teal);
+  border:1px solid rgba(15,163,163,0.18);
+}
+.role-tag.tag-dept { background:rgba(15,39,71,0.05); color:var(--navy); border-color:rgba(15,39,71,0.12); }
+.role-toggle {
+  width:36px; height:36px; flex-shrink:0;
+  border-radius:50%;
+  border:1.5px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:18px; color:var(--teal);
+  font-weight:300; line-height:1;
+  transition:all 0.2s;
+  background:white;
+}
+.role-card.open .role-toggle { background:var(--teal); color:white; border-color:var(--teal); transform:rotate(45deg); }
+
+/* JD body — expanded */
+.role-body {
+  display:none;
+  border-top:1px solid var(--border);
+  padding:36px 36px 40px;
+  background:var(--white);
+}
+.role-card.open .role-body { display:grid; grid-template-columns:1fr 1fr; gap:40px 48px; }
+
+.jd-section { }
+.jd-section-title {
+  font-family:'Montserrat',sans-serif;
+  font-size:10px; font-weight:700;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--teal); margin-bottom:14px;
+  padding-bottom:8px;
+  border-bottom:1px solid rgba(15,163,163,0.15);
+}
+.jd-body {
+  font-size:14px; color:var(--steel);
+  line-height:1.85;
+}
+.jd-list {
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:7px;
+}
+.jd-list li {
+  font-size:14px; color:var(--steel);
+  line-height:1.65;
+  padding-left:16px; position:relative;
+}
+.jd-list li::before {
+  content:'';
+  position:absolute; left:0; top:8px;
+  width:5px; height:5px;
+  border-radius:50%;
+  background:var(--teal);
+}
+.jd-list.cross li::before { background:rgba(90,101,114,0.35); border-radius:2px; width:8px; height:2px; top:11px; }
+.jd-list.check li::before { content:'✓'; background:none; font-size:11px; color:var(--teal); width:auto; height:auto; top:1px; left:0; }
+
+.jd-apply {
+  grid-column:1/-1;
+  display:flex; align-items:center; justify-content:space-between;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+  gap:24px; flex-wrap:wrap;
+}
+.jd-apply-note {
+  font-size:13px; color:var(--steel); line-height:1.6;
+}
+.jd-apply-note strong { color:var(--navy); }
+
+/* ── APPLY ── */
+#apply { padding:100px 5%; }
+.apply-inner { display:grid; grid-template-columns:1fr 1.6fr; gap:80px; align-items:start; }
+.apply-info .section-title { margin-bottom:16px; }
+.apply-info p { font-size:14px; color:var(--steel); line-height:1.85; margin-bottom:20px; }
+.apply-note { background:var(--ice); border-left:3px solid var(--teal); padding:20px 24px; font-size:13px; color:var(--steel); line-height:1.7; }
+
+@media(max-width:900px){
+  .wj-grid{grid-template-columns:1fr 1fr;}
+  .role-card.open .role-body{grid-template-columns:1fr;}
+  .apply-inner{grid-template-columns:1fr;gap:48px;}
+  .role-header{padding:24px 20px;}
+  .role-body{padding:28px 20px 32px;}
+}
+@media(max-width:560px){
+  .wj-grid{grid-template-columns:1fr;}
+  .role-title{font-size:15px;}
+}
+
+/* ── FORM LOADING STATE ── */
+.btn-loading { position:relative; color:transparent !important; pointer-events:none; }
+.btn-loading::after {
+  content:''; position:absolute; inset:0; margin:auto;
+  width:20px; height:20px; border-radius:50%;
+  border:2px solid rgba(255,255,255,0.3);
+  border-top-color:rgba(255,255,255,0.9);
+  animation:btn-spin 0.7s linear infinite;
+}
+@keyframes btn-spin { to { transform:rotate(360deg); } }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  "title": "Multiple Roles \u2014 Facility Management, HR & Operations",
+  "description": "TiNAAK Integrated Services is hiring professionals in facility management, HR operations, recruitment, interim staffing and business development.",
+  "hiringOrganization": {
+    "@type": "Organization",
+    "name": "TiNAAK Integrated Services",
+    "sameAs": "https://tinaak.com"
+  },
+  "jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gurugram",
+      "addressRegion": "Haryana",
+      "addressCountry": "IN"
+    }
+  },
+  "employmentType": [
+    "FULL_TIME",
+    "CONTRACTOR"
+  ],
+  "datePosted": "2026-03-01"
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<div id="scroll-progress"></div>
+
+<nav id="site-nav"></nav>
+<header class="page-hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-glow" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="section-eyebrow">Careers at <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span></div>
+    <h1>Build Something<br><span>That Matters</span></h1>
+    <p>T<span style="color:var(--teal)">i</span>NAAK is building a team of specialists across facility management, recruitment, interim staffing and business development. We are growing — and we are looking for people who want to grow with us.</p>
+  </div>
+</header>
+
+<!-- ═══ WHY JOIN ═══ -->
+<main id="main-content" style="display:contents">
+<section id="why-join">
+  <div class="reveal">
+    <div class="section-eyebrow">Why <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span></div>
+    <h2 class="section-title">What Working Here Looks Like</h2>
+  </div>
+  <div class="wj-grid">
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">📚</span>
+      <div class="tn-n-2 wj-title">Learn from Deep Practice</div>
+      <div class="tn-n-3 wj-desc">T<span style="color:var(--teal)">i</span>NAAK is built on 26 years of real enterprise experience across every function we deliver. That knowledge is embedded in how we work — and available to everyone on the team.</div>
+    </div>
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">🚀</span>
+      <div class="tn-n-2 wj-title">Early-Stage Impact</div>
+      <div class="tn-n-3 wj-desc">T<span style="color:var(--teal)">i</span>NAAK is at the beginning. The decisions you make here will shape the company. Roles come with real responsibility — not just job descriptions.</div>
+    </div>
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">🔗</span>
+      <div class="tn-n-2 wj-title">Cross-Functional Exposure</div>
+      <div class="tn-n-3 wj-desc">Because we deliver multiple services, working here means understanding more than one domain — facility management, recruitment, interim staffing, HR and operations.</div>
+    </div>
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">📍</span>
+      <div class="tn-n-2 wj-title">Gurugram-Based, India-Minded</div>
+      <div class="tn-n-3 wj-desc">We are headquartered in Gurugram with intent to grow pan-India. The people who join now will be part of that expansion — and will have shaped it.</div>
+    </div>
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">⚖️</span>
+      <div class="tn-n-2 wj-title">Compliance-First Culture</div>
+      <div class="tn-n-3 wj-desc">Every engagement T<span style="color:var(--teal)">i</span>NAAK delivers is governed by proper contracts, documentation and statutory compliance. We operate correctly — not conveniently.</div>
+    </div>
+    <div class="wj-card tn-card">
+      <span class="tn-n-1 wj-icon">🤝</span>
+      <div class="tn-n-2 wj-title">Not Just Employment</div>
+      <div class="tn-n-3 wj-desc">Through our Strategic Alliance Network, T<span style="color:var(--teal)">i</span>NAAK also offers associate and commission-based arrangements for specialists who prefer flexible engagement models.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPEN ROLES ═══ -->
+<section id="open-roles">
+  <div class="reveal">
+    <div class="section-eyebrow">Open Positions</div>
+    <h2 class="section-title">Current Openings</h2>
+    <p class="section-subtitle">All roles are based in Gurugram with client-site travel across Delhi NCR. Click any role to read the full job description.</p>
+    <p class="section-subtitle" style="margin-top:10px">
+      New roles are also posted on our <a href="https://www.linkedin.com/company/tinaak/" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700">LinkedIn company page</a>.
+    </p>
+  </div>
+  <div class="roles-list">
+
+    <!-- 01 FACILITY OPERATIONS MANAGER -->
+    <div class="role-card reveal" id="jd-fom">
+      <div class="role-header" onclick="toggleRole('jd-fom')">
+        <div class="role-header-left">
+          <div class="role-title">Facility Operations Manager</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram / Client Sites</span>
+            <span class="role-tag tag-dept">Operations</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">You will be the operational owner for one or more T<span style="color:var(--teal)">i</span>NAAK client sites — responsible for the daily delivery of facility services including housekeeping, pantry, technical maintenance, security coordination and vendor management. You will be the single point of accountability the client sees, and the standard-setter the on-site team follows.<br><br>This is a hands-on role. You will be on-site, not behind a desk in head office.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Manage daily facility operations to agreed scope and SLA across assigned client sites</li>
+            <li>Supervise and schedule housekeeping, pantry, security and support staff</li>
+            <li>Coordinate with technical vendors for PPM and breakdown maintenance</li>
+            <li>Conduct daily/weekly compliance walkthroughs and maintain documentation</li>
+            <li>Manage consumable inventory — ordering, stock control, usage tracking</li>
+            <li>Prepare and submit weekly operations reports to <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> management</li>
+            <li>Handle client escalations promptly and escalate where required</li>
+            <li>Assist in onboarding new sites when <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> wins additional contracts</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>Minimum 5 years FM experience in corporate, IT park or industrial environments</li>
+            <li>Solid understanding of soft services (housekeeping, pantry, front office) and basic technical services (HVAC, electrical, plumbing)</li>
+            <li>Strong documentation discipline — SOPs, checklists, incident logs, vendor records</li>
+            <li>Ability to manage blue-collar teams with firmness and fairness</li>
+            <li>Comfortable with client-facing communication at operations and admin manager level</li>
+            <li>Working knowledge of labour compliance basics (contract labour, ESIC, PF)</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates who have only worked in FM project roles without day-to-day operations accountability</li>
+            <li>Candidates who expect to manage remotely — this role requires site presence</li>
+            <li>Candidates whose experience is primarily technical (MEP) without soft services exposure</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 5–12 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram, with travel to client sites across Delhi NCR &nbsp;·&nbsp; <strong>Reporting to:</strong> Managing Partner</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Facility Operations Manager')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 RECRUITMENT SPECIALIST -->
+    <div class="role-card reveal" id="jd-rec">
+      <div class="role-header" onclick="toggleRole('jd-rec')">
+        <div class="role-header-left">
+          <div class="role-title">Recruitment Specialist — Admin, FM, Finance &amp; HR Profiles</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram</span>
+            <span class="role-tag tag-dept">Recruitment</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">T<span style="color:var(--teal)">i</span>NAAK recruits mid-to-senior white-collar professionals for client organisations across Administration, FM, HR, Finance, Operations and Sales. You will manage the full recruitment cycle — from brief to placement — with a deliberate, low-volume approach where quality of fit matters more than speed of closure.<br><br>You will also contribute to building T<span style="color:var(--teal)">i</span>NAAK's candidate database — particularly professionals between roles who are available for both permanent placement and interim deployment.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Take detailed briefs from clients and translate them into search criteria</li>
+            <li>Source candidates through LinkedIn, job boards, referrals and direct outreach</li>
+            <li>Screen and assess candidates — structured assessment notes, not just CV forwards</li>
+            <li>Manage candidate communication and interview coordination end-to-end</li>
+            <li>Maintain and develop <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span>'s candidate database — with particular focus on building the interim-ready pool</li>
+            <li>Manage offer negotiation and post-placement follow-up</li>
+            <li>Track placement pipeline and report weekly to management</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>Minimum 3 years white-collar recruitment experience — in-house, RPO or agency</li>
+            <li>Experience recruiting across at least two of: Administration, HR, Finance, FM, Operations</li>
+            <li>Strong candidate assessment skills — able to evaluate beyond the CV</li>
+            <li>Genuine understanding of what makes a good hire in each function, not just keyword matching</li>
+            <li>Well-organised with clean process discipline — database hygiene, follow-up, documentation</li>
+            <li>Comfortable with ambiguity — <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> is early-stage and processes are still being built</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Pure volume recruiters who measure success by number of CVs sent</li>
+            <li>Candidates with experience limited to IT, tech or engineering recruitment</li>
+            <li>Candidates who rely entirely on job boards without proactive direct search</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 3–8 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram &nbsp;·&nbsp; <strong>Reporting to:</strong> Managing Partner</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Recruitment Specialist')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 INTERIM STAFFING COORDINATOR -->
+    <div class="role-card reveal" id="jd-isc">
+      <div class="role-header" onclick="toggleRole('jd-isc')">
+        <div class="role-header-left">
+          <div class="role-title">Interim Staffing Coordinator</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram</span>
+            <span class="role-tag tag-dept">Interim Staffing</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">T<span style="color:var(--teal)">i</span>NAAK's Interim &amp; Contract Staffing service deploys pre-verified white-collar professionals to client organisations on fixed-term, cover or trial-to-hire basis — with T<span style="color:var(--teal)">i</span>NAAK as the employer of record throughout. You will manage this function end-to-end: building and maintaining the candidate pool, matching and deploying professionals, and managing the engagement lifecycle for every active placement.<br><br>This is a coordination-heavy role that sits at the intersection of recruitment, HR and client management.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Manage intake of professionals seeking interim or contract engagement — initial screening, documentation, verification</li>
+            <li>Maintain and segment the active interim candidate pool by function, availability and deployment status</li>
+            <li>Match client requirements to available candidates and coordinate deployment within target timelines (48–72 hours for pre-verified profiles)</li>
+            <li>Manage fixed-term employment contracts, onboarding and induction for each placement</li>
+            <li>Track timesheet submissions, attendance and engagement status for all active deployments</li>
+            <li>Coordinate payroll inputs with the HR & Payroll Executive for deployed staff</li>
+            <li>Manage handover-in and handover-out processes at the start and end of each engagement</li>
+            <li>Support conversion discussions when a trial-to-hire engagement moves toward permanent offer</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>2–5 years experience in staffing, HR operations, or workforce coordination</li>
+            <li>Strong process and documentation discipline — contracts, records, compliance</li>
+            <li>Ability to manage multiple active engagements simultaneously without losing detail</li>
+            <li>Understanding of fixed-term employment, EOR arrangements and statutory compliance basics</li>
+            <li>Responsive and reliable — deployed professionals and clients both depend on this role</li>
+            <li>Proficiency in Excel or a basic HRMS; ability to build and maintain structured candidate records</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates looking for a primarily client-facing or business development role</li>
+            <li>Candidates without experience handling employment documentation and compliance basics</li>
+            <li>Candidates who are not comfortable with the operational detail of managing many concurrent engagements</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 2–6 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram &nbsp;·&nbsp; <strong>Reporting to:</strong> Managing Partner</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Interim Staffing Coordinator')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 HR & PAYROLL EXECUTIVE -->
+    <div class="role-card reveal" id="jd-hrp">
+      <div class="role-header" onclick="toggleRole('jd-hrp')">
+        <div class="role-header-left">
+          <div class="role-title">HR &amp; Payroll Executive</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram</span>
+            <span class="role-tag tag-dept">HR / Compliance</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">As T<span style="color:var(--teal)">i</span>NAAK grows its managed operations and interim staffing business, the volume of people on our payroll — both T<span style="color:var(--teal)">i</span>NAAK employees and deployed interim staff — increases. You will own the payroll processing and statutory compliance function, ensuring every person is paid correctly, every filing is on time, and every record is in order.<br><br>This is a compliance-critical role. Accuracy and deadlines are non-negotiable.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Process monthly payroll for <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> employees and deployed interim staff</li>
+            <li>Manage PF, ESIC, PT and TDS — monthly calculations, payments and filings</li>
+            <li>Maintain employee records — offer letters, contracts, increments, exits</li>
+            <li>Manage onboarding documentation for new hires and deployed interim professionals</li>
+            <li>Handle full-and-final settlements for exiting employees and completed engagements</li>
+            <li>Coordinate with the CA for monthly and annual compliance filings</li>
+            <li>Generate payroll reports for management review</li>
+            <li>Support HR advisory engagements for clients where payroll review is in scope</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>3–6 years payroll and statutory compliance experience in a multi-employee environment</li>
+            <li>Working knowledge of PF, ESIC, PT, TDS and Shops & Establishment Act</li>
+            <li>Proficiency in payroll software (Tally, GreytHR, Keka or equivalent)</li>
+            <li>High accuracy and deadline discipline — payroll errors are not acceptable</li>
+            <li>Familiarity with fixed-term and contract employment structures is a strong advantage</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates with primarily HRBP or generalist HR backgrounds without payroll execution experience</li>
+            <li>Candidates who have only processed payroll for a single entity — <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> runs payroll across multiple categories of staff</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 3–6 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram &nbsp;·&nbsp; <strong>Reporting to:</strong> Managing Partner</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('HR & Payroll Executive')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 CLIENT SOLUTIONS MANAGER -->
+    <div class="role-card reveal" id="jd-csm">
+      <div class="role-header" onclick="toggleRole('jd-csm')">
+        <div class="role-header-left">
+          <div class="role-title">Client Solutions Manager</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Delhi NCR</span>
+            <span class="role-tag tag-dept">Business Development</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">T<span style="color:var(--teal)">i</span>NAAK's growth depends on building relationships with the right enterprise clients — not on volume prospecting. You will develop new client accounts across T<span style="color:var(--teal)">i</span>NAAK's five service areas: managed facility operations, professional recruitment, interim staffing, corporate fit-outs and advisory.<br><br>The right person for this role understands B2B professional services, can hold a credible conversation with a CFO, COO or Head of Admin, and is comfortable with a consultative sale that may take weeks to close — not a transactional pitch.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Identify and develop new enterprise client relationships across target segments — corporate offices, IT/ITES, manufacturing, healthcare and co-working operators in Delhi NCR</li>
+            <li>Qualify opportunities and develop tailored proposals with <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> management</li>
+            <li>Own the client conversation from first contact through to contract signature</li>
+            <li>Manage existing client relationships to identify cross-sell opportunities across services</li>
+            <li>Represent <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> at industry events and professional networks</li>
+            <li>Maintain a clean CRM pipeline with accurate stage tracking and activity notes</li>
+            <li>Provide weekly pipeline reports to management</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>4–10 years B2B services sales experience — facility management, HR services, staffing, professional services or similar</li>
+            <li>Proven track record of developing new accounts, not just managing inherited relationships</li>
+            <li>Ability to sell across multiple service lines — this is not a single-product role</li>
+            <li>Credible and professional in client-facing interactions at senior level</li>
+            <li>Self-directed — <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> is early stage, there is no large BD team behind this role</li>
+            <li>Existing network in Delhi NCR enterprise sector is a significant advantage</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates from consumer sales or retail backgrounds without enterprise B2B experience</li>
+            <li>Candidates who require a large support team or extensive inbound lead flow to perform</li>
+            <li>Candidates whose sales approach is volume-based cold calling rather than relationship development</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 4–10 years &nbsp;·&nbsp; <strong>Location:</strong> Delhi NCR (Gurugram base preferred) &nbsp;·&nbsp; <strong>Reporting to:</strong> Managing Partner</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Client Solutions Manager')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 SECURITY SUPERVISOR -->
+    <div class="role-card reveal" id="jd-sec">
+      <div class="role-header" onclick="toggleRole('jd-sec')">
+        <div class="role-header-left">
+          <div class="role-title">Security Supervisor</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram / Client Sites</span>
+            <span class="role-tag tag-dept">Security</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">You will supervise T<span style="color:var(--teal)">i</span>NAAK's security deployment at corporate client sites — responsible for guard management, access control, incident response and compliance with site-specific security protocols. You will be the point of accountability for security operations at assigned sites, reporting to the Facility Operations Manager.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Supervise security guard roster, shifts and post deployment at assigned client sites</li>
+            <li>Manage visitor management system — registration, access control, escort protocols</li>
+            <li>Conduct daily briefings and shift handover documentation</li>
+            <li>Respond to and document security incidents — escalating as required</li>
+            <li>Maintain guard attendance, leave and performance records</li>
+            <li>Liaise with client admin and HR teams on access policies and changes</li>
+            <li>Coordinate with security vendor for guard supply and replacement</li>
+            <li>Ensure compliance with PSARA and site-specific security requirements</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>Minimum 5 years corporate or industrial security supervision experience</li>
+            <li>Prior experience managing teams of 10+ security personnel</li>
+            <li>Familiarity with access control systems and CCTV monitoring</li>
+            <li>Strong incident documentation and reporting discipline</li>
+            <li>Professional presentation and communication — this role is client-visible</li>
+            <li>Ex-defence or ex-paramilitary background is an advantage, not a requirement</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates with only residential or retail security background</li>
+            <li>Candidates without prior supervisory or team management experience</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 5–12 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram / client sites &nbsp;·&nbsp; <strong>Reporting to:</strong> Facility Operations Manager</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Security Supervisor')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 MAINTENANCE & TECHNICAL SUPERVISOR -->
+    <div class="role-card reveal" id="jd-mts">
+      <div class="role-header" onclick="toggleRole('jd-mts')">
+        <div class="role-header-left">
+          <div class="role-title">Maintenance &amp; Technical Supervisor</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram / Client Sites</span>
+            <span class="role-tag tag-dept">Technical / Maintenance</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">You will be the technical accountability point for building services maintenance at one or more T<span style="color:var(--teal)">i</span>NAAK client sites — managing AMC vendors, coordinating PPM schedules, responding to breakdowns, and ensuring all mechanical, electrical and plumbing systems are maintained to standard and in compliance.<br><br>This is a supervision and coordination role, not a hands-on technician role. You will manage the people and contractors who do the work — and be accountable for the outcome. The right candidate has come up through the trades or a diploma in building services, spent time in the field, and is now ready to own the technical operations of a facility rather than just execute within it.<br><br>Candidates available for interim or contract deployment are equally welcome to apply.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Manage and coordinate AMC vendors for HVAC, electrical, plumbing, DG sets, lifts and fire systems</li>
+            <li>Maintain and track the Planned Preventive Maintenance (PPM) schedule — ensuring no service lapses</li>
+            <li>Respond to and manage breakdown calls — assess, escalate to vendor, track to resolution</li>
+            <li>Maintain technical logs, AMC records, statutory compliance certificates (electrical safety, DG permits, fire NOC)</li>
+            <li>Conduct regular walkthroughs to identify defects, wear and compliance gaps before they become failures</li>
+            <li>Coordinate with the Facility Operations Manager on maintenance budget, vendor performance and renewal decisions</li>
+            <li>Manage energy consumption tracking — meter readings, utility bills, consumption trends</li>
+            <li>Support fit-out and renovation projects on technical snagging and handover</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>4–10 years building services or technical FM experience in corporate, industrial or hospitality environments</li>
+            <li>Working knowledge across at least three of: HVAC, electrical distribution, plumbing, DG sets, fire systems</li>
+            <li>Experience managing third-party AMC vendors — not just working alongside them</li>
+            <li>Strong documentation discipline — PPM logs, breakdown records, compliance certificates, energy reports</li>
+            <li>Diploma or ITI in Electrical, Mechanical, HVAC or equivalent trade background</li>
+            <li>Ability to communicate clearly with both blue-collar technicians and white-collar client contacts</li>
+            <li>Comfortable with accountability — this role owns technical outcomes, not just activities</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates who are hands-on technicians only, without vendor management or supervisory experience</li>
+            <li>Candidates with a single-system background (e.g. HVAC only) without exposure to broader building services</li>
+            <li>Candidates from pure construction or project environments without ongoing operations/maintenance experience</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 4–10 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram / client sites across Delhi NCR &nbsp;·&nbsp; <strong>Reporting to:</strong> Facility Operations Manager</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Maintenance & Technical Supervisor')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 FM CONSULTANT / ASSOCIATE SPECIALIST -->
+    <div class="role-card reveal" id="jd-fmc">
+      <div class="role-header" onclick="toggleRole('jd-fmc')">
+        <div class="role-header-left">
+          <div class="role-title">FM Consultant / Associate Specialist</div>
+          <div class="role-meta">
+            <span class="role-tag">Associate / Project-Based</span>
+            <span class="role-tag">Delhi NCR</span>
+            <span class="role-tag tag-dept">Operations · Advisory</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">This is not a traditional employment role. T<span style="color:var(--teal)">i</span>NAAK is building a panel of experienced FM practitioners who work under our brand on client engagements — as associate specialists rather than direct employees. You bring the expertise; we bring the client relationships, compliance structure and back-office support.<br><br>Suitable for professionals between roles, seeking a structured second income stream, or who prefer project-based work over permanent employment. You work under a written engagement agreement with T<span style="color:var(--teal)">i</span>NAAK as the contracting party to the client.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Who We're Looking For</div>
+          <ul class="jd-list check">
+            <li>Minimum 8 years FM operations experience in corporate, industrial or healthcare environments</li>
+            <li>Comfortable operating independently at client sites without day-to-day supervision</li>
+            <li>Strong documentation discipline — SOPs, compliance records, client reporting</li>
+            <li>Available for project or retainer basis — minimum 3-month commitment per engagement</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What T<span style="color:var(--teal)">i</span>NAAK Provides</div>
+          <ul class="jd-list check">
+            <li>Client access through <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span>'s business development pipeline</li>
+            <li>Written engagement agreement covering scope, rate, IP and conduct</li>
+            <li>Brand and back-office support — operate professionally without building your own client infrastructure</li>
+            <li>Compliance cover — <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> manages the client contract and statutory obligations</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Type:</strong> Associate / Project-Based &nbsp;·&nbsp; <strong>Location:</strong> Delhi NCR &nbsp;·&nbsp; <strong>Also see:</strong> <a href="network.html" style="color:var(--teal);">Strategic Alliance Network →</a></div>
+          <a href="#apply" class="btn-primary" onclick="setRole('FM Consultant / Associate Specialist')">Express Interest</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 PAYROLL & COMPLIANCE ASSOCIATE -->
+    <div class="role-card reveal" id="jd-pca">
+      <div class="role-header" onclick="toggleRole('jd-pca')">
+        <div class="role-header-left">
+          <div class="role-title">Payroll &amp; Compliance Associate</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram</span>
+            <span class="role-tag tag-dept">HR / Compliance</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">As T<span style="color:var(--teal)">i</span>NAAK's managed services and interim staffing business scales, compliance workload grows proportionally. This role supports the HR &amp; Payroll Executive in managing statutory filings, vendor compliance monitoring, and the documentation layer that protects both T<span style="color:var(--teal)">i</span>NAAK and its clients.<br><br>This is a detail-oriented, deadline-driven role. You will be the person ensuring PF challan is filed on time, ESIC contributions are correctly calculated, and every deployed professional has a complete, clean paper trail.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Support monthly payroll — attendance reconciliation, variable inputs, deduction schedules</li>
+            <li>Prepare and file PF, ESIC and PT contributions on schedule</li>
+            <li>Monitor vendor and contractor compliance — track filings, obtain compliance certificates</li>
+            <li>Maintain employee and deployed-staff documentation — contracts, statutory forms, records</li>
+            <li>Prepare compliance reports for client submissions where required</li>
+            <li>Assist with full-and-final settlements for exiting staff and completing engagements</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>1–4 years payroll and statutory compliance experience</li>
+            <li>Working knowledge of PF, ESIC, PT and basic TDS — practical, not theoretical</li>
+            <li>Proficiency in any payroll software (Tally, GreytHR, Keka or similar)</li>
+            <li>High accuracy and deadline discipline — compliance errors have real consequences</li>
+            <li>Organised record-keeper with strong document hygiene</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 1–4 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram &nbsp;·&nbsp; <strong>Reporting to:</strong> HR &amp; Payroll Executive</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Payroll & Compliance Associate')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 HOUSEKEEPING SUPERVISOR -->
+    <div class="role-card reveal" id="jd-hks">
+      <div class="role-header" onclick="toggleRole('jd-hks')">
+        <div class="role-header-left">
+          <div class="role-title">Housekeeping Supervisor</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time</span>
+            <span class="role-tag">Gurugram / Client Sites</span>
+            <span class="role-tag tag-dept">Soft Services</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">Good housekeeping supervisors are hard to find — the combination of technical knowledge, people management and professional conduct that corporate clients expect is rarer than the industry assumes. This role is the visible standard-bearer for T<span style="color:var(--teal)">i</span>NAAK's soft services delivery at client sites.<br><br>You will supervise housekeeping and pantry staff, maintain quality to documented standards, and be the first escalation point for the client's facility or admin team.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Day-to-Day Responsibilities</div>
+          <ul class="jd-list">
+            <li>Supervise housekeeping and pantry staff — rostering, briefings, quality walkthroughs</li>
+            <li>Conduct daily inspection rounds using checklists — document findings and corrective actions</li>
+            <li>Manage consumable stock — tracking, reorder triggers, supplier coordination</li>
+            <li>Maintain attendance records and submit weekly reports to Facility Operations Manager</li>
+            <li>Handle client day-to-day requests and feedback promptly</li>
+            <li>Train new staff on <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span>'s documented cleaning standards and safety protocols</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>Minimum 5 years housekeeping experience in corporate, hospitality or healthcare environments</li>
+            <li>Prior supervisory experience — managing a team of 5 or more staff</li>
+            <li>Familiarity with cleaning chemicals, equipment and safety data sheets</li>
+            <li>Professional conduct and communication — this is a client-visible role</li>
+            <li>Basic written English for completing checklists and reports</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What Doesn't Fit This Role</div>
+          <ul class="jd-list cross">
+            <li>Candidates with only residential housekeeping experience</li>
+            <li>Candidates without prior team supervision responsibility</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 5–12 years &nbsp;·&nbsp; <strong>Location:</strong> Gurugram / client sites &nbsp;·&nbsp; <strong>Reporting to:</strong> Facility Operations Manager</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Housekeeping Supervisor')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 FRONT OFFICE EXECUTIVE -->
+    <div class="role-card reveal" id="jd-foe">
+      <div class="role-header" onclick="toggleRole('jd-foe')">
+        <div class="role-header-left">
+          <div class="role-title">Front Office Executive</div>
+          <div class="role-meta">
+            <span class="role-tag">Full-Time / Interim</span>
+            <span class="role-tag">Delhi NCR</span>
+            <span class="role-tag tag-dept">Administration</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section">
+          <div class="jd-section-title">The Role</div>
+          <div class="jd-body">For new office setups and GCC launches, the Front Office Executive is the first person clients, visitors and staff encounter. That interaction sets the tone for how the organisation is perceived. T<span style="color:var(--teal)">i</span>NAAK places Front Office Executives with client organisations where a professional, well-presented reception function matters from day one.<br><br>Available on both permanent placement and interim basis — particularly relevant for organisations in the setup phase.</div>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">Responsibilities</div>
+          <ul class="jd-list">
+            <li>Manage the reception desk — visitor management, access coordination, courier handling</li>
+            <li>Handle incoming calls, general enquiries inbox and direct communications</li>
+            <li>Coordinate meeting room bookings, visitor refreshments and event logistics</li>
+            <li>Maintain visitor registers, access logs and daily front-office records</li>
+            <li>Support admin and facility teams with coordination, stationery management and vendor interactions</li>
+          </ul>
+        </div>
+        <div class="jd-section">
+          <div class="jd-section-title">What We're Looking For</div>
+          <ul class="jd-list check">
+            <li>2–6 years front office or reception experience in a corporate environment</li>
+            <li>Professional presentation, confident communication and calm under pressure</li>
+            <li>Strong English — written and spoken — and working proficiency in Hindi</li>
+            <li>Proficient in MS Office, email management and scheduling tools</li>
+          </ul>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Experience:</strong> 2–6 years &nbsp;·&nbsp; <strong>Location:</strong> Delhi NCR &nbsp;·&nbsp; <strong>Available as:</strong> Permanent placement or interim deployment</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('Front Office Executive')">Apply for This Role</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 GENERAL APPLICATION -->
+    <div class="role-card reveal" id="jd-gen">
+      <div class="role-header" onclick="toggleRole('jd-gen')">
+        <div class="role-header-left">
+          <div class="role-title">General Application — Not Seeing the Right Role?</div>
+          <div class="role-meta">
+            <span class="role-tag">Open</span>
+            <span class="role-tag">All Functions</span>
+            <span class="role-tag tag-dept">Various</span>
+          </div>
+        </div>
+        <div class="role-toggle">+</div>
+      </div>
+      <div class="role-body">
+        <div class="jd-section" style="grid-column:1/-1;">
+          <div class="jd-section-title">About General Applications</div>
+          <div class="jd-body">If none of the listed roles match where you are, we still want to hear from you. T<span style="color:var(--teal)">i</span>NAAK is building both its team and its network of associate specialists — a strong profile submitted today may be exactly what a client needs next month.<br><br>There are three ways to engage with T<span style="color:var(--teal)">i</span>NAAK: as a direct employee, as an interim professional deployed on T<span style="color:var(--teal)">i</span>NAAK's payroll, or as an associate specialist in the Strategic Alliance Network working under our brand. Tell us in your message which path interests you — or if you're open to all three — and we will assess accordingly.</div>
+        </div>
+        <div class="jd-apply">
+          <div class="jd-apply-note"><strong>Functions of interest:</strong> FM Operations · Technical & Maintenance · Recruitment · HR & Payroll · Finance & Accounts · Admin & Operations · Sales & BD · Security</div>
+          <a href="#apply" class="btn-primary" onclick="setRole('General Application')">Send Your Profile</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ APPLY ═══ -->
+<section id="apply">
+  <div class="apply-inner">
+    <div class="apply-info reveal">
+      <div class="section-eyebrow">Apply</div>
+      <h2 class="section-title">Send Your Application</h2>
+      <p>Complete the form and our team will review your application. We respond to every application personally — no automated rejections.</p>
+      <p>If you are between roles and interested in interim or contract deployment, mention it in your message — we will assess you for both permanent and interim opportunities simultaneously.</p>
+      <div class="apply-note">
+        Interested in a freelance or commission-based arrangement instead of a full-time role? Visit our <a href="network.html" style="color:var(--teal);">Strategic Alliance Network</a> page.
+      </div>
+    </div>
+    <div class="reveal">
+      <div id="appForm">
+        <div class="form-row">
+          <div class="form-group"><label for="appName">Full Name *</label><input type="text" id="appName" placeholder="Your full name" required/></div>
+          <div class="form-group"><label for="appEmail">Email *</label><input type="email" id="appEmail" placeholder="your@email.com" required/></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="appPhone">Mobile *</label><input type="tel" id="appPhone" placeholder="+91 98XXX XXXXX" required/></div>
+          <div class="form-group"><label for="appRole">Role Applying For</label>
+            <select id="appRole">
+              <option value="">Select role</option>
+              <option>Facility Operations Manager</option>
+              <option>Recruitment Specialist</option>
+              <option>Interim Staffing Coordinator</option>
+              <option>HR &amp; Payroll Executive</option>
+              <option>Client Solutions Manager</option>
+              <option>Security Supervisor</option>
+              <option>Maintenance &amp; Technical Supervisor</option>
+              <option>FM Consultant / Associate Specialist</option>
+              <option>Payroll &amp; Compliance Associate</option>
+              <option>Housekeeping Supervisor</option>
+              <option>Front Office Executive</option>
+              <option>General Application</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="appExp">Years of Experience</label>
+            <select id="appExp">
+              <option value="">Select</option>
+              <option>0–2 years</option><option>2–5 years</option><option>5–10 years</option><option>10–15 years</option><option>15+ years</option>
+            </select>
+          </div>
+          <div class="form-group"><label for="appType">Engagement Preference</label>
+            <select id="appType">
+              <option value="">Select</option>
+              <option>Permanent / Full-Time only</option>
+              <option>Interim / Contract only</option>
+              <option>Open to both permanent and interim</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label for="appLinkedin">LinkedIn Profile</label><input type="url" id="appLinkedin" placeholder="linkedin.com/in/yourprofile"/></div>
+        <div class="form-group"><label for="appBio">Tell Us About Yourself *</label><textarea id="appBio" rows="5" placeholder="Summarise your background, relevant experience and what draws you to this role. If you're interested in interim deployment, mention the functions and seniority levels you can cover." required></textarea></div>
+        <div class="form-group">
+          <label>Upload CV / Resume</label>
+          <div class="upload-area"><input type="file" accept=".pdf,.doc,.docx" id="appCV" aria-label="Upload your CV or resume (PDF, DOC or DOCX, max 5MB)" style="display:none"/>
+          <p onclick="document.getElementById('appCV').click()" style="cursor:pointer;"><strong>Click to upload</strong> — PDF or Word · Max 5MB</p></div>
+        </div>
+        <button type="button" class="btn-primary" onclick="submitApp()" style="width:100%;padding:16px;font-size:12px;margin-top:8px;">Submit Application</button>
+      </div>
+      <div class="success-box" id="appSuccess"><h3>Application Received</h3><p>Thank you. We review every application personally and will be in touch within 5 working days.</p></div>
+    </div>
+  </div>
+</section>
+
+<a id="whatsapp-fab" href="https://wa.me/919999998522?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20TiNAAK%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat with TiNAAK on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div id="mobile-cta-bar" role="complementary" aria-label="Quick contact">
+  <a href="contact.html" class="mcta-primary">Get In Touch</a>
+  <a href="tel:+919999998522" class="mcta-secondary">Call Now</a>
+</div>
+<footer id="site-footer"></footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="shared.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  injectNav('careers.html'); injectFooter(); initReveal(); initScrollProgress(); initCardReveal(); initHeroParallax(); initWhatsAppFAB();
+});
+
+function toggleRole(id) {
+  const card = document.getElementById(id);
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.role-card.open').forEach(c => c.classList.remove('open'));
+  if (!isOpen) {
+    card.classList.add('open');
+    setTimeout(() => card.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+  }
+}
+
+function setRole(role) {
+  const sel = document.getElementById('appRole');
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].text === role || sel.options[i].value === role) {
+      sel.selectedIndex = i; break;
+    }
+  }
+}
+
+function submitApp() {
+  V.clearAll(document.getElementById('appForm'));
+  const ok = V.run([
+    {el: document.getElementById('appName'),  checks: [{fn:(v)=>V.required(v), msg:'Please enter your full name'}]},
+    {el: document.getElementById('appEmail'), checks: [{fn:(v)=>V.required(v), msg:'Email is required'},{fn:(v)=>V.email(v), msg:'Please enter a valid email address'}]},
+    {el: document.getElementById('appPhone'), checks: [{fn:(v)=>V.required(v), msg:'Phone is required'},{fn:(v)=>V.phone(v), msg:'Please enter a valid phone number'}]},
+    {el: document.getElementById('appLinkedin'), checks: [{fn:(v)=>V.linkedin(v), msg:'Please enter a valid LinkedIn URL'}]},
+    {el: document.getElementById('appBio'),   checks: [{fn:(v)=>V.required(v), msg:'Please tell us about yourself'}]}
+  ]);
+  if (!ok) return;
+
+  const cvEl = document.getElementById('appCV');
+  if (cvEl.files[0]) {
+    if (!V.fileSize(cvEl.files[0], 5)) { V.err(cvEl, 'CV must be under 5MB'); return; }
+    if (!V.fileType(cvEl.files[0], ['.pdf','.doc','.docx'])) { V.err(cvEl, 'CV must be PDF, DOC or DOCX'); return; }
+  }
+
+  const btn = document.querySelector('#appForm .btn-primary');
+  btn.textContent = 'Apply';
+  btn.classList.add('btn-loading');
+  btn.disabled = true;
+
+  const fd = new FormData();
+  fd.append('name',  document.getElementById('appName').value);
+  fd.append('email', document.getElementById('appEmail').value);
+  fd.append('phone', document.getElementById('appPhone').value);
+  fd.append('role_applied_for', document.getElementById('appRole').value || 'General Application');
+  fd.append('years_of_experience', document.getElementById('appExp').value);
+  fd.append('engagement_preference', document.getElementById('appType').value);
+  fd.append('linkedin', document.getElementById('appLinkedin').value);
+  fd.append('message', document.getElementById('appBio').value);
+  if (cvEl.files[0]) fd.append('cv', cvEl.files[0]);
+
+  fetch('https://tinaak-forms-worker.judge-raman.workers.dev/careers', {method:'POST', body:fd})
+    .then(r => r.json())
+    .then(res => {
+      if (res.success) {
+        document.getElementById('appForm').style.display = 'none';
+        document.getElementById('appSuccess').style.display = 'block';
+      } else {
+        btn.classList.remove('btn-loading');
+    btn.textContent = 'Submit Application'; btn.disabled = false;
+        alert('Something went wrong. Please try again or email careers@tinaak.com directly.');
+      }
+    })
+    .catch(() => {
+      btn.classList.remove('btn-loading');
+    btn.textContent = 'Submit Application'; btn.disabled = false;
+      alert('Could not submit — please check your connection or email your CV directly to careers@tinaak.com');
+    });
+}
+</script>
+</body>
+</html>

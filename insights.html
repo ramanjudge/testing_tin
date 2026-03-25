@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="TiNAAK Insights — professional publications, FM excellence guides and industry perspectives from Raman Deep Singh Judge. Facility management, HR operations and workplace best practice for India."/>
+<meta name="robots" content="index, follow"/>
+<title>Insights & Publications | TiNAAK Integrated Services</title>
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://tinaak.com/insights.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://tinaak.com/insights.html"/>
+<meta property="og:title" content="TiNAAK Insights &amp; Publications"/>
+<meta property="og:description" content="8 practitioner publications on facility management and HR operations, plus perspectives on operational practice for India's enterprise sector."/>
+<meta property="og:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@tinaak_in"/>
+<meta name="twitter:title" content="TiNAAK Insights &amp; Publications"/>
+<meta name="twitter:description" content="FM Excellence series, practitioner guides and perspectives on facility management and HR operations for enterprise India."/>
+<meta name="twitter:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:site_name" content="TiNAAK Integrated Services"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ── PUBLICATIONS ── */
+#publications { padding:100px 5%; }
+
+/* ── FM SERIES — visual shelf layout ── */
+.fm-series-wrap { display:grid; grid-template-columns:2fr 3fr; gap:64px; align-items:start; margin-bottom:80px; padding-bottom:80px; border-bottom:1px solid var(--border); }
+.fm-series-intro .section-title { margin-bottom:16px; }
+.fm-series-intro p { font-size:15px; color:var(--steel); line-height:1.9; margin-bottom:12px; }
+.fm-buy-note { font-size:13px; color:var(--teal); font-family:'Montserrat',sans-serif; font-weight:700; margin-top:16px; }
+
+/* Book shelf grid */
+.book-shelf { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.book-item { display:flex; flex-direction:column; gap:10px; text-decoration:none; }
+.book-cover-wrap { position:relative; border-radius:4px 10px 10px 4px; overflow:hidden; box-shadow:4px 4px 16px rgba(15,39,71,0.18); transition:transform 0.28s cubic-bezier(0.22,1,0.36,1), box-shadow 0.28s; }
+.book-item:hover .book-cover-wrap { transform:translateY(-8px) rotate(-0.5deg); box-shadow:6px 16px 36px rgba(15,39,71,0.32); }
+.book-cover-wrap img { width:100%; aspect-ratio:3/4; object-fit:cover; display:block; transition:filter 0.28s; }
+.book-item:hover .book-cover-wrap img { filter:brightness(1.06) contrast(1.02); }
+.book-vol-badge { position:absolute; bottom:8px; right:8px; font-family:'Montserrat',sans-serif; font-size:8px; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; background:var(--teal); color:var(--white); padding:3px 8px; border-radius:3px; }
+.book-title-small { font-family:'Montserrat',sans-serif; font-size:11px; font-weight:700; color:var(--navy); line-height:1.3; }
+.book-buy-row { display:flex; gap:4px; flex-wrap:wrap; }
+.btn-buy-small { font-family:'Montserrat',sans-serif; font-size:8px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 7px; border:1px solid var(--border); color:var(--steel); text-decoration:none; border-radius:3px; transition:background 0.15s, color 0.15s, border-color 0.15s; white-space:nowrap; }
+.btn-buy-small:hover { background:var(--navy); color:var(--white); border-color:var(--navy); }
+.btn-buy-small.teal { border-color:rgba(15,163,163,0.4); color:var(--teal); }
+.btn-buy-small.teal:hover { background:var(--teal); color:var(--white); border-color:var(--teal); }
+
+/* ── SPECIALIST WORKS ── */
+.specialist-wrap { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.specialist-card { display:flex; gap:28px; align-items:flex-start; background:var(--ice); border:1px solid var(--border); padding:36px; }
+.specialist-cover { flex-shrink:0; width:200px; position:relative; overflow:hidden; border-radius:4px 10px 10px 4px; }
+.specialist-cover img { width:200px; aspect-ratio:3/4; object-fit:cover; border-radius:4px 10px 10px 4px; box-shadow:5px 5px 20px rgba(15,39,71,0.18); display:block; transition:filter 0.25s, transform 0.28s cubic-bezier(0.22,1,0.36,1); }
+.specialist-card:hover .specialist-cover img { filter:brightness(1.06) contrast(1.02); transform:translateY(-4px) rotate(-0.3deg); box-shadow:6px 12px 28px rgba(15,39,71,0.28); }
+
+.specialist-body { flex:1; }
+.pub-label { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:10px; }
+.pub-title { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:800; color:var(--navy); margin-bottom:8px; line-height:1.25; }
+.pub-desc { font-size:13px; color:var(--steel); line-height:1.8; margin-bottom:16px; }
+.pub-buy-row { display:flex; gap:6px; flex-wrap:wrap; }
+.btn-buy { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:5px 12px; border:1px solid var(--border); color:var(--steel); text-decoration:none; border-radius:3px; transition:all 0.15s; white-space:nowrap; }
+.btn-buy:hover { background:var(--navy); color:var(--white); border-color:var(--navy); }
+.btn-buy.primary { background:var(--teal); color:var(--white); border-color:var(--teal); }
+.btn-buy.primary:hover { background:var(--teal-light); }
+
+/* ── AUTHOR LINK SECTION ── */
+#author-bridge { background:var(--navy); padding:60px 5%; }
+.author-bridge-inner { display:grid; grid-template-columns:auto 1fr auto; gap:40px; align-items:center; max-width:960px; }
+.author-photo-round { width:80px; height:80px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(15,163,163,0.4); flex-shrink:0; }
+.author-bridge-text .author-name-line { font-size:15px; color:var(--white); font-weight:700; margin-bottom:8px; line-height:1.4; }
+.author-bridge-text .author-name-line .author-role { color:rgba(255,255,255,0.5); font-weight:400; }
+.author-bridge-text .author-name-line .author-company { white-space:nowrap; }
+.author-bridge-text p { font-size:14px; color:rgba(255,255,255,0.5); line-height:1.85; margin:0; }
+.author-bridge-cta { flex-shrink:0; display:flex; flex-direction:column; gap:10px; align-items:flex-end; }
+
+/* ── PERSPECTIVES ── */
+#perspectives { background:var(--ice); padding:100px 5%; }
+.persp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:52px; }
+.persp-card { background:var(--white); padding:36px 28px; border-bottom:3px solid transparent; transition:border-color 0.2s; display:flex; flex-direction:column; }
+.persp-card:hover { border-bottom-color:var(--teal); }
+.persp-topic { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:12px; }
+.persp-title { font-family:'Montserrat',sans-serif; font-size:16px; font-weight:700; color:var(--navy); margin-bottom:10px; line-height:1.3; }
+.persp-summary { font-size:14px; color:var(--steel); line-height:1.85; flex:1; }
+.persp-status { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(90,101,114,0.5); margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+
+@media(max-width:1100px){ .book-shelf { grid-template-columns:1fr 1fr; } }
+@media(max-width:900px){
+  .fm-series-wrap { grid-template-columns:1fr; gap:48px; }
+  .specialist-wrap { grid-template-columns:1fr; }
+  .specialist-card { flex-direction:column; }
+  .specialist-cover { width:160px; }
+  .persp-grid { grid-template-columns:1fr 1fr; }
+  .author-bridge-inner { grid-template-columns:1fr; gap:24px; }
+  .author-bridge-cta { align-items:flex-start; }
+}
+@media(max-width:640px){
+  .book-shelf { grid-template-columns:1fr 1fr; }
+  .persp-grid { grid-template-columns:1fr; }
+}
+@media(max-width:420px){ .book-shelf { grid-template-columns:1fr 1fr; } }
+
+/* ── PERSPECTIVE ARTICLES MODAL ── */
+.persp-card { cursor:pointer; }
+.persp-card:focus { outline:2px solid var(--teal); outline-offset:2px; }
+.persp-read-more { font-family:'Montserrat',sans-serif; font-size:10px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:var(--teal); margin-top:20px; padding-top:16px; border-top:1px solid var(--border); transition:color 0.2s; }
+.persp-card:hover .persp-read-more { color:var(--navy); }
+.persp-status { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(90,101,114,0.5); margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+
+#article-modal { display:none; position:fixed; inset:0; z-index:9000; align-items:center; justify-content:center; padding:20px; }
+#article-modal.open { display:flex; }
+#article-modal-backdrop { position:absolute; inset:0; background:rgba(7,15,28,0.72); backdrop-filter:blur(4px); cursor:pointer; }
+#article-modal-box {
+  position:relative; z-index:1; background:var(--white);
+  max-width:760px; width:100%; max-height:90vh;
+  border-radius:4px; overflow:hidden;
+  box-shadow:0 32px 80px rgba(7,15,28,0.4);
+  display:flex; flex-direction:column;
+  animation:modal-in 0.28s cubic-bezier(0.22,1,0.36,1);
+}
+@keyframes modal-in { from { opacity:0; transform:translateY(24px) scale(0.97); } to { opacity:1; transform:none; } }
+#article-modal-header {
+  background:var(--navy); padding:28px 36px 24px;
+  flex-shrink:0; position:relative;
+}
+#article-modal-close {
+  position:absolute; top:20px; right:24px;
+  width:36px; height:36px; border-radius:50%;
+  background:rgba(255,255,255,0.08); border:none; cursor:pointer;
+  color:rgba(255,255,255,0.7); font-size:20px; line-height:36px; text-align:center;
+  transition:background 0.2s;
+}
+#article-modal-close:hover { background:rgba(255,255,255,0.18); }
+#article-modal-topic { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:0.22em; text-transform:uppercase; color:var(--teal); margin-bottom:10px; }
+#article-modal-title { font-family:'Montserrat',sans-serif; font-size:clamp(18px,2.5vw,24px); font-weight:800; color:var(--white); line-height:1.25; margin:0; padding-right:48px; }
+#article-modal-body { overflow-y:auto; padding:36px; flex:1; }
+#article-modal-body p { font-size:15px; color:#334155; line-height:1.9; margin:0 0 18px; }
+#article-modal-body h3 { font-family:'Montserrat',sans-serif; font-size:14px; font-weight:800; text-transform:uppercase; letter-spacing:0.08em; color:var(--navy); margin:32px 0 12px; padding-top:24px; border-top:1px solid var(--border); }
+#article-modal-body h3:first-child { margin-top:0; padding-top:0; border-top:none; }
+#article-modal-body ul { padding-left:0; list-style:none; margin:0 0 18px; }
+#article-modal-body ul li { font-size:15px; color:#334155; line-height:1.8; padding:6px 0 6px 20px; position:relative; border-bottom:1px solid var(--border); }
+#article-modal-body ul li::before { content:'—'; position:absolute; left:0; color:var(--teal); font-weight:700; }
+#article-modal-body blockquote { margin:24px 0; padding:18px 24px; border-left:3px solid var(--teal); background:var(--ice); font-style:italic; color:#475569; font-size:15px; line-height:1.8; }
+#article-modal-footer { flex-shrink:0; padding:20px 36px; border-top:1px solid var(--border); background:var(--ice); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+#article-modal-footer .author-line { font-size:13px; color:var(--steel); }
+#article-modal-footer .author-line strong { color:var(--navy); }
+@media(max-width:600px){ #article-modal-header{padding:24px 24px 20px;} #article-modal-body{padding:24px;} #article-modal-footer{padding:16px 24px;} }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "TiNAAK Insights",
+  "description": "Professional publications and perspectives on facility management, HR operations and workplace practice for the Indian enterprise sector.",
+  "url": "https://tinaak.com/insights.html",
+  "publisher": { "@type": "Organization", "name": "TiNAAK Integrated Services" },
+  "author": { "@type": "Person", "name": "Raman Deep Singh Judge", "url": "https://ramanjudge.com" }
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<div id="scroll-progress"></div>
+<nav id="site-nav"></nav>
+<header class="page-hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-glow" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="section-eyebrow">Insights &amp; Publications</div>
+    <h1>Knowledge Built<br><span>Through Practice</span></h1>
+    <p>Eight books. Six covering the full spectrum of facility management from foundations to strategic leadership. Two specialist works on HR compliance and operational performance governance. All written from practice — not theory.</p>
+  </div>
+</header>
+
+<main id="main-content" style="display:contents">
+<section id="publications">
+
+  <!-- ── FM EXCELLENCE SERIES ── -->
+  <div class="fm-series-wrap reveal">
+    <div class="fm-series-intro">
+      <div class="section-eyebrow">Six-Volume Series</div>
+      <h2 class="section-title">Facilities Management Excellence: Mastering the Built Environment</h2>
+      <p>A structured six-volume curriculum covering every stage of FM leadership — from operational fundamentals to board-level strategic governance. Each volume is self-contained and can be read independently at the career stage it is written for.</p>
+      <p>The series covers people management, asset lifecycle, maintenance planning, sustainability, technology deployment, global governance, and the future of the profession. India-relevant throughout, globally applicable in scope.</p>
+      <div class="fm-buy-note">Available on NotionPress · Kindle · Amazon IN · Flipkart</div>
+      <a href="https://ramanjudge.com/fm-excellence.html" target="_blank" rel="noopener" class="btn-teal" style="display:inline-flex;margin-top:20px;">View Full Series Details ↗</a>
+    </div>
+    <div class="book-shelf">
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 1</span>
+          <picture><source srcset="assets/fm-fundamentals.webp" type="image/webp"><img src="assets/fm-fundamentals.jpg" alt="The Fundamentals of Facilities Management" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">Fundamentals of Facilities Management</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/the-fundamentals-of-facilities-management" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Fundamentals-Facilities-Management-Excellence-Environment-ebook/dp/B0G4VLKKQ1" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FHHWSPGS" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 2</span>
+          <picture><source srcset="assets/fm-operational-excellence.webp" type="image/webp"><img src="assets/fm-operational-excellence.jpg" alt="Operational Excellence in Facilities Management" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">Operational Excellence in FM</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/operational-excellence-in-facilities-management" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Operational-Excellence-Facilities-Management-Environment-ebook/dp/B0G53C3DCW" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FHHWSPGS" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 3</span>
+          <picture><source srcset="assets/fm-sustainable.webp" type="image/webp"><img src="assets/fm-sustainable.jpg" alt="Sustainable Facilities Management" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">Sustainable Facilities Management</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/sustainable-facilities-management" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Sustainable-Facilities-Management-Environmental-Environment-ebook/dp/B0GC9PB2CX" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FJ2LV39K" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 4</span>
+          <picture><source srcset="assets/fm-technology.webp" type="image/webp"><img src="assets/fm-technology.jpg" alt="FM Technology and Innovation" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">FM Technology &amp; Innovation</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/facilities-management-technology-and-innovation" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Facilities-Management-Technology-Innovation-Transformation-ebook/dp/B0GCSGGWY6" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FHPQ33G4" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 5</span>
+          <picture><source srcset="assets/fm-global.webp" type="image/webp"><img src="assets/fm-global.jpg" alt="Global Facilities Management" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">Global Facilities Management</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/global-facilities-management" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Global-Facilities-Management-Differences-Environment-ebook/dp/B0GDLKGB1K" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FHHPJM9Y" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+      <div class="book-item">
+        <div class="book-cover-wrap">
+          <span class="book-vol-badge">Vol 6</span>
+          <picture><source srcset="assets/fm-future.webp" type="image/webp"><img src="assets/fm-future.jpg" alt="The Future of Facilities Management" loading="lazy"></picture>
+        </div>
+        <div class="book-title-small">The Future of FM</div>
+        <div class="book-buy-row">
+          <a href="https://notionpress.com/in/read/the-future-of-facilities-management" target="_blank" rel="noopener" class="btn-buy-small teal">NotionPress</a>
+          <a href="https://www.amazon.in/Future-Facilities-Management-Leadership-Environment-ebook/dp/B0GF31Y955" target="_blank" rel="noopener" class="btn-buy-small">Kindle</a>
+          <a href="https://www.amazon.in/dp/B0FHHQRT92" target="_blank" rel="noopener" class="btn-buy-small">Amazon IN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SPECIALIST WORKS ── -->
+  <div class="reveal">
+    <div class="section-eyebrow">Practitioner Guides</div>
+    <h2 class="section-title" style="margin-bottom:32px;">Specialist Works</h2>
+    <div class="specialist-wrap">
+      <div class="specialist-card">
+        <div class="specialist-cover">
+          <picture><source srcset="assets/hr-playbook.webp" type="image/webp"><img src="assets/hr-playbook.jpg" alt="HR Playbook for the Indian Business Landscape" loading="lazy"></picture>
+        </div>
+        <div class="specialist-body">
+          <div class="pub-label">HR Operations · 2025 Compliance Edition</div>
+          <div class="pub-title">HR Playbook for the Indian Business Landscape</div>
+          <p class="pub-desc">An operational field manual covering India's four Labour Codes, payroll compliance, talent frameworks, HR analytics (HCRoI, predictive attrition modelling) and AI integration. Fully updated for the new Labour Codes. Includes 30+ ready-to-use templates and calculators.</p>
+          <div class="pub-buy-row">
+            <a href="https://notionpress.com/in/read/hr-playbook-for-the-indian-business-landscape" target="_blank" rel="noopener" class="btn-buy primary">NotionPress</a>
+            <a href="https://www.amazon.in/Playbook-Indian-Business-Landscape-Foundations-ebook/dp/B0GCN4B5B6" target="_blank" rel="noopener" class="btn-buy">Kindle</a>
+            <a href="https://www.amazon.in/HR-Playbook-Indian-Business-Landscape/dp/B0CXX4GVZL" target="_blank" rel="noopener" class="btn-buy">Amazon IN</a>
+            <a href="https://ramanjudge.com/hr-playbook.html" target="_blank" rel="noopener" class="btn-buy">Full Details ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="specialist-card">
+        <div class="specialist-cover">
+          <picture><source srcset="assets/impact-metrics.webp" type="image/webp"><img src="assets/impact-metrics.jpg" alt="Impact Metrics: Achieving Operational Excellence in Facility and Office Management" loading="lazy"></picture>
+        </div>
+        <div class="specialist-body">
+          <div class="pub-label">Performance Governance</div>
+          <div class="pub-title">Impact Metrics: Achieving Operational Excellence in Facility and Office Management</div>
+          <p class="pub-desc">A governance manual reframing KPIs as instruments of control rather than reporting outputs. Establishes disciplined frameworks for accountability, escalation and predictable operational performance across outsourced and technology-saturated environments.</p>
+          <div class="pub-buy-row">
+            <a href="https://notionpress.com/in/read/impact-metrics" target="_blank" rel="noopener" class="btn-buy primary">NotionPress</a>
+            <a href="https://www.amazon.in/Impact-Metrics-Operational-Excellence-Management-ebook/dp/B0GGNGP84V" target="_blank" rel="noopener" class="btn-buy">Kindle</a>
+            <a href="https://www.amazon.in/Impact-Metrics-Achieving-Operational-Excellence/dp/B0CXX4GVZL" target="_blank" rel="noopener" class="btn-buy">Amazon IN</a>
+            <a href="https://ramanjudge.com/impact-metrics.html" target="_blank" rel="noopener" class="btn-buy">Full Details ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ── AUTHOR BRIDGE ── -->
+<section id="author-bridge">
+  <div class="author-bridge-inner reveal">
+    <picture>
+      <source srcset="assets/raman-judge.webp" type="image/webp">
+      <img src="assets/raman-judge.jpg" alt="Raman Deep Singh Judge" class="author-photo-round" loading="lazy">
+    </picture>
+    <div class="author-bridge-text">
+      <div class="author-name-line">
+        Raman Deep Singh Judge
+        <span class="author-role"> — Founder &amp; Managing Partner, </span><span class="author-company">T<span style="color:var(--teal)">i</span>NAAK Integrated Services LLP</span>
+      </div>
+      <p>All publications are written from practitioner experience — 26 years of managing facility operations, HR systems, compliance and projects inside enterprise organisations across India. The full publication library, career-stage curriculum and practice record are at <strong style="color:rgba(255,255,255,0.8);">ramanjudge.com</strong></p>
+    </div>
+    <div class="author-bridge-cta">
+      <a href="https://ramanjudge.com" target="_blank" rel="noopener" class="btn-teal" style="white-space:nowrap;">Visit ramanjudge.com ↗</a>
+      <a href="https://ramanjudge.com/connect.html" target="_blank" rel="noopener" class="btn-outline" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.25);white-space:nowrap;">Advisory Enquiry ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PERSPECTIVES ── -->
+<section id="perspectives">
+  <div class="reveal">
+    <div class="section-eyebrow">Perspectives</div>
+    <h2 class="section-title">Thinking on the Industry</h2>
+    <p class="section-subtitle">Views on facility management, HR operations and workplace practice — written from 26 years of running these functions, not observing them.</p>
+  </div>
+  <div class="persp-grid">
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a1')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Facility Management</div>
+        <div class="tn-n-2 persp-title">Why Most FM Contracts Fail to Deliver — and How to Fix Them</div>
+        <p class="tn-n-3 persp-summary">The most common reasons facility management engagements underperform — and the structural changes that turn a vendor relationship into an accountable service partnership.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a2')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">HR Operations</div>
+        <div class="tn-n-2 persp-title">The Hidden Cost of Attrition in Frontline Workforce Operations</div>
+        <p class="tn-n-3 persp-summary">Frontline attrition is rarely tracked with the same rigour as professional attrition — but the cost to operations, compliance and client relationships is just as significant.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a3')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Compliance</div>
+        <div class="tn-n-2 persp-title">Labour Compliance in India: What Growing Companies Get Wrong</div>
+        <p class="tn-n-3 persp-summary">The statutory obligations that small and mid-sized organisations most commonly miss — and the consequences that tend to surface only at audit or dispute.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a4')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Projects</div>
+        <div class="tn-n-2 persp-title">Fit-Out Governance: Why Projects Run Over Budget and How to Prevent It</div>
+        <p class="tn-n-3 persp-summary">The project management disciplines that separate on-budget, on-time fit-outs from the costly, disruptive norm in corporate interior projects.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a5')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Energy Management</div>
+        <div class="tn-n-2 persp-title">Energy Savings Through FM: Practical Measures for Indian Offices</div>
+        <p class="tn-n-3 persp-summary">Achievable energy reduction strategies for corporate facilities — without significant capital investment. Based on documented outcomes from managed operations.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a6')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Technology</div>
+        <div class="tn-n-2 persp-title">Why Growing Indian Organisations Need Purpose-Built Operational Software</div>
+        <p class="tn-n-3 persp-summary">The gap between what enterprise software offers and what a 50–500 person Indian organisation actually needs — and why that gap represents a significant underserved opportunity.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a7')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Operations</div>
+        <div class="tn-n-2 persp-title">The Integration Advantage: Why One Partner Beats Six Vendors</div>
+        <p class="tn-n-3 persp-summary">A 200-person company managing six separate service vendors isn't saving money — it's paying a hidden coordination tax. The structural case for integrated service delivery.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a8')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">Workforce</div>
+        <div class="tn-n-2 persp-title">Interim Staffing Done Right: The Employer of Record Model Explained</div>
+        <p class="tn-n-3 persp-summary">Most organisations misunderstand what interim staffing actually involves. The difference between a properly structured EOR engagement and an informal contractor arrangement — and why it matters.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+    <div class="persp-card tn-card persp-tilt" onclick="openArticle('a9')" role="button" tabindex="0" aria-label="Read full article">
+      <div class="persp-tilt-inner">
+        <div class="tn-n-1 persp-topic">New Setups</div>
+        <div class="tn-n-2 persp-title">Setting Up Right: The First 90 Days of Facility and HR Operations</div>
+        <p class="tn-n-3 persp-summary">New offices and early-stage companies make the same operational mistakes in their first quarter. A structured guide to what to put in place, in what order, before the chaos compounds.</p>
+        <div class="persp-read-more">Read Full Article →</div>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:52px;padding-top:40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;" class="reveal">
+    <div>
+      <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;">Articles are added as they are written.</div>
+      <p style="font-size:14px;color:var(--steel);margin:0;">Extracts appear on LinkedIn. The full piece is always here.</p>
+    </div>
+    <a href="https://www.linkedin.com/company/tinaak/" target="_blank" rel="noopener" class="btn-outline" style="white-space:nowrap;flex-shrink:0;">Follow on LinkedIn →</a>
+  </div>
+</section>
+
+
+<!-- ── ARTICLE MODAL ── -->
+<div id="article-modal" role="dialog" aria-modal="true" aria-labelledby="article-modal-title">
+  <div id="article-modal-backdrop" onclick="closeArticle()"></div>
+  <div id="article-modal-box">
+    <div id="article-modal-header">
+      <button id="article-modal-close" onclick="closeArticle()" aria-label="Close article">✕</button>
+      <div id="article-modal-topic"></div>
+      <h2 id="article-modal-title"></h2>
+    </div>
+    <div id="article-modal-body"></div>
+    <div id="article-modal-footer">
+      <span class="author-line"><strong>Raman Deep Singh Judge</strong> — Founder &amp; Managing Partner, T<span style="color:var(--teal)">i</span>NAAK Integrated Services LLP</span>
+      <a href="contact.html" class="btn-teal" style="font-size:10px;padding:10px 20px;">Discuss With Us →</a>
+    </div>
+  </div>
+</div>
+
+
+<a id="whatsapp-fab" href="https://wa.me/919999998522?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20TiNAAK%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat with TiNAAK on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div id="mobile-cta-bar" role="complementary" aria-label="Quick contact">
+  <a href="contact.html" class="mcta-primary">Get In Touch</a>
+  <a href="tel:+919999998522" class="mcta-secondary">Call Now</a>
+</div>
+<footer id="site-footer"></footer>
+<script src="shared.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  injectNav('insights.html'); injectFooter(); initReveal(); initScrollProgress(); initCardReveal(); initHeroParallax(); initWhatsAppFAB(); initPerspTilt();
+});
+/* ── PERSPECTIVE ARTICLES ── */
+const ARTICLES = {
+  a1: {
+    topic: 'Facility Management',
+    title: 'Why Most FM Contracts Fail to Deliver — and How to Fix Them',
+    body: `
+      <p>If you have managed a facility services contract in India for more than two years, you have almost certainly experienced the same degradation pattern. The first three months are good. The vendor is attentive, the service levels hold, escalations get resolved quickly. Then, slowly, things drift. Response times lengthen. Quality slips. The same complaints recur. By month eighteen, the contract has become a source of friction rather than service.</p>
+      <p>This pattern is so common that many facility managers have accepted it as inevitable. It is not. It is the predictable result of specific structural failures — failures that begin before the contract is even signed.</p>
+      <h3>The Root Causes</h3>
+      <p>The most fundamental problem is that most FM contracts are written to describe activities, not outcomes. The contract specifies that housekeeping staff will clean the office twice daily. It does not specify what "clean" means, how it will be verified, or what happens when it is not. When the service degrades, both parties retreat to their interpretations of vague language, and nothing changes.</p>
+      <p>The second structural failure is the absence of a functioning escalation mechanism. In a well-structured FM contract, there are at least three escalation tiers: a daily operational level, a weekly management level, and a monthly governance level. In most contracts I have reviewed, there is one: call the account manager. When the account manager fails to act, there is nowhere to go.</p>
+      <p>Third — and most commonly overlooked — is the absence of a baseline. You cannot measure degradation against a standard that was never documented. A properly initiated FM contract begins with a documented baseline assessment: what was the condition of the facility at handover? What were the first-week service metrics? Without this, every future dispute becomes a matter of opinion.</p>
+      <h3>What a Properly Structured FM Contract Looks Like</h3>
+      <p>The starting point is an SLA matrix that specifies outcomes, not activities. Not "security staff will patrol hourly" but "all perimeter entry points will be covered between 0700–2100 with verified guard presence logged at 30-minute intervals." The difference is accountability. The first statement describes a process. The second creates a measurable standard.</p>
+      <p>The second element is a performance review cadence. Monthly reviews between client and vendor management — not between the client's admin team and the vendor's supervisor, but between the people who can actually authorise changes. These reviews should use documented scorecards, not verbal updates. The scorecard should follow the vendor from month to month so that trends, not just snapshots, are visible.</p>
+      <p>Third is a structured remediation process. When service levels fall below threshold, the remediation process should be automatic and time-bound: acknowledgement within 24 hours, root cause within 72, corrective action within seven days, verification of correction within fourteen. This is not demanding — it is what a professional vendor should expect of themselves.</p>
+      <h3>The Vendor Selection Problem</h3>
+      <p>Most FM vendor selection processes in India are driven primarily by price. This is rational in the short term and expensive in the long term. A vendor who wins on price has immediately committed to delivering at a margin that may not sustain quality, compliance or sufficient supervisory oversight. The cheapest FM contract is frequently the most expensive one you will sign.</p>
+      <p>The right selection criteria weight process documentation, compliance track record, and supervisory depth as heavily as price. A vendor with three times the supervisory headcount of their cheapest competitor is not overpriced — they are structured to actually deliver what you have contracted.</p>
+      <blockquote>"The contract is the constitution of the engagement. If it is vague, everything that follows will be disputed. If it is specific, most disputes resolve themselves before they become conflicts."</blockquote>
+      <h3>The Practical First Steps</h3>
+      <p>If you are renewing an existing FM contract, begin with a baseline audit before the renewal date. Document the current state of every contracted deliverable. Use this as the starting point for the new contract's SLA matrix. If the vendor cannot meet the baseline on day one of the new contract, that is the right time to find out — not month eighteen.</p>
+      <p>If you are engaging a new FM vendor, build the performance review structure into the contract before signing. Specify who attends, what is reviewed, and what happens when thresholds are breached. A vendor who objects to structured oversight is telling you something important about their intentions.</p>
+    `
+  },
+  a2: {
+    topic: 'HR Operations',
+    title: 'The Hidden Cost of Attrition in Frontline Workforce Operations',
+    body: `
+      <p>When organisations measure attrition, they typically look at the professional workforce — the managers, executives, and specialists whose departure costs are visible: recruitment fees, notice period overlap, productivity dip, knowledge loss. Frontline attrition — housekeeping staff, security guards, pantry workers, drivers — is rarely tracked with the same discipline. This is a significant and consistent error.</p>
+      <p>Frontline attrition carries costs that are less visible but structurally just as damaging. Understanding them is the first step to managing them.</p>
+      <h3>The Direct Costs</h3>
+      <p>The most immediate cost is deployment disruption. When a housekeeping supervisor leaves, the replacement is typically not ready within 24 hours. In the gap, either the client absorbs the service disruption, the vendor deploys an under-trained substitute, or the remaining team absorbs additional workload — all of which degrade service quality. In a well-managed operation, this disruption costs approximately 1.5 to 2.5 times the monthly cost of the departed employee in lost productivity and remediation.</p>
+      <p>The second direct cost is retraining. A new frontline employee typically requires 3–6 weeks to reach the operational standard of the person they replaced — assuming they receive structured training, which most do not. In the absence of documented SOPs and a supervised induction programme, the new employee improvises, and quality variance becomes structural rather than temporary.</p>
+      <h3>The Compliance Cost</h3>
+      <p>Every departing employee triggers a statutory obligation. Full-and-final settlement must be calculated and paid within the statutory timeline. Gratuity eligibility must be assessed. PF and ESIC exit formalities must be completed. For organisations managing frontline staff directly, each departure creates administrative overhead that is frequently under-resourced and therefore frequently late. Late FnF payments are a statutory violation with compounding consequences.</p>
+      <p>In the aggregate — if your frontline attrition rate is 40–60% annually, which is typical in Indian FM operations — you are processing FnF settlements for roughly half your frontline workforce every twelve months. The compliance exposure from even a modest percentage of late or incorrect settlements is material.</p>
+      <h3>The Client Relationship Cost</h3>
+      <p>In managed services, clients notice frontline attrition even when they cannot name it. What they experience is inconsistency: the service quality that was good last month is variable this month, because the team delivering it has partially turned over. This inconsistency erodes trust. Over time, it becomes the reason a client begins looking for an alternative vendor — not because of a single failure, but because reliability has become unpredictable.</p>
+      <h3>What Reduces Frontline Attrition</h3>
+      <p>The single most effective intervention is a structured induction that makes new employees feel competent in their first two weeks. Frontline staff leave most commonly in the first 90 days — not because of compensation, but because they were given insufficient guidance and felt unable to meet expectations. A documented induction programme, a named buddy or supervisor, and an explicit 30-day check-in conversation reduces early attrition by more than any compensation adjustment.</p>
+      <p>The second intervention is pay reliability. Frontline workers make financial commitments based on their expected income. Delayed or incorrect payroll is disproportionately disruptive to their lives and is a leading driver of early departure. In managed services, the vendor's payroll accuracy directly affects the client's service stability.</p>
+      <p>Third is supervisory quality. Frontline teams with strong, fair supervisors have materially lower attrition than teams with weak or inconsistent supervision. Investing in supervisory capability — not just technical skills, but people management — is among the highest-return interventions available in frontline workforce management.</p>
+    `
+  },
+  a3: {
+    topic: 'Compliance',
+    title: 'Labour Compliance in India: What Growing Companies Get Wrong',
+    body: `
+      <p>India's labour compliance landscape is genuinely complex. Four consolidated Labour Codes have replaced 29 central statutes, but the implementing rules vary by state, the transition timelines remain uneven, and the practical implications for mid-sized organisations are still being worked out in real time. In this environment, it is understandable that growing companies make compliance errors. What is less understandable — and more dangerous — is the pattern of specific, recurring mistakes that appear across organisations regardless of sector or geography.</p>
+      <p>These are the most consequential ones, based on audit observations and compliance reviews across Indian corporate environments.</p>
+      <h3>Treating Contract Labour Compliance as the Contractor's Problem</h3>
+      <p>The most common and most expensive mistake. Under the Contract Labour (Regulation and Abolition) Act and its successors, the principal employer is jointly liable for the statutory obligations of their contractors toward the deployed workforce. If your housekeeping vendor fails to pay PF contributions for their staff working at your facility, you are not insulated from liability — you are jointly exposed to it.</p>
+      <p>This means that vendor compliance monitoring is not optional. Before signing any contract for deployed labour, verify that the vendor is PF and ESIC registered, obtain their last three months of contribution challans, and include a clause requiring monthly compliance certificates as a condition of payment. Many organisations have discovered this obligation only when a regulatory notice arrives — by which point the liability has compounded significantly.</p>
+      <h3>Misclassifying Employment Relationships</h3>
+      <p>The distinction between an employee, a fixed-term employee, a contractor, and a consultant carries specific legal consequences. The Labour Code on Industrial Relations now provides for Fixed-Term Employment — a formal category with defined rights including proportionate gratuity entitlement. Using informal "contractor" arrangements to avoid these obligations is both legally fragile and increasingly scrutinised.</p>
+      <p>The test applied by labour tribunals is functional, not formal: does the person work under the organisation's direction and control, using the organisation's tools and resources, at the organisation's premises? If yes, the relationship is likely employment regardless of what the engagement letter says. Organisations that use contract labels to avoid employment obligations are carrying hidden liability that surfaces at the worst possible time.</p>
+      <h3>Inadequate Gratuity Provisioning</h3>
+      <p>Gratuity becomes payable after five years of continuous service at 15 days' wages per completed year. For organisations that have been operating for five or more years with stable workforces, the gratuity liability is real and potentially material — yet many growing companies have made no provision for it. The liability does not become visible until an employee reaches the five-year threshold or the organisation faces a financial event. At that point, it is too late to spread the provision.</p>
+      <p>A proper HR finance function maintains a gratuity provision schedule that is updated annually as the workforce tenure profile changes. This is not complicated — it is a spreadsheet calculation — but it requires the discipline to do it before it becomes urgent.</p>
+      <h3>The POSH Compliance Gap</h3>
+      <p>The Prevention, Protection and Redressal of Sexual Harassment at the Workplace Act requires every employer with ten or more employees to constitute an Internal Complaints Committee. The majority of growing organisations with 20–100 employees have not done this. The penalty for non-compliance is a fine of up to ₹50,000 and possible cancellation of business licences upon repeated violation. More materially, the absence of a constituted ICC means the organisation has no defensible process when a complaint arises.</p>
+      <h3>Getting Ahead of the New Labour Codes</h3>
+      <p>The four Labour Codes — on Wages, Industrial Relations, Social Security, and Occupational Safety — consolidate and in some areas expand employee protections. Organisations operating on the assumption that existing compliance covers the new codes are likely wrong. The definition of "worker" has been expanded. The social security provisions for gig and platform workers introduce new obligations. The ESIC coverage thresholds have changed.</p>
+      <p>The practical step is a compliance gap assessment against the new codes, conducted before the state-level implementing rules are finalised in your operating states. Addressing gaps proactively is always cheaper than addressing them in response to regulatory action.</p>
+    `
+  },
+  a4: {
+    topic: 'Projects',
+    title: 'Fit-Out Governance: Why Projects Run Over Budget and How to Prevent It',
+    body: `
+      <p>Corporate interior fit-outs are among the most consistently over-budget project categories in Indian corporate spending. The average overrun on a mid-sized corporate fit-out (5,000–20,000 sq ft) in Delhi NCR, based on post-project reviews, is between 18% and 35% over the original estimate. The average delay is three to six weeks beyond the committed completion date. These are not exceptional outcomes — they are the norm.</p>
+      <p>The causes are identifiable and, with proper governance, largely preventable.</p>
+      <h3>The Scope Problem</h3>
+      <p>The majority of cost overruns originate in scope changes after the project is underway. A client approves a design, the contractor begins work, and then changes start: a partition wall moved, a different flooring material, additional power points, a revised pantry layout. Each change is individually small. In aggregate, they extend the project by weeks and add costs that were never in the budget.</p>
+      <p>The structural fix is a formal change control process: every variation from the approved scope must be documented, costed, and approved in writing before the work proceeds. This sounds obvious, and it is. The reason it does not happen in most projects is that clients underestimate how quickly small decisions compound and contractors are reluctant to pause work for paperwork. A project manager who enforces change control is worth their fee many times over.</p>
+      <h3>The BOQ Problem</h3>
+      <p>The Bill of Quantities is the foundation of a fit-out budget. A poorly prepared BOQ — with vague specifications, assumed rates rather than tendered ones, or scope gaps — is a pre-loaded mechanism for overruns. The difference between a BOQ that says "false ceiling — as per design" and one that specifies "Armstrong Optima Grid 600x600 with 50mm mineral fibre tiles at Rs. 185/sq ft, including all metal framing and fixings" is the difference between a budget and a wish list.</p>
+      <p>Before any contractor is engaged, the BOQ should be prepared to specification-level detail, reviewed by an independent QS or experienced PM, and used as the basis for tendering. Accepting contractor estimates that do not match a specified BOQ means you are comparing incomparable things.</p>
+      <h3>Contractor Selection and Payment Structure</h3>
+      <p>Most corporate fit-out clients select contractors on the basis of presentation quality and headline rate rather than delivery track record and financial stability. A contractor who has delivered three similar projects on time and budget in the last eighteen months is a better choice than one who gives the best presentation but has no verifiable delivery history.</p>
+      <p>Payment structure matters equally. Milestone-based payment — tied to verified completion of defined stages, not to calendar dates — gives the client leverage throughout the project and incentivises the contractor to maintain progress. Front-loading payments (common in the Indian market) transfers leverage to the contractor and reduces the client's ability to enforce performance.</p>
+      <h3>The Regulatory Dimension</h3>
+      <p>In buildings with heritage designations, or in areas under NDMC, MCD, or other regulatory authority, fit-outs may require advance approvals that take weeks or months to obtain. Projects that begin without confirming regulatory requirements discover them mid-construction, when the cost of non-compliance is orders of magnitude higher than the cost of advance planning would have been. A pre-project regulatory check — an hour's work — is among the highest-return activities in fit-out planning.</p>
+      <h3>What Good Governance Looks Like in Practice</h3>
+      <p>A properly governed fit-out has a project manager who is independent of both the client's internal team and the contractor, a weekly site meeting with documented minutes and action items, a change register updated in real time, a payment schedule linked to milestones verified by the PM, and a completion checklist signed off before the final payment is released. None of these are complex. All of them are frequently absent. Their absence is why most projects overrun.</p>
+    `
+  },
+  a5: {
+    topic: 'Energy Management',
+    title: 'Energy Savings Through FM: Practical Measures for Indian Offices',
+    body: `
+      <p>Energy is typically the second or third largest operating cost in a corporate facility, after rent and staffing. In Indian offices, where HVAC alone can account for 40–60% of electrical consumption, even modest efficiency improvements translate directly into material cost savings. The good news is that the majority of energy savings available in typical Indian corporate facilities require no significant capital investment — only structured operational discipline.</p>
+      <h3>The Low-Hanging Fruit</h3>
+      <p>The starting point for any energy management programme is a baseline audit: what is the facility currently consuming, when, and where? Without metering data at the circuit or zone level, you are managing energy in the dark. Sub-metering installation — if not already in place — is the single most impactful capital investment available, because it makes everything else visible.</p>
+      <p>Once you have metering data, the patterns become obvious. Consumption on weekends and late evenings, when the facility is largely unoccupied, is frequently 40–70% of peak weekday consumption. This is not because energy is needed — it is because equipment is left running by default. AHUs and FCUs that continue to run after the last person leaves, lighting circuits that are never switched off, server room precision cooling that has not been adjusted since installation — these are the targets.</p>
+      <h3>HVAC Optimisation</h3>
+      <p>HVAC is where the largest savings are available and where operational decisions have the greatest impact. The setpoint temperature is the single most consequential variable: raising the cooling setpoint from 22°C to 24°C reduces HVAC energy consumption by approximately 6–8% per degree in Indian climate conditions. This is not a comfort sacrifice — 24°C is within the ASHRAE comfort zone — it is a default that was set years ago and never reviewed.</p>
+      <p>Occupancy-based scheduling is the second major lever. An AHU serving a boardroom that is used on average 4 hours per day should not run continuously during business hours. Zone-by-zone scheduling, linked to the room booking system, typically reduces HVAC consumption in large meeting rooms by 50–70%. The technical implementation is straightforward — the barrier is usually organisational: no one has been given accountability for doing it.</p>
+      <h3>Lighting</h3>
+      <p>The LED transition is largely complete in new Indian corporate facilities, but many buildings that were fitted out five or more years ago still have T8 fluorescent fixtures or older LED installations at inefficient lux levels. A lighting audit that identifies over-lit zones — where the measured lux level significantly exceeds the task requirement — and installs dimming controls or reduces fixture density typically achieves 20–30% lighting energy reduction at minimal cost.</p>
+      <p>Daylight zones — the areas within 3–4 metres of exterior glazing — are frequently lit to the same level as interior zones despite receiving substantial natural light. Daylight-linked dimming controls in perimeter zones typically pay back within 18–24 months in Indian operating conditions.</p>
+      <h3>The Operational Discipline Layer</h3>
+      <p>The most durable energy savings come not from technology but from operational behaviour: a documented switch-off procedure at the end of each shift, a named person responsible for checking compliance, and a monthly energy review that makes consumption visible to the FM and building management teams. Buildings with structured energy management disciplines consistently outperform technically superior buildings that are managed informally. The technology enables savings; the discipline sustains them.</p>
+    `
+  },
+  a6: {
+    topic: 'Technology',
+    title: 'Why Growing Indian Organisations Need Purpose-Built Operational Software',
+    body: `
+      <p>The software that growing Indian organisations use to manage their facilities and HR operations is almost always the wrong tool for the job. Large enterprise software (SAP, Oracle, IBM Maximo) is designed for organisations with dedicated IT teams, multi-country operations, and the budget to spend years on implementation. Spreadsheets and WhatsApp groups — which are what most mid-sized Indian organisations actually use — are not software at all. They are improvisation.</p>
+      <p>Between these two extremes, there is almost nothing designed specifically for the Indian mid-market. This is a real gap, and understanding it helps explain why organisations in the 50–500 employee range consistently manage their operations less efficiently than their size would suggest they should.</p>
+      <h3>What Mid-Market Organisations Actually Need</h3>
+      <p>A facility management system for a 200-person company in Gurugram does not need blockchain-enabled asset tracking or AI-driven predictive maintenance algorithms. It needs: a maintenance request system that the office admin can operate without training, a PPM schedule that sends reminders before tasks become overdue, a vendor management module that stores contracts and tracks SLA performance, and a compliance calendar that flags statutory deadlines. That is it. Four functions, well executed.</p>
+      <p>An HR system for the same company does not need a global payroll engine or a sophisticated learning management system. It needs: accurate payroll processing that handles India-specific deductions correctly, PF and ESIC filing support, an employee database that is actually maintained, and leave and attendance tracking that integrates with payroll. Again — four functions, well executed.</p>
+      <h3>Why Existing Solutions Do Not Work</h3>
+      <p>The enterprise tools are genuinely too expensive and too complex. Implementation timelines are measured in months, licensing costs are material relative to the organisation's total operational budget, and the configuration overhead assumes IT capability that does not exist in a 200-person company.</p>
+      <p>The consumer and SME tools — the ones that cost ₹500–2000 per month and are marketed to small businesses — are typically built for Western markets and retrofitted for India. They handle Indian tax and statutory requirements poorly, their support is inadequate when something breaks, and they have been designed for retail and services businesses rather than for corporate operations environments.</p>
+      <h3>The Opportunity</h3>
+      <p>A purpose-built operational software for the Indian mid-market — designed from the ground up for 50–500 employee organisations, with Indian statutory compliance built in rather than bolted on, priced at a level that makes sense relative to the organisation's total operational spend, and deployable without a dedicated IT function — would be genuinely valuable. The market for it is large, the existing solutions are inadequate, and the organisations that need it are actively looking.</p>
+      <p>This is the gap that T<span style="color:var(--teal)">i</span>NAAK Products is being built to fill. The software being developed is not a technology experiment — it is a response to a documented, recurring need observed across years of operational engagement with exactly the organisations it is designed to serve.</p>
+    `
+  },
+  a7: {
+    topic: 'Operations',
+    title: 'The Integration Advantage: Why One Partner Beats Six Vendors',
+    body: `
+      <p>A 200-person company in Gurugram typically manages the following relationships for its operational services: a housekeeping vendor, a security agency, an annual maintenance contractor for HVAC and electrical, a pest control company, a stationery and consumables supplier, and an informal arrangement with a local handyman for minor repairs. Six separate contracts, six separate invoices, six separate escalation paths, and no single person who is accountable for the whole.</p>
+      <p>This is not unusual. It is the default operating model for the majority of mid-sized Indian companies. And it carries costs that almost none of them have fully quantified.</p>
+      <h3>The Coordination Tax</h3>
+      <p>Every time a problem crosses a vendor boundary — the security guard who needs to report a maintenance issue, the housekeeping supervisor whose work is complicated by a HVAC fault, the admin team member who needs to reconcile six vendor invoices at month end — there is a coordination cost. Someone's time is spent managing the interface between systems that do not talk to each other.</p>
+      <p>In a typical 200-person operation with six service vendors, this coordination overhead is estimated at 8–12 hours of admin/FM management time per week. At a conservative fully-loaded cost of ₹500–800 per hour, that is ₹4,000–10,000 per week in hidden coordination cost — or ₹2–5 lakh per year — before accounting for the service quality gaps that occur in the spaces between vendor responsibilities.</p>
+      <h3>The Accountability Gap</h3>
+      <p>When a service fails in a multi-vendor environment, the first response is almost always attribution: which vendor was responsible? The housekeeping vendor points to the maintenance contractor. The maintenance contractor points to the consumables supplier. The client's admin team manages the dispute. Nothing gets fixed quickly, and the client bears the cost of the delay and the management time.</p>
+      <p>In an integrated model, there is one escalation path and one accountable party. The question is not which vendor is responsible — it is what the solution is and when it will be delivered.</p>
+      <h3>The Compliance Dimension</h3>
+      <p>Six vendors mean six separate compliance profiles. Each one has PF and ESIC obligations toward their deployed staff. Each one has statutory liabilities that, under joint liability provisions, the principal employer shares. Monitoring the compliance of six vendors simultaneously — or more accurately, failing to monitor it — is a material regulatory exposure that most organisations do not recognise until it surfaces.</p>
+      <p>A single integrated service partner consolidates this exposure into one auditable relationship with one compliance report, one set of statutory documentation, and one point of accountability for any regulatory inquiry.</p>
+      <h3>What Integration Actually Costs</h3>
+      <p>The objection to integrated service models is usually cost: won't a single partner charge more than the sum of six separate vendors? Sometimes slightly, in the short term. The correct comparison is not headline contract value but total cost of ownership: coordination overhead, compliance monitoring, dispute resolution time, service quality gaps, and the management bandwidth freed up by not managing six relationships.</p>
+      <p>In practice, organisations that have moved from fragmented to integrated service delivery consistently report that the integrated model costs the same or less when total costs are properly measured — and delivers materially better service quality and management peace of mind.</p>
+    `
+  },
+  a8: {
+    topic: 'Workforce',
+    title: 'Interim Staffing Done Right: The Employer of Record Model Explained',
+    body: `
+      <p>Interim staffing — deploying a professional to fill a role for a defined period rather than hiring permanently — is a well-established practice in mature employment markets. In India, it is growing rapidly as organisations discover the operational flexibility it provides. It is also frequently done badly, in ways that create significant compliance exposure for both the deploying organisation and the individual.</p>
+      <p>The Employer of Record (EOR) model is the correct structural approach to interim staffing. Understanding what it is, what it provides, and what it does not, is essential for any organisation using or considering interim staff.</p>
+      <h3>What the EOR Model Is</h3>
+      <p>In an EOR arrangement, the interim professional is formally employed by the EOR organisation — in this case T<span style="color:var(--teal)">i</span>NAAK — rather than by the client company where they are deployed. The client directs the professional's day-to-day work and outputs. T<span style="color:var(--teal)">i</span>NAAK is responsible for their payroll, statutory contributions, employment documentation, and compliance obligations.</p>
+      <p>The professional has a formal employer, receives a proper payslip, has PF and ESIC contributions made on their behalf, and has statutory protections in place. The client has a professionally managed, compliant deployment without the administrative and legal overhead of a direct employment relationship that will need to be unwound at the end of the engagement.</p>
+      <h3>Why Informal Arrangements Create Problems</h3>
+      <p>The alternative to EOR — paying an individual directly on a "contractor" basis, or engaging them through an informal agency arrangement — is common and carries specific risks. For the individual, informal arrangements mean no PF, no ESIC, and no employment protection. For the organisation, a contractor who works under their direction and control using their resources — regardless of what the engagement letter calls them — is likely to be classified as an employee by a labour tribunal. The liability for back-payment of statutory contributions, with interest and penalties, can be substantial.</p>
+      <p>The new Labour Codes have tightened this classification further. The functional employment test is applied more consistently than it was under the older statutory framework. Organisations relying on informal contractor arrangements to avoid employment obligations are carrying risk that is increasing, not decreasing.</p>
+      <h3>When Interim Staffing Makes Sense</h3>
+      <p>The clearest use cases are: maternity and medical cover (a defined absence with a known return date), open position gap cover (while a permanent hire is being recruited), project-based deployment (a specific deliverable over a defined timeline), and trial-to-hire (evaluating a candidate in role before making a permanent offer). In each case, the EOR model provides the structure that makes the deployment clean, compliant, and professionally managed for all parties.</p>
+      <h3>The Professional's Perspective</h3>
+      <p>For the professional between roles, an EOR engagement is not a compromise — it is a structured income path with formal employment status, continued PF contributions, and a legitimate engagement record. The professional who is six months between permanent roles and takes two interim engagements through an EOR model maintains their statutory contribution continuity, avoids the reputational ambiguity of extended unemployment, and gains documented delivery experience in new organisations. These are real advantages.</p>
+    `
+  },
+  a9: {
+    topic: 'New Setups',
+    title: 'Setting Up Right: The First 90 Days of Facility and HR Operations',
+    body: `
+      <p>New offices and early-stage companies are where the majority of operational mistakes are made — and where they are hardest to undo. The systems put in place in the first three months of an organisation's life tend to persist long after they have ceased to be appropriate. The informal arrangement that worked for ten people becomes a liability at fifty. The undocumented process that felt unnecessary at launch becomes the source of every operational dispute at scale.</p>
+      <p>This is a structured guide to what needs to be in place, in what order, in the first ninety days of facility and HR operations.</p>
+      <h3>Days 1–15: The Non-Negotiables</h3>
+      <p>Before anyone sits at a desk, three things must exist. First, a statutory registration map: which acts apply to you at your current employee count, what registrations are required, and what their timelines are. SHOPS AND ESTABLISHMENTS ACT registration is typically immediate. PF and ESIC registration triggers at 20 and 10 employees respectively. Having this map completed before you hit the threshold means you register proactively rather than in response to a compliance failure.</p>
+      <p>Second, a basic employment documentation set: an offer letter template, an appointment letter template, and an NDA. These do not need to be elaborate — they need to exist and be consistently used. An employee who has not signed an appointment letter is an employee whose terms of employment are undefined. In any future dispute, undefined terms are interpreted against the employer.</p>
+      <p>Third, a payroll process. Even for ten employees, payroll must be processed on time, every month, with correct statutory deductions. A payroll process that works for ten employees can scale to fifty. A process that involves an ad-hoc spreadsheet and a manual bank transfer will fail at scale and frequently fails earlier.</p>
+      <h3>Days 16–45: Facility Operations Foundation</h3>
+      <p>Once people are working, the facility operations foundation needs to be in place. This means: a documented cleaning and maintenance schedule (not necessarily elaborate — even a one-page checklist is better than nothing), a consumables inventory and reorder system, an asset register for IT and office equipment, and a visitor management process. The visitor management process matters more than most new setups realise — it is a security baseline, a legal record, and the first impression for every external visitor.</p>
+      <p>If you are using an FM vendor for housekeeping and maintenance, the vendor engagement must be under a written agreement from day one. An informal arrangement with a cleaning company that has been providing the service since before your lease started is a compliance exposure and a service quality risk. Put it in writing before it becomes a problem.</p>
+      <h3>Days 46–90: Governance Structure</h3>
+      <p>By day 46, you should have enough operational experience to identify the processes that are not working. This is the moment to build the governance structure that will scale with the organisation: a monthly HR review that covers headcount, attrition, compliance status, and payroll accuracy; a monthly facility review that covers maintenance completion rates, vendor performance, and consumables spend; and a documented escalation path for both.</p>
+      <p>The organisations that scale smoothly are not the ones that had everything perfect from day one. They are the ones that built feedback loops early enough to identify and fix problems before they compounded. The first ninety days is when those loops are easiest to build and most valuable to have.</p>
+      <blockquote>"The best time to build an operational system is before you need it. The second best time is now."</blockquote>
+      <h3>A Note on Getting Help Early</h3>
+      <p>The cost of advisory support in the first ninety days — a compliance review, an operational setup consultation, a payroll process design — is a fraction of the cost of unwinding structural mistakes at fifty or one hundred employees. Organisations that treat early-stage operational setup as a cost to be avoided discover its true cost later, at the worst possible time. Getting it right from the start is not a luxury. It is the most cost-effective investment a new organisation can make in its operational future.</p>
+    `
+  }
+};
+
+function openArticle(id) {
+  const article = ARTICLES[id];
+  if (!article) return;
+  const modal = document.getElementById('article-modal');
+  document.getElementById('article-modal-topic').textContent = article.topic;
+  document.getElementById('article-modal-title').textContent = article.title;
+  const modalBody = document.getElementById('article-modal-body');
+  modalBody.innerHTML = article.body;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  // Reset scroll AFTER modal is visible (display:none blocks scrollTop assignment)
+  requestAnimationFrame(function() {
+    modalBody.scrollTop = 0;
+    requestAnimationFrame(function() { modalBody.scrollTop = 0; });
+  });
+  // Focus trap
+  document.getElementById('article-modal-close').focus();
+}
+
+function closeArticle() {
+  document.getElementById('article-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// Keyboard: Escape closes modal, Enter/Space opens focused card
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeArticle();
+});
+document.querySelectorAll('.persp-card').forEach(function(card) {
+  card.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      card.click();
+    }
+  });
+});
+</script>
+</body>
+</html>

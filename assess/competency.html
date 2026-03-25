@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Competency Assessment — TiNAAK</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script src="tinaak-questions.js"></script>
+<style>
+:root{
+  --navy:#0F2747;--navy-mid:#163560;--navy-deep:#070F1C;
+  --teal:#0FA3A3;--teal-lt:#12BFBF;
+  --steel:#5A6572;--ice:#F4F6F9;
+  --white:#fff;--text:#1A2B40;--border:rgba(15,39,71,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:var(--ice);color:var(--text);min-height:100vh}
+
+.site-header{background:var(--navy);padding:16px 40px;display:flex;align-items:center;gap:12px}
+.wordmark{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.wordmark span{color:var(--teal)}
+.badge{margin-left:auto;font-size:.65rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:2px 7px}
+
+.container{max-width:860px;margin:0 auto;padding:32px 20px 80px}
+
+/* Progress system */
+.prog-header{background:var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:20px}
+.prog-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.prog-title{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.prog-timer{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:700;color:var(--teal)}
+.prog-bar-wrap{background:rgba(255,255,255,.12);border-radius:4px;height:6px}
+.prog-bar{height:6px;background:var(--teal);border-radius:4px;transition:width .4s ease}
+.prog-sections{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}
+@media(max-width:540px){.prog-sections{grid-template-columns:repeat(3,1fr)}}
+.prog-sec{padding:8px 6px;border-radius:4px;text-align:center;border:1px solid rgba(255,255,255,.12)}
+.prog-sec.current{border-color:var(--teal);background:rgba(15,163,163,.15)}
+.prog-sec.done{border-color:var(--teal);background:rgba(15,163,163,.1)}
+.prog-sec .ps-n{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em}
+.prog-sec .ps-lbl{font-size:.65rem;color:#8AAAC4;margin-top:2px;line-height:1.2}
+.prog-sec .ps-done{font-size:.7rem;color:var(--teal)}
+
+/* Steps */
+.steps{display:flex;gap:0;margin-bottom:20px}
+.step{flex:1;text-align:center;position:relative}
+.step::before{content:"";position:absolute;top:12px;left:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.step:first-child::before{display:none}
+.step-dot{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-family:"Montserrat",sans-serif;font-size:.6rem;font-weight:700;position:relative;z-index:1;transition:all .2s}
+.step.active .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step.done .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step-label{font-size:.62rem;color:var(--steel);font-family:"Montserrat",sans-serif}
+.step.active .step-label{color:var(--navy);font-weight:700}
+
+/* Cards */
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:28px 32px;margin-bottom:16px}
+@media(max-width:600px){.card{padding:20px 18px}}
+
+.eyebrow{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+h1{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:10px}
+.lead{font-size:.95rem;color:var(--steel);line-height:1.65}
+.notice{border-left:3px solid var(--teal);background:#EAF7F7;padding:12px 16px;border-radius:0 5px 5px 0;font-size:.85rem;line-height:1.55;color:var(--text);margin:16px 0}
+
+/* Domain selector */
+.domain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+@media(max-width:480px){.domain-grid{grid-template-columns:1fr}}
+.domain-btn{border:2px solid var(--border);border-radius:6px;padding:16px 18px;cursor:pointer;text-align:left;background:#fff;transition:all .18s}
+.domain-btn:hover{border-color:var(--teal)}
+.domain-btn.selected{border-color:var(--teal);background:var(--teal);color:#fff}
+.domain-btn .d-title{font-family:"Montserrat",sans-serif;font-weight:700;font-size:.9rem;display:block;margin-bottom:3px}
+.domain-btn .d-meta{font-size:.78rem;opacity:.7}
+
+/* Fields */
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:540px){.field-row{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.req{color:var(--teal)}
+input,select{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.9rem;color:var(--text);background:#fff;transition:border-color .18s}
+input:focus,select:focus{outline:none;border-color:var(--teal)}
+
+/* Section header in questions */
+.section-divider{background:var(--navy);border-radius:6px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-badge{background:var(--teal);color:var(--navy);border-radius:4px;padding:3px 10px;font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;flex-shrink:0}
+.sec-title{font-family:"Montserrat",sans-serif;font-size:.92rem;font-weight:700;color:#fff}
+.sec-count{margin-left:auto;font-size:.75rem;color:#8AAAC4;font-family:"Montserrat",sans-serif;flex-shrink:0}
+
+/* Question block */
+.q-block{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(15,39,71,.06);padding:22px 26px;margin-bottom:12px}
+.q-num{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:6px}
+.q-difficulty{display:inline-block;font-size:.6rem;font-family:"Montserrat",sans-serif;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.q-difficulty.d1{background:#EAF7F7;color:var(--teal)}
+.q-difficulty.d2{background:#FFF8E7;color:#B87800}
+.q-difficulty.d3{background:#FFF0F0;color:#C03030}
+.q-text{font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:14px}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:10px 14px;border:1.5px solid var(--border);border-radius:5px;transition:all .15s;font-size:.88rem;line-height:1.45;width:100%}
+.opt:hover{border-color:var(--teal);background:#EAF7F7}
+.opt input[type=radio]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+.opt.selected{border-color:var(--teal);background:#EAF7F7}
+.opt-key{font-weight:700;color:var(--teal);min-width:18px;flex-shrink:0;font-family:"Montserrat",sans-serif}
+.opt-text{flex:1;min-width:0}
+
+/* Nav between sections */
+.section-nav{display:flex;gap:12px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;border:none;transition:all .18s}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-lt)}
+.btn-secondary{background:#fff;color:var(--navy);border:1.5px solid var(--border)}
+.btn-secondary:hover{border-color:var(--teal)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-loading{position:relative;color:transparent!important}
+.btn-loading::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err-note{font-size:.8rem;color:#C03030;display:none}
+
+/* Pages */
+.page{display:none}.page.active{display:block}
+
+/* Result */
+.result-hero{background:var(--navy);border-radius:8px;padding:32px 36px;margin-bottom:20px;text-align:center}
+.result-score-big{font-family:"Montserrat",sans-serif;font-size:3.5rem;font-weight:800;margin-bottom:4px}
+.result-score-big.good{color:var(--teal)}
+.result-score-big.ok{color:#E8A020}
+.result-score-big.low{color:#E05050}
+.result-verdict{font-size:1.1rem;color:#fff;margin-bottom:8px;font-family:"Montserrat",sans-serif;font-weight:700}
+.result-sub{font-size:.9rem;color:#8AAAC4}
+
+.section-results{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:600px){.section-results{grid-template-columns:repeat(3,1fr)}}
+.sr-card{border-radius:8px;padding:16px 12px;text-align:center}
+.sr-card.good{background:#EAF7F7;border:2px solid var(--teal)}
+.sr-card.ok{background:#FFF8E7;border:2px solid #E8A020}
+.sr-card.low{background:#FFF0F0;border:2px solid #E05050}
+.sr-pct{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;display:block}
+.sr-card.good .sr-pct{color:var(--teal)}
+.sr-card.ok .sr-pct{color:#B87800}
+.sr-card.low .sr-pct{color:#C03030}
+.sr-label{font-size:.7rem;color:var(--steel);margin-top:4px;line-height:1.3}
+.sr-count{font-size:.72rem;color:var(--steel);margin-top:2px}
+
+.result-msg-card{background:#fff;border-radius:8px;padding:24px 28px;box-shadow:0 2px 12px rgba(15,39,71,.08)}
+.return-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--teal);font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:700;text-decoration:none}
+.return-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wordmark">T<span>i</span>NAAK Assessment Centre</div>
+  <div class="badge">Domain Competency</div>
+</header>
+
+<div class="container">
+  <!-- Steps -->
+  <div class="steps" id="stepsBar">
+    <div class="step active" id="step1"><div class="step-dot">1</div><div class="step-label">Setup</div></div>
+    <div class="step" id="step2"><div class="step-dot">2</div><div class="step-label">Assessment</div></div>
+    <div class="step" id="step3"><div class="step-dot">3</div><div class="step-label">Result</div></div>
+  </div>
+
+  <!-- PAGE 1: Setup -->
+  <div class="page active" id="page1">
+    <div class="card">
+      <div class="eyebrow">T<span style="color:var(--teal)">i</span>NAAK — Domain Competency Assessment</div>
+      <h1 id="setupTitle">Confirm Your Details</h1>
+      <p class="lead" style="margin-bottom:16px">60 questions across 5 sections — approximately 45–50 minutes. Work through the sections in order. You may navigate back within the assessment but cannot change answers once a section is submitted.</p>
+      <div class="notice" id="domainNotice">Completing this assessment confirms your domain knowledge in the selected area. Results are shared with T<span style="color:var(--teal)">i</span>NAAK's team at <strong>network@tinaak.com</strong> and stored on this device.</div>
+
+      <div class="field-row">
+        <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="fname" placeholder="Your full name" autocomplete="name"></div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="femail" placeholder="your@email.com" autocomplete="email"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Phone</label><input type="tel" id="fphone" placeholder="+91 98xxx xxxxx"></div>
+        <div class="field"><label>Applying For / Track</label><input type="text" id="fapplying" placeholder="e.g. FM Associate Specialist, PSN"></div>
+      </div>
+
+      <!-- Domain selector — hidden if pre-set via URL -->
+      <div id="domainSelector" style="margin-top:8px">
+        <label style="margin-bottom:10px;display:block">Select Domain <span class="req">*</span></label>
+        <div class="domain-grid">
+          <button class="domain-btn" data-domain="fm" type="button">
+            <span class="d-title">Facility Management</span>
+            <span class="d-meta">Operations · Compliance · Vendor Mgmt · Numeracy · Governance</span>
+          </button>
+          <button class="domain-btn" data-domain="hr" type="button">
+            <span class="d-title">Human Resources & Payroll</span>
+            <span class="d-meta">Labour Codes · Payroll · HRBP · Compliance · Analytics</span>
+          </button>
+          <button class="domain-btn" data-domain="admin" type="button">
+            <span class="d-title">Administration</span>
+            <span class="d-meta">Office Mgmt · Procurement · Compliance · Numeracy · Practice</span>
+          </button>
+          <button class="domain-btn" data-domain="fitouts" type="button">
+            <span class="d-title">Fit-Outs & Projects</span>
+            <span class="d-meta">BOQ · Programme · Site QC · Contracts · Regulatory</span>
+          </button>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-primary" id="startBtn" type="button" disabled>Begin Assessment &#x2192;</button>
+        <span style="font-size:.8rem;color:var(--steel)">60 questions &nbsp;·&nbsp; 5 sections &nbsp;·&nbsp; ~45 minutes</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Questions -->
+  <div class="page" id="page2">
+    <!-- Progress header -->
+    <div class="prog-header">
+      <div class="prog-top">
+        <div class="prog-title" id="progTitle">Domain Competency — Loading…</div>
+        <div class="prog-timer" id="timerDisplay">00:00</div>
+      </div>
+      <div class="prog-bar-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+      <div class="prog-sections" id="progSections"></div>
+    </div>
+
+    <!-- Question area -->
+    <div id="questionArea"></div>
+
+    <!-- Section nav -->
+    <div class="section-nav">
+      <button class="btn btn-secondary" id="prevSecBtn" type="button" style="display:none">&#x2190; Previous Section</button>
+      <button class="btn btn-primary" id="nextSecBtn" type="button">Next Section &#x2192;</button>
+      <span class="err-note" id="secErrNote"></span>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Result -->
+  <div class="page" id="page3">
+    <div class="result-hero">
+      <div class="result-score-big" id="rScoreBig">—</div>
+      <div class="result-verdict" id="rVerdict">—</div>
+      <div class="result-sub" id="rSub">—</div>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:12px">Section Breakdown</div>
+    <div class="section-results" id="sectionResults"></div>
+
+    <div class="result-msg-card">
+      <div class="eyebrow">Next Steps</div>
+      <p id="rMsg" style="margin-top:10px;font-size:.93rem;line-height:1.7;color:var(--steel)"></p>
+      <p style="margin-top:12px;font-size:.88rem;color:var(--steel)">Your result has been submitted to T<span style="color:var(--teal)">i</span>NAAK at <strong>network@tinaak.com</strong>. We will be in touch within 5 working days.</p>
+      <a id="returnLink" href="index.html" class="return-link">&#x2190; Return to Assessment Centre</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const WORKER = "https://tinaak-forms-worker.judge-raman.workers.dev";
+const LS_KEY = "tinaak_assess";
+
+/* ── URL params ── */
+const urlP = new URLSearchParams(window.location.search);
+let selectedDomain = urlP.get("domain") || null;
+const preEmail    = urlP.get("email") || "";
+const preName     = urlP.get("name")  || "";
+const preRole     = urlP.get("role")  || "";
+const returnTo    = urlP.get("returnTo") ? decodeURIComponent(urlP.get("returnTo")) : "index.html";
+
+/* ── Session ── */
+function getSession() { try { return JSON.parse(localStorage.getItem(LS_KEY))||{}; } catch { return {}; } }
+function saveResult(testId, result) {
+  const s = getSession();
+  if (!s.completed) s.completed = {};
+  s.completed[testId] = result;
+  localStorage.setItem(LS_KEY, JSON.stringify(s));
+  /* Also write pending result so index.html picks it up */
+  localStorage.setItem("tinaak_assess_pending_result", JSON.stringify({testId, ...result}));
+}
+
+/* ── Pre-fill from session or URL ── */
+const sess = getSession();
+if (preName  || sess.name)  document.getElementById("fname").value  = preName  || sess.name;
+if (preEmail || sess.email) document.getElementById("femail").value = preEmail || sess.email;
+if (preRole  || sess.role)  document.getElementById("fapplying").value = preRole || sess.role || "";
+
+/* ── Domain pre-selection from URL ── */
+if (selectedDomain) {
+  document.getElementById("domainSelector").style.display = "none";
+  const meta = DOMAIN_META[selectedDomain];
+  if (meta) {
+    document.getElementById("setupTitle").textContent = meta.label + " — Competency Assessment";
+    document.getElementById("domainNotice").innerHTML =
+      `You are taking the <strong>${meta.label}</strong> assessment. 60 questions across 5 sections: ${meta.sections.join(" · ")}. Results are sent to <strong>network@tinaak.com</strong>.`;
+  }
+  updateStartBtn();
+}
+
+/* ── Domain buttons ── */
+document.querySelectorAll(".domain-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".domain-btn").forEach(b => b.classList.remove("selected"));
+    btn.classList.add("selected");
+    selectedDomain = btn.dataset.domain;
+    updateStartBtn();
+  });
+});
+
+["fname","femail"].forEach(id => {
+  const el = document.getElementById(id);
+  ["input","change","blur","keyup"].forEach(evt => el.addEventListener(evt, updateStartBtn));
+});
+// Poll every 300ms to catch autofill / browser-populated values
+setInterval(updateStartBtn, 300);
+
+function updateStartBtn() {
+  const ok = document.getElementById("fname").value.trim().length > 0 &&
+             document.getElementById("femail").value.trim().length > 0 &&
+             !!selectedDomain;
+  document.getElementById("startBtn").disabled = !ok;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ASSESSMENT STATE
+══════════════════════════════════════════════════════════════ */
+let questions    = [];   // all 60 for selected domain
+let sectionMeta  = [];   // section labels
+let currentSec   = 1;    // 1–5
+const answers    = {};   // { qIndex: "a"|"b"|"c" }
+let startTime    = null;
+let timerInt     = null;
+
+/* ── SET PAGE ── */
+function setPage(n) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+  [1,2,3].forEach(i => {
+    const el = document.getElementById("step"+i);
+    el.classList.toggle("active", i===n);
+    el.classList.toggle("done", i<n);
+  });
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ── START ── */
+document.getElementById("startBtn").addEventListener("click", () => {
+  const meta = DOMAIN_META[selectedDomain];
+  questions   = QUESTION_BANKS[selectedDomain];
+  sectionMeta = meta.sections;
+
+  // Set return link
+  document.getElementById("returnLink").href = returnTo;
+
+  // Start timer
+  startTime = Date.now();
+  timerInt  = setInterval(updateTimer, 1000);
+
+  // Render progress sections
+  renderProgSections();
+  document.getElementById("progTitle").textContent = meta.label + " — Competency Assessment";
+
+  // Go to section 1
+  currentSec = 1;
+  renderSection(1);
+  setPage(2);
+});
+
+/* ── TIMER ── */
+function updateTimer() {
+  const sec = Math.floor((Date.now() - startTime) / 1000);
+  const m   = String(Math.floor(sec/60)).padStart(2,"0");
+  const s   = String(sec%60).padStart(2,"0");
+  document.getElementById("timerDisplay").textContent = m+":"+s;
+}
+function getElapsed() {
+  return startTime ? Math.round((Date.now()-startTime)/60000) : 0;
+}
+
+/* ── PROGRESS SECTIONS ── */
+function renderProgSections() {
+  const container = document.getElementById("progSections");
+  container.innerHTML = sectionMeta.map((label, i) => {
+    const sNum = i+1;
+    return `<div class="prog-sec" id="psec${sNum}">
+      <div class="ps-n">S${sNum}</div>
+      <div class="ps-lbl">${label}</div>
+    </div>`;
+  }).join("");
+}
+
+function updateProgSections() {
+  sectionMeta.forEach((_, i) => {
+    const sNum = i+1;
+    const el = document.getElementById("psec"+sNum);
+    if (!el) return;
+    el.className = "prog-sec" + (sNum === currentSec ? " current" : sNum < currentSec ? " done" : "");
+    // Count answered in this section
+    const secQs = questions.filter(q => q.s === sNum);
+    const answered = secQs.filter((_, qi) => {
+      const globalIdx = questions.indexOf(secQs[qi]);
+      return answers[globalIdx] !== undefined;
+    }).length;
+    if (sNum < currentSec) {
+      el.querySelector(".ps-lbl").textContent = `${answered}/${secQs.length}`;
+    }
+  });
+  // Overall progress bar
+  const total    = questions.length;
+  const answered = Object.keys(answers).length;
+  document.getElementById("progBar").style.width = Math.round((answered/total)*100)+"%";
+}
+
+/* ── RENDER SECTION ── */
+function renderSection(sNum) {
+  const secQs    = questions.filter(q => q.s === sNum);
+  const secLabel = sectionMeta[sNum-1];
+  const area     = document.getElementById("questionArea");
+
+  area.innerHTML = `
+    <div class="section-divider">
+      <span class="sec-badge">Section ${sNum} of 5</span>
+      <span class="sec-title">${secLabel}</span>
+      <span class="sec-count">${secQs.length} questions</span>
+    </div>`;
+
+  secQs.forEach((q, localIdx) => {
+    const globalIdx = questions.indexOf(q);
+    const qNum      = globalIdx + 1;
+    const diffLabel = ["","Basic","Intermediate","Applied"][q.d] || "";
+    const diffCls   = "d"+q.d;
+
+    const block = document.createElement("div");
+    block.className = "q-block";
+    block.innerHTML = `
+      <div class="q-num">
+        Question ${qNum} of ${questions.length}
+        <span class="q-difficulty ${diffCls}">${diffLabel}</span>
+      </div>
+      <div class="q-text">${q.q}</div>
+      <div class="options">
+        ${Object.entries(q.opts).map(([key,text]) => `
+          <label class="opt${answers[globalIdx]===key?" selected":""}" data-val="${key}">
+            <input type="radio" name="q${globalIdx}" value="${key}"${answers[globalIdx]===key?" checked":""}>
+            <span class="opt-key">${key.toUpperCase()}</span>
+            <span class="opt-text">${text}</span>
+          </label>`).join("")}
+      </div>`;
+
+    block.querySelectorAll("input").forEach(inp => {
+      inp.addEventListener("change", () => {
+        answers[globalIdx] = inp.value;
+        block.querySelectorAll(".opt").forEach(l => l.classList.remove("selected"));
+        inp.closest(".opt").classList.add("selected");
+        updateProgSections();
+      });
+    });
+    area.appendChild(block);
+  });
+
+  // Nav buttons
+  const prev = document.getElementById("prevSecBtn");
+  const next = document.getElementById("nextSecBtn");
+  prev.style.display = sNum > 1 ? "inline-flex" : "none";
+  next.textContent   = sNum < 5 ? "Next Section \u2192" : "Submit Assessment \u2192";
+
+  updateProgSections();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+/* ── SECTION NAV ── */
+document.getElementById("nextSecBtn").addEventListener("click", () => {
+  const secQs     = questions.filter(q => q.s === currentSec);
+  const unanswered = secQs.filter((_, li) => {
+    const gi = questions.indexOf(secQs[li]);
+    return answers[gi] === undefined;
+  });
+  const note = document.getElementById("secErrNote");
+  if (unanswered.length) {
+    note.style.display = "inline";
+    note.textContent = `Please answer all ${secQs.length} questions in this section before continuing (${unanswered.length} unanswered).`;
+    return;
+  }
+  note.style.display = "none";
+  note.textContent = "";
+
+  if (currentSec < 5) {
+    currentSec++;
+    renderSection(currentSec);
+  } else {
+    submitAssessment();
+  }
+});
+
+document.getElementById("prevSecBtn").addEventListener("click", () => {
+  if (currentSec > 1) {
+    currentSec--;
+    renderSection(currentSec);
+    document.getElementById("secErrNote").style.display = "none";
+  }
+});
+
+/* ══════════════════════════════════════════════════════════════
+   SCORING
+══════════════════════════════════════════════════════════════ */
+function computeScores() {
+  const sections = {};
+  let totalCorrect = 0;
+
+  for (let s = 1; s <= 5; s++) {
+    const secQs   = questions.filter(q => q.s === s);
+    let correct   = 0;
+    secQs.forEach((q, li) => {
+      const gi = questions.indexOf(secQs[li]);
+      if (answers[gi] === q.correct) correct++;
+    });
+    totalCorrect += correct;
+    sections[s] = {
+      correct, total: secQs.length,
+      pct: Math.round((correct/secQs.length)*100),
+      label: sectionMeta[s-1],
+    };
+  }
+
+  return {
+    correct: totalCorrect,
+    total: questions.length,
+    pct: Math.round((totalCorrect/questions.length)*100),
+    sections,
+  };
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SUBMIT
+══════════════════════════════════════════════════════════════ */
+async function submitAssessment() {
+  clearInterval(timerInt);
+  const btn = document.getElementById("nextSecBtn");
+  btn.disabled = true;
+  btn.classList.add("btn-loading");
+  btn.textContent = "Submitting…";
+
+  const scores  = computeScores();
+  const elapsed = getElapsed();
+  const domain  = selectedDomain;
+  const meta    = DOMAIN_META[domain];
+  const testId  = "competency-" + domain;
+
+  const breakdownLines = Object.entries(scores.sections)
+    .map(([s, sc]) => `S${s} ${sc.label}: ${sc.correct}/${sc.total} (${sc.pct}%)`);
+
+  const payload = {
+    name:        document.getElementById("fname").value.trim(),
+    email:       document.getElementById("femail").value.trim(),
+    phone:       document.getElementById("fphone").value.trim(),
+    domain:      domain,
+    applyingFor: document.getElementById("fapplying").value.trim(),
+    answers:     Object.fromEntries(Object.entries(answers).map(([k,v])=>[parseInt(k)+1,v])),
+    timeTaken:   elapsed,
+    notes:       `Overall: ${scores.correct}/${scores.total} (${scores.pct}%)\n\nSection Breakdown:\n${breakdownLines.join("\n")}`,
+  };
+
+  try {
+    await fetch(WORKER + "/assess/competency", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+  } catch (e) {
+    console.warn("Worker submission failed:", e);
+  }
+
+  // Save to localStorage
+  saveResult(testId, {
+    pct: scores.pct,
+    correct: scores.correct,
+    total: scores.total,
+    date: new Date().toISOString().split("T")[0],
+    sections: Object.fromEntries(
+      Object.entries(scores.sections).map(([s,sc]) => [s, {pct:sc.pct,correct:sc.correct,total:sc.total}])
+    ),
+  });
+
+  showResult(scores, elapsed, meta);
+  setPage(3);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   RESULT PAGE
+══════════════════════════════════════════════════════════════ */
+function showResult(scores, elapsed, meta) {
+  const cls = scores.pct >= 70 ? "good" : scores.pct >= 50 ? "ok" : "low";
+
+  // Big score
+  document.getElementById("rScoreBig").className = "result-score-big " + cls;
+  document.getElementById("rScoreBig").textContent = scores.pct + "%";
+  document.getElementById("rVerdict").textContent =
+    scores.pct >= 70 ? "Strong Result" :
+    scores.pct >= 50 ? "Moderate Result" : "Result Received";
+  document.getElementById("rSub").textContent =
+    `${scores.correct} of ${scores.total} questions correct · ${elapsed} minutes · ${meta.label}`;
+
+  // Section cards
+  const secContainer = document.getElementById("sectionResults");
+  secContainer.innerHTML = Object.entries(scores.sections).map(([s,sc]) => {
+    const c = sc.pct>=70?"good":sc.pct>=50?"ok":"low";
+    return `<div class="sr-card ${c}">
+      <span class="sr-pct">${sc.pct}%</span>
+      <div class="sr-label">${sc.label}</div>
+      <div class="sr-count">${sc.correct}/${sc.total}</div>
+    </div>`;
+  }).join("");
+
+  // Message
+  const strongSecs  = Object.values(scores.sections).filter(s=>s.pct>=70).map(s=>s.label);
+  const weakSecs    = Object.values(scores.sections).filter(s=>s.pct<50).map(s=>s.label);
+  let msg = "";
+  if (scores.pct >= 70) {
+    msg = `This is a strong result across the ${meta.label} domain. `;
+    if (strongSecs.length) msg += `Particular strength in: ${strongSecs.join(", ")}. `;
+    if (weakSecs.length)   msg += `Areas to continue developing: ${weakSecs.join(", ")}. `;
+    msg += "TiNAAK's team will review your submission and be in touch within 5 working days.";
+  } else if (scores.pct >= 50) {
+    msg = `Your result shows working knowledge of the ${meta.label} domain. `;
+    if (weakSecs.length) msg += `Sections that would benefit from further development: ${weakSecs.join(", ")}. `;
+    msg += "TiNAAK will review your full profile in context and be in touch within 5 working days.";
+  } else {
+    msg = `Your submission has been received. TiNAAK recommends revisiting the core ${meta.label} standards `;
+    if (weakSecs.length) msg += `— particularly ${weakSecs.join(" and ")} — `;
+    msg += "before reapplying. We will be in touch within 5 working days.";
+  }
+  document.getElementById("rMsg").textContent = msg;
+}
+</script>
+</body>
+</html>

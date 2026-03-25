@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Profile Questionnaire — TiNAAK</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F2747;--navy-mid:#163560;--teal:#0FA3A3;--teal-lt:#12BFBF;--steel:#5A6572;--ice:#F4F6F9;--white:#fff;--text:#1A2B40;--border:rgba(15,39,71,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:var(--ice);color:var(--text);min-height:100vh}
+.site-header{background:var(--navy);padding:18px 40px;display:flex;align-items:center;gap:12px}
+.site-header .wordmark{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:800;color:#fff}
+.site-header .wordmark span{color:var(--teal)}
+.site-header .badge{margin-left:auto;font-size:.7rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:3px 8px}
+.container{max-width:820px;margin:0 auto;padding:40px 20px 80px}
+.progress-wrap{background:#D8DDE6;border-radius:4px;height:5px;margin-bottom:32px}
+.progress-bar{height:5px;background:var(--teal);border-radius:4px;transition:width .4s ease}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:36px 40px;margin-bottom:24px}
+@media(max-width:600px){.card{padding:24px 20px}}
+.eyebrow{font-family:"Montserrat",sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+h1{font-family:"Montserrat",sans-serif;font-size:1.7rem;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:12px}
+.lead{font-size:1rem;color:var(--steel);line-height:1.65}
+.notice{border-left:3px solid var(--teal);background:#EAF7F7;padding:14px 18px;border-radius:0 5px 5px 0;font-size:.88rem;line-height:1.55;color:var(--text);margin-bottom:24px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+@media(max-width:540px){.field-row{grid-template-columns:1fr}}
+.field{margin-bottom:16px}
+label{display:block;font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:5px}
+label .req{color:var(--teal)}
+input,select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.92rem;color:var(--text);background:#fff;transition:border-color .18s}
+input:focus,select:focus{outline:none;border-color:var(--teal)}
+.scale-q{margin-bottom:30px;padding-bottom:30px;border-bottom:1px solid var(--border)}
+.scale-q:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.scale-stmt{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.4}
+.scale-vs{font-size:.8rem;color:var(--steel);margin-bottom:12px}
+.scale-row{display:flex;gap:8px;align-items:center}
+.scale-anchor{font-size:.72rem;color:var(--steel);flex:0 0 85px;line-height:1.3}
+.scale-anchor.right{text-align:right}
+.scale-options{display:flex;gap:6px;flex:1}
+.scale-opt{flex:1}
+.scale-opt input[type=radio]{display:none}
+.scale-opt label{display:flex;align-items:center;justify-content:center;height:38px;border:1.5px solid var(--border);border-radius:5px;cursor:pointer;font-family:"Montserrat",sans-serif;font-weight:700;font-size:.82rem;color:var(--steel);transition:all .15s;margin:0}
+.scale-opt input:checked + label{background:var(--teal);border-color:var(--teal);color:#fff}
+.scale-opt label:hover{border-color:var(--teal)}
+.mcq-q{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--border)}
+.mcq-q:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.mcq-text{font-size:.97rem;font-weight:700;color:var(--navy);line-height:1.45;margin-bottom:14px}
+.mcq-opts{display:flex;flex-direction:column;gap:8px}
+.mcq-opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:10px 14px;border:1.5px solid var(--border);border-radius:5px;transition:all .15s;font-size:.9rem;line-height:1.4;width:100%}
+.mcq-opt:hover{border-color:var(--teal);background:#EAF7F7}
+.mcq-opt input[type=radio]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+.mcq-opt.selected{border-color:var(--teal);background:#EAF7F7}
+.section-head{background:var(--navy);color:#fff;padding:14px 20px;border-radius:6px;font-family:"Montserrat",sans-serif;font-size:.88rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.s-num{background:var(--teal);color:var(--navy);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;border:none;transition:all .18s}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-lt)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-loading{position:relative;color:transparent!important}
+.btn-loading::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.btn-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px}
+.steps{display:flex;gap:0;margin-bottom:32px}
+.step{flex:1;text-align:center;position:relative}
+.step::before{content:"";position:absolute;top:14px;left:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.step:first-child::before{display:none}
+.step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 6px;font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;position:relative;z-index:1;transition:all .2s}
+.step.active .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step.done .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step-label{font-size:.7rem;color:var(--steel);font-family:"Montserrat",sans-serif}
+.step.active .step-label{color:var(--navy);font-weight:700}
+.page{display:none}.page.active{display:block}
+.confirm-panel{background:#EAF7F7;border:2px solid var(--teal);border-radius:8px;padding:32px 36px;text-align:center}
+.confirm-panel h2{font-family:"Montserrat",sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);margin-bottom:10px}
+.confirm-panel p{font-size:.95rem;color:var(--steel);line-height:1.65}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wordmark">T<span>i</span>NAAK Integrated Services LLP</div>
+  <div class="badge">Assessment Portal</div>
+</header>
+<div class="container">
+  <div class="steps">
+    <div class="step active" id="step1"><div class="step-dot">1</div><div class="step-label">About You</div></div>
+    <div class="step" id="step2"><div class="step-dot">2</div><div class="step-label">Work Style</div></div>
+    <div class="step" id="step3"><div class="step-dot">3</div><div class="step-label">Situations</div></div>
+    <div class="step" id="step4"><div class="step-dot">4</div><div class="step-label">Done</div></div>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:0%"></div></div>
+
+  <!-- PAGE 1 -->
+  <div class="page active" id="page1">
+    <div class="card">
+      <div class="eyebrow">Professional Profile Questionnaire</div>
+      <h1>About You</h1>
+      <p class="lead" style="margin-bottom:24px">This questionnaire helps T<span style="color:var(--teal)">i</span>NAAK understand how you work — not what you know. There are no right or wrong answers. Your profile is used to match you to engagements that suit your working style.</p>
+      <div class="notice">Responses are shared with T<span style="color:var(--teal)">i</span>NAAK's team only. Not shared with any third party without your consent.</div>
+      <div class="field-row">
+        <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="name" placeholder="Your full name" autocomplete="name"></div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="email" placeholder="your@email.com" autocomplete="email"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Phone</label><input type="tel" id="phone" placeholder="+91 98xxx xxxxx"></div>
+        <div class="field"><label>Primary Domain</label>
+          <select id="domain">
+            <option value="">Select domain...</option>
+            <option>Facility Management</option>
+            <option>Human Resources &amp; Payroll</option>
+            <option>Administration</option>
+            <option>Corporate Fit-Outs &amp; Projects</option>
+            <option>Finance &amp; Accounts</option>
+            <option>Operations</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Applying For / Track</label><input type="text" id="applyingFor" placeholder="e.g. Associate Specialist, PSN, Career role"></div>
+        <div class="field"><label>Availability</label>
+          <select id="availability">
+            <option value="">Select...</option>
+            <option>Immediately available</option>
+            <option>Available within 2 weeks</option>
+            <option>Available within 30 days</option>
+            <option>Available within 60 days</option>
+            <option>Project-based / part-time only</option>
+            <option>Currently employed — open to opportunities</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="nextBtn1" type="button">Continue &#x2192;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: Scales -->
+  <div class="page" id="page2">
+    <div class="card">
+      <div class="section-head"><div class="s-num">A</div>Working Style — Where do you naturally sit?</div>
+      <p class="lead" style="margin-bottom:28px">Rate yourself 1–5 between each pair. 1 = strongly left, 5 = strongly right. Neither end is better.</p>
+      <div id="scalesContainer"></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="nextBtn2" type="button">Continue &#x2192;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: Situations -->
+  <div class="page" id="page3">
+    <div class="card">
+      <div class="section-head"><div class="s-num">B</div>How Would You Respond?</div>
+      <p class="lead" style="margin-bottom:28px">Select the response that most closely reflects how you would actually behave. No correct answers — these reveal your instincts and priorities.</p>
+      <div id="situationsContainer"></div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="submitBtn" type="button">Submit Profile &#x2192;</button>
+        <span id="sitNote" style="font-size:.82rem;color:#C03030;display:none"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: Confirmation -->
+  <div class="page" id="page4">
+    <div class="card">
+      <div class="confirm-panel">
+        <div style="font-size:2.5rem;margin-bottom:12px">&#x2713;</div>
+        <h2>Profile Submitted</h2>
+        <p>Thank you &#x2014; your professional profile has been received. T<span style="color:var(--teal)">i</span>NAAK will be in touch within 5 working days.</p>
+        <p style="margin-top:12px">Questions? <a href="mailto:network@tinaak.com" style="color:var(--teal)">network@tinaak.com</a></p>
+        <p style="margin-top:12px"><a href="index.html" style="color:var(--teal);font-family:Montserrat,sans-serif;font-weight:700;font-size:.88rem">&#x2190; Return to Assessment Centre</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const WORKER = "https://tinaak-forms-worker.judge-raman.workers.dev";
+
+/* ── Pre-fill from URL params or localStorage session ── */
+(function() {
+  try {
+    const urlP = new URLSearchParams(window.location.search);
+    const sess = JSON.parse(localStorage.getItem("tinaak_assess") || "{}");
+
+    const nameEl   = document.getElementById("name");
+    const emailEl  = document.getElementById("email");
+    const phoneEl  = document.getElementById("phone");
+    const domainEl = document.getElementById("domain");
+    const applyEl  = document.getElementById("applyingFor");
+    const availEl  = document.getElementById("availability");
+
+    if (nameEl)  nameEl.value  = urlP.get("name")  || sess.name  || "";
+    if (emailEl) emailEl.value = urlP.get("email") || sess.email || "";
+    if (phoneEl && (urlP.get("phone") || sess.phone))
+      phoneEl.value = urlP.get("phone") || sess.phone || "";
+    if (applyEl && (urlP.get("role") || sess.role))
+      applyEl.value = urlP.get("role") || sess.role || "";
+  } catch(e) { /* silently ignore storage errors */ }
+})();
+
+function checkStartReady() {
+  const nameEl  = document.getElementById("name");
+  const emailEl = document.getElementById("email");
+  const btn     = document.getElementById("nextBtn1");
+  if (!nameEl || !emailEl || !btn) return;
+  btn.disabled = !(nameEl.value.trim().length > 0 && emailEl.value.trim().length > 0);
+}
+setInterval(checkStartReady, 300);
+document.addEventListener("DOMContentLoaded", checkStartReady);
+const SCALES = [
+  {id:"s1",left:"Work independently with minimal direction",right:"Clear direction and defined responsibilities",lbl:"Independent",rlbl:"Directed"},
+  {id:"s2",left:"Decide quickly and adjust as information comes in",right:"Gather full information before deciding",lbl:"Fast/Adaptive",rlbl:"Thorough"},
+  {id:"s3",left:"Focus on process — doing things the right way",right:"Focus on outcome — finding the fastest route",lbl:"Process-first",rlbl:"Result-first"},
+  {id:"s4",left:"Work alone and deliver the finished product",right:"Collaborate closely with a team throughout",lbl:"Solo",rlbl:"Collaborative"},
+  {id:"s5",left:"Energised by variety and switching between tasks",right:"Energised by going deep on one specialisation",lbl:"Generalist",rlbl:"Specialist"},
+  {id:"s6",left:"Raise concerns directly with seniors even when uncomfortable",right:"Escalate through proper channels and follow hierarchy",lbl:"Direct",rlbl:"Structured"},
+  {id:"s7",left:"Prefer structured environments with clear policies",right:"Thrive in ambiguous, fast-moving environments",lbl:"Structured",rlbl:"Ambiguous"},
+  {id:"s8",left:"Take full personal ownership of outcomes",right:"Believe accountability should be shared clearly",lbl:"Personal ownership",rlbl:"Shared accountability"},
+];
+const SITUATIONS = [
+  {id:"t1",text:"A client asks you directly to do something outside your agreed scope and it would require significant additional time. You:",
+   opts:["Do it without question to keep the client happy","Politely clarify the scope boundary, flag it to TiNAAK, and ask whether it should be formalised as a scope change","Refuse without explanation","Do it once and agree verbally to adjust future scope"]},
+  {id:"t2",text:"You discover a process you have been using for weeks is incorrect and has produced errors in earlier deliverables. You:",
+   opts:["Continue to avoid drawing attention to earlier errors","Immediately flag the issue, document the errors found, propose a correction plan and implement the fix going forward","Fix only the most recent error and monitor going forward","Wait to see if anyone else notices before raising it"]},
+  {id:"t3",text:"You are 80% through a task when you realise the deadline cannot be met without compromising quality. You:",
+   opts:["Miss the deadline without saying anything and deliver the full quality version late","Rush the work to meet the deadline, accepting reduced quality","Proactively inform the stakeholder as soon as you identify the constraint, explain the trade-off and ask how to proceed","Ask a colleague to complete the remaining 20% without informing the supervisor"]},
+  {id:"t4",text:"You are asked to handle a task in an area where your knowledge is limited. You:",
+   opts:["Attempt the task without raising the gap to avoid appearing incompetent","Decline the task entirely","Disclose the knowledge gap to your supervisor, identify what is needed and propose either upskilling or bringing in support","Complete to the best of your ability without disclosing the limitation"]},
+  {id:"t5",text:"A colleague on a shared assignment disagrees with your approach and the conversation becomes tense. You:",
+   opts:["Defer entirely to their view to avoid conflict","Disengage and continue with your original approach","Focus on the objective not the disagreement, propose a way to test both approaches or seek a third perspective, and document the agreed approach","Escalate to the supervisor immediately without further discussion"]},
+  {id:"t6",text:"You complete a piece of work that is good enough but could be significantly stronger with another 20% of effort. The deadline allows for this. You:",
+   opts:["Submit as is — it meets the standard","Put in the additional effort to produce the stronger version","Submit and note the improvement opportunity in your delivery note","Ask the client whether they want the standard or improved version"]},
+];
+const scaleR={}, sitR={};
+function setPage(n){
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+  document.getElementById("page"+n).classList.add("active");
+  [1,2,3,4].forEach(i=>{const el=document.getElementById("step"+i);if(!el)return;el.classList.toggle("active",i===n);el.classList.toggle("done",i<n);});
+  document.getElementById("progressBar").style.width=(((n-1)/3)*100)+"%";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function buildScales(){
+  const c=document.getElementById("scalesContainer");c.innerHTML="";
+  SCALES.forEach(sc=>{
+    const d=document.createElement("div");d.className="scale-q";
+    d.innerHTML=`<div class="scale-stmt">${sc.left}</div><div class="scale-vs">&harr; vs &harr; ${sc.right}</div>
+    <div class="scale-row">
+      <div class="scale-anchor">${sc.lbl}</div>
+      <div class="scale-options">${[1,2,3,4,5].map(n=>`<div class="scale-opt"><input type="radio" name="${sc.id}" id="${sc.id}_${n}" value="${n}"><label for="${sc.id}_${n}">${n}</label></div>`).join("")}</div>
+      <div class="scale-anchor right">${sc.rlbl}</div>
+    </div>`;
+    d.querySelectorAll("input").forEach(i=>i.addEventListener("change",()=>{scaleR[sc.id]=i.value;}));
+    c.appendChild(d);
+  });
+}
+function buildSituations(){
+  const c=document.getElementById("situationsContainer");c.innerHTML="";
+  SITUATIONS.forEach((sit,idx)=>{
+    const d=document.createElement("div");d.className="mcq-q";
+    d.innerHTML=`<div class="mcq-text">${idx+1}. ${sit.text}</div><div class="mcq-opts">${sit.opts.map((o,oi)=>`<label class="mcq-opt" data-val="${String.fromCharCode(97+oi)}"><input type="radio" name="${sit.id}" value="${String.fromCharCode(97+oi)}"><span style="flex:1;min-width:0">${o}</span></label>`).join("")}</div>`;
+    d.querySelectorAll("input").forEach(i=>i.addEventListener("change",()=>{
+      sitR[sit.id]=i.value;
+      d.querySelectorAll(".mcq-opt").forEach(l=>l.classList.remove("selected"));
+      i.closest(".mcq-opt").classList.add("selected");
+    }));
+    c.appendChild(d);
+  });
+}
+document.getElementById("nextBtn1").addEventListener("click",()=>{
+  if(!document.getElementById("name").value.trim()||!document.getElementById("email").value.trim()){alert("Please enter your name and email.");return;}
+  buildScales();setPage(2);
+});
+document.getElementById("nextBtn2").addEventListener("click",()=>{
+  if(SCALES.some(sc=>!scaleR[sc.id])){alert("Please respond to all "+SCALES.length+" scale questions.");return;}
+  buildSituations();setPage(3);
+});
+document.getElementById("submitBtn").addEventListener("click",async()=>{
+  if(SITUATIONS.some(s=>!sitR[s.id])){const note=document.getElementById("sitNote");note.style.display="inline";note.textContent="Please answer all "+SITUATIONS.length+" situational questions.";return;}
+  const btn=document.getElementById("submitBtn");btn.disabled=true;btn.classList.add("btn-loading");btn.textContent="Submitting...";
+  const responses={...scaleR};SITUATIONS.forEach(s=>{responses["sit_"+s.id]=sitR[s.id];});
+  const payload={name:document.getElementById("name").value.trim(),email:document.getElementById("email").value.trim(),phone:document.getElementById("phone").value.trim(),domain:document.getElementById("domain").value,applyingFor:document.getElementById("applyingFor").value.trim(),availability:document.getElementById("availability").value,responses};
+  try{await fetch(WORKER+"/assess/profile",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});setPage(4);}
+  catch{btn.classList.remove("btn-loading");btn.disabled=false;btn.textContent="Submit Profile &#x2192;";alert("Submission error. Email network@tinaak.com.");}
+});
+</script>
+</body>
+</html>

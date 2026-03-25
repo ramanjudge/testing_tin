@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spreadsheet Proficiency Assessment — TiNAAK</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script src="tinaak-questions.js"></script>
+<style>
+:root{--navy:#0F2747;--navy-mid:#163560;--navy-deep:#070F1C;--teal:#0FA3A3;--teal-lt:#12BFBF;--steel:#5A6572;--ice:#F4F6F9;--white:#fff;--text:#1A2B40;--border:rgba(15,39,71,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Lato",sans-serif;background:var(--ice);color:var(--text);min-height:100vh}
+.site-header{background:var(--navy);padding:16px 40px;display:flex;align-items:center;gap:12px}
+.wordmark{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.wordmark span{color:var(--teal)}
+.badge{margin-left:auto;font-size:.65rem;font-family:"Montserrat",sans-serif;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal);border-radius:3px;padding:2px 7px}
+.container{max-width:860px;margin:0 auto;padding:32px 20px 80px}
+.prog-header{background:var(--navy);border-radius:8px;padding:20px 24px;margin-bottom:20px}
+.prog-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+.prog-title{font-family:"Montserrat",sans-serif;font-size:1rem;font-weight:800;color:#fff}
+.prog-timer{font-family:"Montserrat",sans-serif;font-size:1.1rem;font-weight:700;color:var(--teal)}
+.prog-bar-wrap{background:rgba(255,255,255,.12);border-radius:4px;height:6px}
+.prog-bar{height:6px;background:var(--teal);border-radius:4px;transition:width .4s ease}
+.prog-sections{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:14px}
+@media(max-width:540px){.prog-sections{grid-template-columns:repeat(3,1fr)}}
+.prog-sec{padding:8px 6px;border-radius:4px;text-align:center;border:1px solid rgba(255,255,255,.12)}
+.prog-sec.current{border-color:var(--teal);background:rgba(15,163,163,.15)}
+.prog-sec.done{border-color:var(--teal);background:rgba(15,163,163,.1)}
+.prog-sec .ps-n{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.05em}
+.prog-sec .ps-lbl{font-size:.65rem;color:#8AAAC4;margin-top:2px;line-height:1.2}
+.steps{display:flex;gap:0;margin-bottom:20px}
+.step{flex:1;text-align:center;position:relative}
+.step::before{content:"";position:absolute;top:12px;left:-50%;width:100%;height:2px;background:var(--border);z-index:0}
+.step:first-child::before{display:none}
+.step-dot{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 4px;font-family:"Montserrat",sans-serif;font-size:.6rem;font-weight:700;position:relative;z-index:1;transition:all .2s}
+.step.active .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step.done .step-dot{border-color:var(--teal);background:var(--teal);color:#fff}
+.step-label{font-size:.62rem;color:var(--steel);font-family:"Montserrat",sans-serif}
+.step.active .step-label{color:var(--navy);font-weight:700}
+.card{background:#fff;border-radius:8px;box-shadow:0 2px 12px rgba(15,39,71,.08);padding:28px 32px;margin-bottom:16px}
+@media(max-width:600px){.card{padding:20px 18px}}
+.eyebrow{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+h1{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;color:var(--navy);line-height:1.15;margin-bottom:10px}
+.lead{font-size:.95rem;color:var(--steel);line-height:1.65}
+.notice{border-left:3px solid var(--teal);background:#EAF7F7;padding:12px 16px;border-radius:0 5px 5px 0;font-size:.85rem;line-height:1.55;color:var(--text);margin:16px 0}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:540px){.field-row{grid-template-columns:1fr}}
+.field{margin-bottom:14px}
+label{display:block;font-size:.8rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.req{color:var(--teal)}
+input,select{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:5px;font-family:"Lato",sans-serif;font-size:.9rem;color:var(--text);background:#fff;transition:border-color .18s}
+input:focus,select:focus{outline:none;border-color:var(--teal)}
+.section-divider{background:var(--navy);border-radius:6px;padding:14px 20px;margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.sec-badge{background:var(--teal);color:var(--navy);border-radius:4px;padding:3px 10px;font-family:"Montserrat",sans-serif;font-size:.7rem;font-weight:700;flex-shrink:0}
+.sec-title{font-family:"Montserrat",sans-serif;font-size:.92rem;font-weight:700;color:#fff}
+.sec-count{margin-left:auto;font-size:.75rem;color:#8AAAC4;font-family:"Montserrat",sans-serif;flex-shrink:0}
+.q-block{background:#fff;border-radius:8px;box-shadow:0 2px 8px rgba(15,39,71,.06);padding:22px 26px;margin-bottom:12px}
+.q-num{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal);text-transform:uppercase;margin-bottom:6px}
+.q-difficulty{display:inline-block;font-size:.6rem;font-family:"Montserrat",sans-serif;font-weight:700;padding:2px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+.q-difficulty.d1{background:#EAF7F7;color:var(--teal)}.q-difficulty.d2{background:#FFF8E7;color:#B87800}.q-difficulty.d3{background:#FFF0F0;color:#C03030}
+.q-text{font-size:.93rem;font-weight:700;color:var(--navy);line-height:1.5;margin-bottom:14px}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;cursor:pointer;padding:10px 14px;border:1.5px solid var(--border);border-radius:5px;transition:all .15s;font-size:.88rem;line-height:1.45;width:100%}
+.opt:hover{border-color:var(--teal);background:#EAF7F7}
+.opt input[type=radio]{width:16px;height:16px;flex-shrink:0;margin-top:2px;accent-color:var(--teal);cursor:pointer}
+.opt.selected{border-color:var(--teal);background:#EAF7F7}
+.opt-key{font-weight:700;color:var(--teal);min-width:18px;flex-shrink:0;font-family:"Montserrat",sans-serif}
+.opt-text{flex:1;min-width:0}
+.opt-code{font-family:monospace;font-size:.85rem;flex:1;min-width:0}
+.section-nav{display:flex;gap:12px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:12px 24px;border-radius:5px;font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;border:none;transition:all .18s}
+.btn-primary{background:var(--teal);color:#fff}.btn-primary:hover{background:var(--teal-lt)}
+.btn-secondary{background:#fff;color:var(--navy);border:1.5px solid var(--border)}.btn-secondary:hover{border-color:var(--teal)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-loading{position:relative;color:transparent!important}
+.btn-loading::after{content:"";position:absolute;inset:0;margin:auto;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.err-note{font-size:.8rem;color:#C03030;display:none}
+.page{display:none}.page.active{display:block}
+.result-hero{background:var(--navy);border-radius:8px;padding:32px 36px;margin-bottom:20px;text-align:center}
+.result-score-big{font-family:"Montserrat",sans-serif;font-size:3.5rem;font-weight:800;margin-bottom:4px}
+.result-score-big.good{color:var(--teal)}.result-score-big.ok{color:#E8A020}.result-score-big.low{color:#E05050}
+.result-verdict{font-size:1.1rem;color:#fff;margin-bottom:8px;font-family:"Montserrat",sans-serif;font-weight:700}
+.result-sub{font-size:.9rem;color:#8AAAC4}
+.section-results{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:20px}
+@media(max-width:600px){.section-results{grid-template-columns:repeat(3,1fr)}}
+.sr-card{border-radius:8px;padding:16px 12px;text-align:center}
+.sr-card.good{background:#EAF7F7;border:2px solid var(--teal)}.sr-card.ok{background:#FFF8E7;border:2px solid #E8A020}.sr-card.low{background:#FFF0F0;border:2px solid #E05050}
+.sr-pct{font-family:"Montserrat",sans-serif;font-size:1.6rem;font-weight:800;display:block}
+.sr-card.good .sr-pct{color:var(--teal)}.sr-card.ok .sr-pct{color:#B87800}.sr-card.low .sr-pct{color:#C03030}
+.sr-label{font-size:.7rem;color:var(--steel);margin-top:4px;line-height:1.3}.sr-count{font-size:.72rem;color:var(--steel);margin-top:2px}
+.result-msg-card{background:#fff;border-radius:8px;padding:24px 28px;box-shadow:0 2px 12px rgba(15,39,71,.08)}
+.return-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--teal);font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:700;text-decoration:none}
+.return-link:hover{text-decoration:underline}
+.sec-overview{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:14px}
+.sec-card{padding:12px;background:var(--ice);border-radius:6px;border-left:3px solid var(--teal)}
+.sec-card-eyebrow{font-family:"Montserrat",sans-serif;font-size:.65rem;font-weight:700;color:var(--teal);margin-bottom:4px}
+.sec-card-name{font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:4px}
+.sec-card-desc{font-size:.78rem;color:var(--steel);line-height:1.4}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wordmark">T<span>i</span>NAAK Assessment Centre</div>
+  <div class="badge">Spreadsheet Proficiency</div>
+</header>
+<div class="container">
+  <div class="steps">
+    <div class="step active" id="step1"><div class="step-dot">1</div><div class="step-label">Setup</div></div>
+    <div class="step" id="step2"><div class="step-dot">2</div><div class="step-label">Assessment</div></div>
+    <div class="step" id="step3"><div class="step-dot">3</div><div class="step-label">Result</div></div>
+  </div>
+
+  <div class="page active" id="page1">
+    <div class="card">
+      <div class="eyebrow">Spreadsheet Proficiency Assessment</div>
+      <h1>Excel &amp; Google Sheets</h1>
+      <p class="lead" style="margin-bottom:16px">60 questions across 5 sections — approximately 40&ndash;45 minutes. Covers formula knowledge, data management, lookups, practical FM/HR/Admin scenarios, and error handling. Answer from knowledge only.</p>
+      <div class="notice">Results are sent to <strong>network@tinaak.com</strong> and stored on this device so you can return to the Assessment Centre and see your score.</div>
+      <div class="field-row">
+        <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="fname" placeholder="Your full name" autocomplete="name"></div>
+        <div class="field"><label>Email <span class="req">*</span></label><input type="email" id="femail" placeholder="your@email.com" autocomplete="email"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Phone</label><input type="tel" id="fphone" placeholder="+91 98xxx xxxxx"></div>
+        <div class="field"><label>Role / Applying For</label><input type="text" id="fapplying" placeholder="e.g. FM Manager, Admin Executive"></div>
+      </div>
+      <div class="field">
+        <label>Tools you use regularly</label>
+        <select id="ftools">
+          <option value="">Select&hellip;</option>
+          <option>Microsoft Excel (primary)</option>
+          <option>Google Sheets (primary)</option>
+          <option>Both equally</option>
+          <option>Neither &mdash; limited experience</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:20px;align-items:center;flex-wrap:wrap">
+        <button class="btn btn-primary" id="startBtn" type="button" disabled>Begin Assessment &#x2192;</button>
+        <span style="font-size:.8rem;color:var(--steel)">60 questions &nbsp;&middot;&nbsp; 5 sections &nbsp;&middot;&nbsp; ~40 minutes</span>
+      </div>
+    </div>
+    <div class="card" style="margin-top:0">
+      <div class="eyebrow">What This Assessment Covers</div>
+      <div class="sec-overview">
+        <div class="sec-card"><div class="sec-card-eyebrow">S1 &mdash; 12 QUESTIONS</div><div class="sec-card-name">Formula Knowledge</div><div class="sec-card-desc">SUM, AVERAGE, COUNTIF, SUMIF, IF, IFERROR, LEN, TEXT, SUMPRODUCT, UNIQUE</div></div>
+        <div class="sec-card"><div class="sec-card-eyebrow">S2 &mdash; 12 QUESTIONS</div><div class="sec-card-name">Data Management</div><div class="sec-card-desc">Filters, pivot tables, conditional formatting, data validation, sort, duplicates, named ranges</div></div>
+        <div class="sec-card"><div class="sec-card-eyebrow">S3 &mdash; 12 QUESTIONS</div><div class="sec-card-name">Lookup &amp; Reference</div><div class="sec-card-desc">VLOOKUP, HLOOKUP, INDEX/MATCH, XLOOKUP, INDIRECT, COUNTIFS &mdash; including common pitfalls</div></div>
+        <div class="sec-card"><div class="sec-card-eyebrow">S4 &mdash; 12 QUESTIONS</div><div class="sec-card-name">Scenario Application</div><div class="sec-card-desc">Real FM, HR and Admin situations &mdash; choose the right formula or feature to solve the problem</div></div>
+        <div class="sec-card"><div class="sec-card-eyebrow">S5 &mdash; 12 QUESTIONS</div><div class="sec-card-name">Errors &amp; Best Practice</div><div class="sec-card-desc">#DIV/0, #REF, #N/A, #VALUE, circular references, trace precedents, sheet protection, absolute references</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page2">
+    <div class="prog-header">
+      <div class="prog-top">
+        <div class="prog-title">Spreadsheet Proficiency Assessment</div>
+        <div class="prog-timer" id="timerDisplay">00:00</div>
+      </div>
+      <div class="prog-bar-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+      <div class="prog-sections" id="progSections"></div>
+    </div>
+    <div id="questionArea"></div>
+    <div class="section-nav">
+      <button class="btn btn-secondary" id="prevSecBtn" type="button" style="display:none">&#x2190; Previous Section</button>
+      <button class="btn btn-primary" id="nextSecBtn" type="button">Next Section &#x2192;</button>
+      <span class="err-note" id="secErrNote"></span>
+    </div>
+  </div>
+
+  <div class="page" id="page3">
+    <div class="result-hero">
+      <div class="result-score-big" id="rScoreBig">--</div>
+      <div class="result-verdict" id="rVerdict">--</div>
+      <div class="result-sub" id="rSub">--</div>
+    </div>
+    <div class="eyebrow" style="margin-bottom:12px">Section Breakdown</div>
+    <div class="section-results" id="sectionResults"></div>
+    <div class="result-msg-card">
+      <div class="eyebrow">Next Steps</div>
+      <p id="rMsg" style="margin-top:10px;font-size:.93rem;line-height:1.7;color:var(--steel)"></p>
+      <p style="margin-top:12px;font-size:.88rem;color:var(--steel)">Your result has been submitted to T<span style="color:var(--teal)">i</span>NAAK at <strong>network@tinaak.com</strong>. We will be in touch within 5 working days.</p>
+      <a id="returnLink" href="index.html" class="return-link">&#x2190; Return to Assessment Centre</a>
+    </div>
+  </div>
+</div>
+
+<script>
+const WORKER  = "https://tinaak-forms-worker.judge-raman.workers.dev";
+const LS_KEY  = "tinaak_assess";
+const TEST_ID = "spreadsheet";
+const SECTION_LABELS = ["Formula Knowledge","Data Management","Lookup & Reference","Scenario Application","Errors & Best Practice"];
+
+/* ── Session helpers ── */
+function getSession() { try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch { return {}; } }
+
+/* ── Pre-fill from URL params or localStorage ── */
+(function() {
+  const urlP  = new URLSearchParams(window.location.search);
+  const sess  = getSession();
+  const fname = document.getElementById("fname");
+  const femail = document.getElementById("femail");
+  const fapply = document.getElementById("fapplying");
+  if (fname)  fname.value  = urlP.get("name")  || sess.name  || "";
+  if (femail) femail.value = urlP.get("email") || sess.email || "";
+  if (fapply) fapply.value = urlP.get("role")  || sess.role  || "";
+  const returnTo = urlP.get("returnTo") ? decodeURIComponent(urlP.get("returnTo")) : "index.html";
+  const link = document.getElementById("returnLink");
+  if (link) link.href = returnTo;
+})();
+
+/* ── Begin button enable — poll + multi-event ── */
+function checkStartBtn() {
+  const n = document.getElementById("fname");
+  const e = document.getElementById("femail");
+  const btn = document.getElementById("startBtn");
+  if (!n || !e || !btn) return;
+  btn.disabled = !(n.value.trim().length > 0 && e.value.trim().length > 0);
+}
+["fname","femail"].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  ["input","change","blur","keyup","paste"].forEach(function(evt) {
+    el.addEventListener(evt, function() { setTimeout(checkStartBtn, 50); });
+  });
+});
+setInterval(checkStartBtn, 300);
+window.addEventListener("DOMContentLoaded", checkStartBtn);
+checkStartBtn();
+
+/* ── State ── */
+var questions   = QUESTION_BANKS.spreadsheet;
+var answers     = {};
+var currentSec  = 1;
+var startTime   = null;
+var timerInt    = null;
+
+/* ── setPage ── */
+function setPage(n) {
+  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
+  document.getElementById("page" + n).classList.add("active");
+  [1,2,3].forEach(function(i) {
+    var el = document.getElementById("step" + i);
+    if (!el) return;
+    el.classList.toggle("active", i === n);
+    el.classList.toggle("done",   i < n);
+  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ── Timer ── */
+function updateTimer() {
+  var sec = Math.floor((Date.now() - startTime) / 1000);
+  var m = String(Math.floor(sec / 60)).padStart(2, "0");
+  var s = String(sec % 60).padStart(2, "0");
+  var el = document.getElementById("timerDisplay");
+  if (el) el.textContent = m + ":" + s;
+}
+
+/* ── Progress sections ── */
+function renderProgSections() {
+  var container = document.getElementById("progSections");
+  if (!container) return;
+  container.innerHTML = SECTION_LABELS.map(function(l, i) {
+    return '<div class="prog-sec" id="psec' + (i+1) + '">' +
+           '<div class="ps-n">S' + (i+1) + '</div>' +
+           '<div class="ps-lbl">' + l + '</div></div>';
+  }).join("");
+}
+
+function updateProgSections() {
+  SECTION_LABELS.forEach(function(_, i) {
+    var s = i + 1;
+    var el = document.getElementById("psec" + s);
+    if (!el) return;
+    el.className = "prog-sec" + (s === currentSec ? " current" : s < currentSec ? " done" : "");
+    if (s < currentSec) {
+      var sq = questions.filter(function(q) { return q.s === s; });
+      var answered = sq.filter(function(q) { return answers[questions.indexOf(q)] !== undefined; }).length;
+      el.querySelector(".ps-lbl").textContent = answered + "/" + sq.length;
+    }
+  });
+  var bar = document.getElementById("progBar");
+  if (bar) bar.style.width = Math.round((Object.keys(answers).length / questions.length) * 100) + "%";
+}
+
+/* ── Render section ── */
+function renderSection(sNum) {
+  var secQs = questions.filter(function(q) { return q.s === sNum; });
+  var area  = document.getElementById("questionArea");
+  if (!area) return;
+
+  area.innerHTML = '<div class="section-divider">' +
+    '<span class="sec-badge">Section ' + sNum + ' of 5</span>' +
+    '<span class="sec-title">' + SECTION_LABELS[sNum - 1] + '</span>' +
+    '<span class="sec-count">' + secQs.length + ' questions</span></div>';
+
+  secQs.forEach(function(q) {
+    var gi     = questions.indexOf(q);
+    var qNum   = gi + 1;
+    var diffLabels = ["","Basic","Intermediate","Applied"];
+    var diffLabel  = diffLabels[q.d] || "";
+    var diffCls    = "d" + q.d;
+    var isFormula  = function(t) { return t.trim().charAt(0) === "=" || /=[A-Z]+\(/.test(t); };
+
+    var optsHtml = Object.keys(q.opts).map(function(key) {
+      var text    = q.opts[key];
+      var cls     = isFormula(text) ? "opt-code" : "opt-text";
+      var checked = answers[gi] === key ? " checked" : "";
+      var selCls  = answers[gi] === key ? " selected" : "";
+      return '<label class="opt' + selCls + '" data-val="' + key + '">' +
+             '<input type="radio" name="q' + gi + '" value="' + key + '"' + checked + '>' +
+             '<span class="opt-key">' + key.toUpperCase() + '</span>' +
+             '<span class="' + cls + '">' + text + '</span></label>';
+    }).join("");
+
+    var block = document.createElement("div");
+    block.className = "q-block";
+    block.innerHTML =
+      '<div class="q-num">Question ' + qNum + ' of ' + questions.length +
+      '<span class="q-difficulty ' + diffCls + '">' + diffLabel + '</span></div>' +
+      '<div class="q-text">' + q.q + '</div>' +
+      '<div class="options">' + optsHtml + '</div>';
+
+    block.querySelectorAll("input[type=radio]").forEach(function(inp) {
+      inp.addEventListener("change", function() {
+        answers[gi] = inp.value;
+        block.querySelectorAll(".opt").forEach(function(l) { l.classList.remove("selected"); });
+        inp.closest(".opt").classList.add("selected");
+        updateProgSections();
+      });
+    });
+    area.appendChild(block);
+  });
+
+  var prevBtn = document.getElementById("prevSecBtn");
+  var nextBtn = document.getElementById("nextSecBtn");
+  if (prevBtn) prevBtn.style.display = sNum > 1 ? "inline-flex" : "none";
+  if (nextBtn) nextBtn.textContent   = sNum < 5 ? "Next Section \u2192" : "Submit Assessment \u2192";
+  updateProgSections();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+/* ── Start ── */
+document.getElementById("startBtn").addEventListener("click", function() {
+  renderProgSections();
+  startTime = Date.now();
+  timerInt  = setInterval(updateTimer, 1000);
+  currentSec = 1;
+  renderSection(1);
+  setPage(2);
+});
+
+/* ── Next section ── */
+document.getElementById("nextSecBtn").addEventListener("click", function() {
+  var secQs     = questions.filter(function(q) { return q.s === currentSec; });
+  var unanswered = secQs.filter(function(q) { return answers[questions.indexOf(q)] === undefined; }).length;
+  var note = document.getElementById("secErrNote");
+
+  if (unanswered > 0) {
+    if (note) { note.style.display = "inline"; note.textContent = "Please answer all " + secQs.length + " questions before continuing (" + unanswered + " unanswered)."; }
+    return;
+  }
+  if (note) { note.style.display = "none"; note.textContent = ""; }
+
+  if (currentSec < 5) {
+    currentSec++;
+    renderSection(currentSec);
+  } else {
+    submitAssessment();
+  }
+});
+
+/* ── Prev section ── */
+document.getElementById("prevSecBtn").addEventListener("click", function() {
+  if (currentSec > 1) {
+    currentSec--;
+    renderSection(currentSec);
+    var note = document.getElementById("secErrNote");
+    if (note) { note.style.display = "none"; note.textContent = ""; }
+  }
+});
+
+/* ── Score ── */
+function computeScores() {
+  var sections = {};
+  var totalCorrect = 0;
+  for (var s = 1; s <= 5; s++) {
+    var secQs   = questions.filter(function(q) { return q.s === s; });
+    var correct = 0;
+    secQs.forEach(function(q) { if (answers[questions.indexOf(q)] === q.correct) correct++; });
+    totalCorrect += correct;
+    sections[s] = { correct: correct, total: secQs.length, pct: Math.round((correct / secQs.length) * 100), label: SECTION_LABELS[s - 1] };
+  }
+  return { correct: totalCorrect, total: questions.length, pct: Math.round((totalCorrect / questions.length) * 100), sections: sections };
+}
+
+/* ── Submit ── */
+async function submitAssessment() {
+  clearInterval(timerInt);
+  var btn = document.getElementById("nextSecBtn");
+  btn.disabled = true;
+  btn.classList.add("btn-loading");
+  btn.textContent = "Submitting\u2026";
+
+  var scores  = computeScores();
+  var elapsed = startTime ? Math.round((Date.now() - startTime) / 60000) : 0;
+  var name    = document.getElementById("fname").value.trim();
+  var email   = document.getElementById("femail").value.trim();
+  var phone   = document.getElementById("fphone").value.trim();
+  var role    = document.getElementById("fapplying").value.trim();
+  var tools   = document.getElementById("ftools").value;
+
+  var breakdown = Object.entries(scores.sections).map(function(entry) {
+    var sc = entry[1];
+    return "S" + entry[0] + " " + sc.label + ": " + sc.correct + "/" + sc.total + " (" + sc.pct + "%)";
+  }).join("\n");
+
+  var sectionScores = {};
+  Object.entries(scores.sections).forEach(function(e) { sectionScores[e[0]] = { pct: e[1].pct }; });
+
+  try {
+    await fetch(WORKER + "/assess/spreadsheet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: name, email: email, phone: phone,
+        applyingFor: role, role: role, tools: tools,
+        kScore: scores.pct + "%",
+        correct: scores.correct, total: scores.total,
+        timeTaken: elapsed,
+        sectionScores: sectionScores,
+        sectionLabels: SECTION_LABELS,
+        selfSummary: breakdown,
+        notes: "Tools: " + tools + "\n\n" + breakdown
+      })
+    });
+  } catch(e) { console.warn("Worker error (non-fatal):", e); }
+
+  /* Save to localStorage */
+  var sess = getSession();
+  if (!sess.completed) sess.completed = {};
+  var result = {
+    pct: scores.pct, correct: scores.correct, total: scores.total,
+    date: new Date().toISOString().split("T")[0],
+    sections: sectionScores
+  };
+  sess.completed[TEST_ID] = result;
+  localStorage.setItem(LS_KEY, JSON.stringify(sess));
+  localStorage.setItem("tinaak_assess_pending_result", JSON.stringify(Object.assign({ testId: TEST_ID }, result)));
+
+  showResult(scores, elapsed);
+  setPage(3);
+}
+
+/* ── Show result ── */
+function showResult(scores, elapsed) {
+  var cls = scores.pct >= 70 ? "good" : scores.pct >= 50 ? "ok" : "low";
+
+  document.getElementById("rScoreBig").className = "result-score-big " + cls;
+  document.getElementById("rScoreBig").textContent = scores.pct + "%";
+  document.getElementById("rVerdict").textContent =
+    scores.pct >= 70 ? "Strong Result" : scores.pct >= 50 ? "Moderate Result" : "Result Received";
+  document.getElementById("rSub").textContent =
+    scores.correct + " of " + scores.total + " correct \u00b7 " + elapsed + " minutes \u00b7 Spreadsheet Proficiency";
+
+  document.getElementById("sectionResults").innerHTML = Object.entries(scores.sections).map(function(e) {
+    var sc = e[1];
+    var c  = sc.pct >= 70 ? "good" : sc.pct >= 50 ? "ok" : "low";
+    return '<div class="sr-card ' + c + '"><span class="sr-pct">' + sc.pct + '%</span>' +
+           '<div class="sr-label">' + sc.label + '</div>' +
+           '<div class="sr-count">' + sc.correct + '/' + sc.total + '</div></div>';
+  }).join("");
+
+  var strong = Object.values(scores.sections).filter(function(s) { return s.pct >= 70; }).map(function(s) { return s.label; });
+  var weak   = Object.values(scores.sections).filter(function(s) { return s.pct <  50; }).map(function(s) { return s.label; });
+
+  var msg = scores.pct >= 70 ? "Strong spreadsheet proficiency demonstrated. " :
+            scores.pct >= 50 ? "Moderate spreadsheet proficiency. " : "Submission received. ";
+  if (strong.length && scores.pct >= 70) msg += "Particular strength in: " + strong.join(", ") + ". ";
+  if (weak.length)                       msg += "Areas to develop: " + weak.join(", ") + ". ";
+  msg += "TiNAAK will be in touch within 5 working days.";
+  document.getElementById("rMsg").textContent = msg;
+}
+</script>
+</body>
+</html>

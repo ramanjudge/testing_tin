@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="TiNAAK is building India's first practitioner-designed FM operations platform for growing organisations — and a tech-enabled network model that scales professional services without proportional headcount growth."/>
+<meta name="robots" content="index, follow"/>
+<title>TiNAAK Products | FM Operations Software & Staffing Network Platform | India</title><link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://tinaak.com/products.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://tinaak.com/products.html"/>
+<meta property="og:title" content="TiNAAK Products — Built from Practice, Not Assumption"/>
+<meta property="og:description" content="TiNAAK FM Hub and the SAN Platform — operational software built by practitioners for India's growth-stage organisations."/>
+<meta property="og:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@tinaak_in"/>
+<meta name="twitter:title" content="TiNAAK Products — FM Hub &amp; SAN Platform"/>
+<meta name="twitter:description" content="India's first practitioner-designed FM operations platform. Built for growing organisations. Priced for growth."/>
+<meta name="twitter:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:site_name" content="TiNAAK Integrated Services"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+
+/* ── PRODUCT HERO CARDS ── */
+#lead-products { padding: 100px 5%; background: var(--ice); }
+.lead-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 56px;
+}
+.lead-card {
+  background: var(--white);
+  padding: 56px 48px;
+  position: relative; overflow: hidden;
+}
+.lead-card.dark { background: var(--navy); }
+.lead-card-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 28px; display: block;
+}
+.lead-card-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+.lead-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px; font-weight: 900;
+  color: var(--navy); margin-bottom: 6px; line-height: 1.1;
+}
+.lead-card.dark .lead-card-name { color: var(--white); }
+.lead-card-tagline {
+  font-size: 14px; color: var(--teal);
+  font-weight: 600; margin-bottom: 24px;
+  font-family: 'Montserrat', sans-serif;
+}
+.lead-card-desc {
+  font-size: 15px; color: var(--steel);
+  line-height: 1.9; margin-bottom: 32px;
+}
+.lead-card.dark .lead-card-desc { color: rgba(255,255,255,0.55); }
+
+/* Status badge */
+.dev-status {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--steel); margin-bottom: 32px;
+}
+.dev-status.active { border-color: rgba(15,163,163,0.3); color: var(--teal); }
+.dev-status::before {
+  content: ''; width: 6px; height: 6px;
+  border-radius: 50%; background: currentColor; flex-shrink: 0;
+}
+
+/* Feature list */
+.lead-features { list-style: none; margin-bottom: 36px; }
+.lead-features li {
+  font-size: 14px; color: var(--steel);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: 12px; align-items: flex-start;
+  line-height: 1.5;
+}
+.lead-card.dark .lead-features li { color: rgba(255,255,255,0.55); border-bottom-color: rgba(255,255,255,0.06); }
+.lead-features li:last-child { border-bottom: none; }
+.lead-features li::before {
+  content: '→'; color: var(--teal);
+  font-size: 11px; font-weight: 700;
+  margin-top: 2px; flex-shrink: 0;
+}
+
+/* Why box */
+.lead-why {
+  background: var(--ice);
+  padding: 24px 28px;
+  border-left: 3px solid var(--teal);
+  margin-top: 8px;
+}
+.lead-card.dark .lead-why {
+  background: rgba(255,255,255,0.04);
+  border-left-color: var(--teal);
+}
+.lead-why-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 10px;
+}
+.lead-why p {
+  font-size: 13px; color: var(--steel); line-height: 1.75; margin: 0;
+}
+.lead-card.dark .lead-why p { color: rgba(255,255,255,0.45); }
+
+/* ── PROBLEM STATEMENT ── */
+#problem { background: var(--navy); padding: 100px 5%; }
+.problem-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+.problem-left .section-title { color: var(--white); margin-bottom: 24px; }
+.problem-left > p {
+  font-size: 15px; color: rgba(255,255,255,0.5);
+  line-height: 1.9; margin-bottom: 0;
+}
+.problem-stats {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; margin-top: 48px;
+}
+.prob-stat {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 28px;
+}
+.prob-stat-val {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--teal); line-height: 1;
+  margin-bottom: 10px;
+}
+.prob-stat-label {
+  font-size: 13px; color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+.problem-right {}
+.gap-list { display: flex; flex-direction: column; gap: 2px; }
+/* gap-item styles in shared.css */
+.gap-item { background: rgba(255,255,255,0.04); }
+
+/* ── ROADMAP ── */
+#roadmap { padding: 100px 5%; }
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px; margin-top: 52px;
+}
+.roadmap-card {
+  background: var(--ice);
+  padding: 32px 28px;
+  position: relative;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.roadmap-card:hover { opacity: 1; }
+.roadmap-card.priority {
+  opacity: 1;
+  background: var(--white);
+  border: 1px solid rgba(15,163,163,0.2);
+}
+.roadmap-icon { font-size: 24px; margin-bottom: 16px; display: block; }
+.roadmap-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px; font-weight: 800;
+  color: var(--navy); margin-bottom: 8px;
+}
+.roadmap-desc {
+  font-size: 13px; color: var(--steel);
+  line-height: 1.75;
+}
+.roadmap-tag {
+  display: inline-block; margin-top: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); padding: 3px 8px;
+  border: 1px solid rgba(15,163,163,0.25);
+}
+.roadmap-tag.later {
+  color: var(--steel); border-color: var(--border);
+}
+
+/* ── BUILT FOR TINAAK ── */
+#internal-use { background: var(--ice); padding: 100px 5%; }
+.iu-inner {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 80px; align-items: start;
+}
+.iu-left .section-title { margin-bottom: 20px; }
+.iu-left > p { font-size: 15px; color: var(--steel); line-height: 1.9; margin-bottom: 20px; }
+.iu-principle-list { display: flex; flex-direction: column; gap: 2px; }
+.iu-principle {
+  padding: 20px 24px;
+  background: var(--white);
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s;
+}
+.iu-principle:hover { border-left-color: var(--teal); }
+.iu-principle-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px;
+}
+.iu-principle-desc { font-size: 13px; color: var(--steel); line-height: 1.7; }
+.iu-right {}
+.iu-model {
+  background: var(--navy);
+  padding: 40px 36px;
+}
+.iu-model-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 28px;
+}
+.iu-model-step {
+  display: flex; gap: 20px;
+  margin-bottom: 24px; align-items: flex-start;
+}
+.iu-model-step:last-child { margin-bottom: 0; }
+.iu-step-num {
+  width: 28px; height: 28px; flex-shrink: 0;
+  background: rgba(15,163,163,0.15);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 700;
+  color: var(--teal);
+}
+.iu-step-text {
+  font-size: 13px; color: rgba(255,255,255,0.55);
+  line-height: 1.7; padding-top: 4px;
+}
+.iu-step-text strong { color: rgba(255,255,255,0.85); }
+
+/* ── NOTIFY ── */
+#notify { padding: 100px 5%; }
+.notify-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.notify-form { display: flex; gap: 2px; margin-top: 32px; }
+.notify-form input {
+  flex: 1; padding: 14px 18px;
+  border: 1.5px solid var(--border);
+  font-family: 'Lato', sans-serif; font-size: 14px;
+  outline: none; border-radius: 0;
+  transition: border-color 0.2s;
+}
+.notify-form input:focus { border-color: var(--teal); }
+.notify-form button {
+  background: var(--navy); color: var(--white);
+  border: none; padding: 14px 32px; cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  transition: background 0.2s; white-space: nowrap;
+}
+.notify-form button:hover { background: var(--teal); }
+
+@media (max-width: 1024px) {
+  .lead-grid { grid-template-columns: 1fr; }
+  .roadmap-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .problem-inner { grid-template-columns: 1fr; gap: 48px; }
+  .iu-inner { grid-template-columns: 1fr; gap: 48px; }
+  .notify-form { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .roadmap-grid { grid-template-columns: 1fr; }
+  .problem-stats { grid-template-columns: 1fr; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "TiNAAK FM Hub",
+  "description": "India's first practitioner-designed FM operations platform for growing organisations.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "price": "0",
+    "priceCurrency": "INR"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "TiNAAK Integrated Services",
+    "url": "https://tinaak.com"
+  }
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<div id="scroll-progress"></div>
+
+
+<nav id="site-nav"></nav>
+
+<header class="page-hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-glow" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="section-eyebrow"><span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> Products</div>
+    <h1>Built from Practice,<br><span>Not Assumption</span></h1>
+    <p>Every product T<span style="color:var(--teal)">i</span>NAAK builds starts with a problem we have personally encountered across 26 years of running these functions inside real organisations. No theoretical frameworks. No feature bloat. Tools that do exactly what people in the field actually need.</p>
+  </div>
+</header>
+
+<!-- ═══ LEAD PRODUCTS ═══ -->
+<main id="main-content" style="display:contents">
+<section id="lead-products">
+  <div class="reveal">
+    <div class="section-eyebrow">Products in Development</div>
+    <h2 class="section-title">Two Platforms.<br>One Connected Model.</h2>
+    <p class="section-subtitle">T<span style="color:var(--teal)">i</span>NAAK is developing two products that are directly connected to how it delivers services — built first for internal use, then made available to organisations with the same operational needs.</p>
+  </div>
+
+  <div class="lead-grid">
+
+    <!-- FM HUB -->
+    <div class="lead-card reveal">
+      <span class="lead-card-num">Product 01 — Flagship</span>
+      <span class="lead-card-icon">🏢</span>
+      <div class="lead-card-name">T<span style="color:var(--teal)">i</span>NAAK FM Hub</div>
+      <div class="lead-card-tagline">The FM operations platform India's growing organisations don't have yet</div>
+      <span class="dev-status active">In Development</span>
+      <p class="lead-card-desc">
+        Indian organisations managing one office or ten sites run their facility operations on spreadsheets, WhatsApp groups and paper registers. Enterprise CAFM systems (Archibus, IBM Maximo, ServiceMax) cost more than the FM budget of the organisations that need them most. Nothing credible exists in between.<br><br>
+        T<span style="color:var(--teal)">i</span>NAAK FM Hub is being built to fill that gap — a practical, India-specific facility management operations platform designed by people who have personally managed large FM programmes, for organisations that are growing but not yet enterprise.
+      </p>
+      <ul class="lead-features">
+        <li>PPM scheduler — planned preventive maintenance with vendor assignment and completion tracking</li>
+        <li>Work order management — breakdown logging, assignment, escalation and resolution</li>
+        <li>Asset register — lifecycle tracking from purchase through disposal, with QR tagging</li>
+        <li>AMC calendar — vendor contracts, renewal alerts, service visit logs</li>
+        <li>Inventory &amp; consumables — stock levels, reorder triggers, purchase requests</li>
+        <li>Compliance log — statutory certificates, inspection records, expiry alerts</li>
+        <li>Energy tracking — meter readings, utility costs, consumption trends by site</li>
+        <li>Vendor portal — onboarding, performance scoring, invoice submission</li>
+      </ul>
+      <div class="lead-why">
+        <div class="lead-why-label">Why T<span style="color:var(--teal)">i</span>NAAK can build this</div>
+        <p>FM Hub is being designed from the operations up — by someone who has personally managed ₹280M+ facility programmes, supervised 250+ facility staff across multi-site operations, and used every enterprise tool in this space. The features are not invented. They are the functions T<span style="color:var(--teal)">i</span>NAAK needs to run its own client engagements — which means every feature gets stress-tested in live operations before it reaches the market.</p>
+      </div>
+    </div>
+
+    <!-- SAN PLATFORM -->
+    <div class="lead-card dark reveal">
+      <span class="lead-card-num">Product 02 — Network Infrastructure</span>
+      <span class="lead-card-icon">🔗</span>
+      <div class="lead-card-name">T<span style="color:var(--teal)">i</span>NAAK SAN Platform</div>
+      <div class="lead-card-tagline">The operating layer for T<span style="color:var(--teal)">i</span>NAAK's Strategic Alliance Network</div>
+      <span class="dev-status active">In Development</span>
+      <p class="lead-card-desc">
+        T<span style="color:var(--teal)">i</span>NAAK's Strategic Alliance Network is a curated network of pre-verified FM professionals, associate specialists and operational practitioners who extend T<span style="color:var(--teal)">i</span>NAAK's delivery capability across geographies and disciplines without proportional headcount growth.<br><br>
+        The SAN Platform is the technology layer that makes this network scalable — managing member profiles, engagement matching, deployment tracking, performance records and payment. What currently runs on documents and direct coordination will be systematised into a platform that can support hundreds of network members and dozens of concurrent engagements.
+      </p>
+      <ul class="lead-features">
+        <li>Member profile management — verified credentials, skills, availability, deployment history</li>
+        <li>Engagement matching — client requirement to network member capability</li>
+        <li>Deployment tracking — active engagements, timesheets, milestones, completion</li>
+        <li>Performance records — client ratings, engagement outcomes, SLA compliance</li>
+        <li>Commission management — transparent calculation, approval and payment tracking</li>
+        <li>Member portal — self-service profile, availability calendar, engagement dashboard</li>
+        <li>Client-side visibility — vetted member profiles, engagement status, reporting</li>
+      </ul>
+      <div class="lead-why">
+        <div class="lead-why-label">The scalability model</div>
+        <p>A traditional services firm grows by hiring. T<span style="color:var(--teal)">i</span>NAAK grows by expanding the network — adding verified practitioners who activate on client engagements without becoming permanent overheads. The SAN Platform is what makes that model defensible and scalable: every member is verified, every engagement is tracked, every performance record is retained. The network becomes more valuable with every member added and every engagement completed.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ PROBLEM STATEMENT ═══ -->
+<section id="problem">
+  <div class="problem-inner">
+    <div class="problem-left reveal">
+      <div class="section-eyebrow">The Gap We Are Building Into</div>
+      <h2 class="section-title">A Real Market Problem,<br>Not a Pitch Deck One</h2>
+      <p>India has 63 million registered MSMEs and a growing segment of mid-market organisations — companies with 50 to 1,000 employees — that manage real estate, facilities, people and vendors every day. They do it without proper tools because the tools that exist were built for organisations ten times their size at ten times their budget.</p>
+      <p style="margin-top:20px;">The FM software gap is particularly acute. Facility management as a function is invisible to most software vendors — it doesn't fit neatly into ERP, HRMS or project management categories. The result is that most FM operations in Indian mid-market organisations run on Excel, paper and WhatsApp. Not because the organisations don't want better — because nothing appropriate exists at the right price point.</p>
+      <div class="problem-stats">
+        <div class="prob-stat">
+          <div class="prob-stat-val">63M+</div>
+          <div class="prob-stat-label">Registered MSMEs in India — the primary underserved market for practical operational software</div>
+        </div>
+        <div class="prob-stat">
+          <div class="prob-stat-val">₹0</div>
+          <div class="prob-stat-label">What most mid-market FM operations spend on dedicated FM software — because nothing appropriate exists at their price point</div>
+        </div>
+        <div class="prob-stat">
+          <div class="prob-stat-val">26 yrs</div>
+          <div class="prob-stat-label">Of direct FM operations experience informing every product decision at T<span style="color:var(--teal)">i</span>NAAK</div>
+        </div>
+        <div class="prob-stat">
+          <div class="prob-stat-val">0</div>
+          <div class="prob-stat-label">India-built, India-priced, practitioner-designed CAFM platforms currently available to the SME and mid-market segment</div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-right reveal">
+      <div class="section-eyebrow" style="color:rgba(15,163,163,0.7);margin-bottom:28px;">What Organisations Are Currently Using Instead</div>
+      <div class="gap-list">
+        <div class="gap-item tn-card">
+          <div class="gap-item-title">Excel for the asset register</div>
+          <div class="gap-item-desc">Updated manually, usually quarterly, often incomplete, no audit trail, no depreciation tracking, no QR linkage. Useless during an audit.</div>
+        </div>
+        <div class="gap-item tn-card">
+          <div class="gap-item-title">WhatsApp for work orders</div>
+          <div class="gap-item-desc">Breakdown reported in a group chat, vendor called by phone, resolution confirmed in a message that disappears. No log, no SLA, no pattern analysis.</div>
+        </div>
+        <div class="gap-item tn-card">
+          <div class="gap-item-title">A paper PPM register</div>
+          <div class="gap-item-desc">If one exists at all. AMC renewal dates missed, HVAC servicing delayed, DG maintenance skipped. Usually discovered during a failure, not before.</div>
+        </div>
+        <div class="gap-item tn-card">
+          <div class="gap-item-title">No vendor management system</div>
+          <div class="gap-item-desc">Contract documents in a folder somewhere, renewal reminders in someone's calendar, performance assessment never done systematically.</div>
+        </div>
+        <div class="gap-item tn-card">
+          <div class="gap-item-title">Inventory tracked by the housekeeping supervisor</div>
+          <div class="gap-item-desc">In a notebook. Restocked when someone notices stock is low, not when reorder triggers are hit. Over-stocking and stockouts both happen regularly.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCT ROADMAP ═══ -->
+<section id="roadmap">
+  <div class="reveal">
+    <div class="section-eyebrow">Full Product Roadmap</div>
+    <h2 class="section-title">Beyond the Flagship —<br>The Complete Suite</h2>
+    <p class="section-subtitle">FM Hub and SAN Platform are the priority builds. The following products share the same design principle — practitioner-built, India-specific, priced for growth — and will be developed in sequence as the flagship products reach stability.</p>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card priority reveal">
+      <span class="roadmap-icon">🏢</span>
+      <div class="roadmap-name">FM Hub</div>
+      <div class="roadmap-desc">Facility operations platform — PPM, work orders, assets, vendors, compliance.</div>
+      <span class="roadmap-tag">In Development</span>
+    </div>
+    <div class="roadmap-card priority reveal">
+      <span class="roadmap-icon">🔗</span>
+      <div class="roadmap-name">SAN Platform</div>
+      <div class="roadmap-desc">Network member management, engagement matching, deployment and performance tracking.</div>
+      <span class="roadmap-tag">In Development</span>
+    </div>
+    <div class="roadmap-card reveal">
+      <span class="roadmap-icon">👥</span>
+      <div class="roadmap-name">HRMS Lite</div>
+      <div class="roadmap-desc">India-first workforce management — payroll, PF/ESIC/TDS compliance, attendance, F&amp;F.</div>
+      <span class="roadmap-tag later">Next Phase</span>
+    </div>
+    <div class="roadmap-card reveal">
+      <span class="roadmap-icon">🔐</span>
+      <div class="roadmap-name">SecureLog</div>
+      <div class="roadmap-desc">Digital visitor management, access logs and security incident reporting to replace the paper register.</div>
+      <span class="roadmap-tag later">Next Phase</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUILT FOR TINAAK FIRST ═══ -->
+<section id="internal-use">
+  <div class="iu-inner">
+    <div class="iu-left reveal">
+      <div class="section-eyebrow">Design Philosophy</div>
+      <h2 class="section-title">Built for T<span style="color:var(--teal)">i</span>NAAK First.<br>Then for Everyone Else.</h2>
+      <p>T<span style="color:var(--teal)">i</span>NAAK does not build software and then try to find people who need it. Both flagship products are being built because T<span style="color:var(--teal)">i</span>NAAK needs them to operate — FM Hub to manage its own client facility engagements, and the SAN Platform to manage its growing network of associate practitioners.</p>
+      <p>This is a deliberate choice. Building for internal use first means every feature is stress-tested in live operations before it reaches a paying customer. Features that don't survive contact with reality don't make it into the product. The result is software that is lean, practical and genuinely useful — not feature-complete and unusable.</p>
+      <div class="iu-principle-list">
+        <div class="iu-principle">
+          <div class="iu-principle-title">No feature that hasn't been needed in practice</div>
+          <div class="iu-principle-desc">Every module in FM Hub maps to a real operational need T<span style="color:var(--teal)">i</span>NAAK has encountered in the field. Nothing is built because it looks good on a feature comparison table.</div>
+        </div>
+        <div class="iu-principle">
+          <div class="iu-principle-title">India-specific by default, not by configuration</div>
+          <div class="iu-principle-desc">PF, ESIC, PT, GST, local statutory compliance — built in from the ground up, not bolted on as an India localisation pack.</div>
+        </div>
+        <div class="iu-principle">
+          <div class="iu-principle-title">Priced for the organisations that need it most</div>
+          <div class="iu-principle-desc">The target customer is an organisation that currently uses Excel because nothing affordable exists. Pricing will reflect that — not enterprise licensing disguised as SME-friendly.</div>
+        </div>
+      </div>
+    </div>
+    <div class="iu-right reveal">
+      <div class="iu-model">
+        <div class="iu-model-title">How the model works</div>
+        <div class="iu-model-step">
+          <div class="iu-step-num">1</div>
+          <div class="iu-step-text"><strong>T<span style="color:var(--teal)">i</span>NAAK uses the product internally</strong> — FM Hub manages T<span style="color:var(--teal)">i</span>NAAK's own client facility operations. SAN Platform manages T<span style="color:var(--teal)">i</span>NAAK's own network of practitioners.</div>
+        </div>
+        <div class="iu-model-step">
+          <div class="iu-step-num">2</div>
+          <div class="iu-step-text"><strong>Real operations validate every feature</strong> — if a module doesn't work in T<span style="color:var(--teal)">i</span>NAAK's own delivery, it gets fixed before it reaches an external customer.</div>
+        </div>
+        <div class="iu-model-step">
+          <div class="iu-step-num">3</div>
+          <div class="iu-step-text"><strong>T<span style="color:var(--teal)">i</span>NAAK's service clients get early access</strong> — organisations already using T<span style="color:var(--teal)">i</span>NAAK's managed services become the first external users, providing structured feedback in a real environment.</div>
+        </div>
+        <div class="iu-model-step">
+          <div class="iu-step-num">4</div>
+          <div class="iu-step-text"><strong>The product is offered to the broader market</strong> — once validated through internal use and early-access clients, FM Hub and SAN Platform are made available to any organisation with the same operational needs.</div>
+        </div>
+        <div class="iu-model-step">
+          <div class="iu-step-num">5</div>
+          <div class="iu-step-text"><strong>Services and software become mutually reinforcing</strong> — clients who use FM Hub may also engage T<span style="color:var(--teal)">i</span>NAAK for managed operations. Managed operations clients may adopt FM Hub for internal visibility. One strengthens the other.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NOTIFY ═══ -->
+<section id="notify">
+  <div class="notify-inner reveal">
+    <div class="section-eyebrow" style="justify-content:center;">Early Access</div>
+    <h2 class="section-title" style="text-align:center;">Register Your Interest</h2>
+    <p style="color:var(--steel);font-size:15px;line-height:1.85;margin-bottom:0;">T<span style="color:var(--teal)">i</span>NAAK FM Hub and the SAN Platform are currently in active development. Register your interest and we will reach out when early access becomes available. Organisations that register now will receive priority access and direct input into the product roadmap.</p>
+    <div class="notify-form" id="notifyForm">
+      <input type="email" id="notifyEmail" placeholder="Your business email address" aria-label="Email for product notification"/>
+      <button onclick="submitNotify()">Register Interest</button>
+    </div>
+    <p id="notifySuccess" style="display:none;color:var(--teal);font-weight:600;margin-top:20px;">Registered. We will be in touch when early access opens.</p>
+    <p style="font-size:12px;color:var(--steel);margin-top:16px;">No spam. Notification only. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<a id="whatsapp-fab" href="https://wa.me/919999998522?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20TiNAAK%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat with TiNAAK on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div id="mobile-cta-bar" role="complementary" aria-label="Quick contact">
+  <a href="contact.html" class="mcta-primary">Get In Touch</a>
+  <a href="tel:+919999998522" class="mcta-secondary">Call Now</a>
+</div>
+<footer id="site-footer"></footer>
+<script src="shared.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  injectNav('products.html'); injectFooter(); initReveal(); initScrollProgress(); initCardReveal(); initHeroParallax(); initWhatsAppFAB();
+});
+
+function submitNotify() {
+  const emailEl = document.getElementById('notifyEmail');
+  V.clearAll(document.getElementById('notifyForm'));
+  const ok = V.run([
+    {el: emailEl, checks: [
+      {fn:(v)=>V.required(v), msg:'Please enter your email address'},
+      {fn:(v)=>V.email(v),    msg:'Please enter a valid email address'}
+    ]}
+  ]);
+  if (!ok) return;
+
+  const btn = document.querySelector('#notifyForm button');
+  btn.textContent = 'Registering…'; btn.disabled = true;
+
+  fetch('https://tinaak-forms-worker.judge-raman.workers.dev/products', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({email: emailEl.value.trim()})
+  })
+  .then(r => r.json())
+  .then(res => {
+    if (res.success) {
+      document.getElementById('notifyForm').style.display = 'none';
+      document.getElementById('notifySuccess').style.display = 'block';
+    } else {
+      btn.textContent = 'Register Interest'; btn.disabled = false;
+      alert('Something went wrong. Please try again or email hello@tinaak.com directly.');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Register Interest'; btn.disabled = false;
+    alert('Could not submit — please check your connection.');
+  });
+}
+</script>
+</body>
+</html>

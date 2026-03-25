@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Join the TiNAAK Strategic Alliance Network — a curated programme for vetted vendors, associate specialists and business development partners across India."/>
+<meta name="robots" content="index, follow"/>
+<title>Strategic Alliance Network | Partner with TiNAAK | Vendor & Consultant Empanelment India</title><link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
+<link rel="canonical" href="https://tinaak.com/network.html"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://tinaak.com/network.html"/>
+<meta property="og:title" content="TiNAAK Strategic Alliance Network — Partner with Us"/>
+<meta property="og:description" content="Join a curated network of vetted vendors, specialist consultants and strategic partners. Expand your reach. Work under an established brand."/>
+<meta property="og:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:image:type" content="image/png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@tinaak_in"/>
+<meta name="twitter:title" content="TiNAAK Strategic Alliance Network — Partner with Us"/>
+<meta name="twitter:description" content="Vetted vendors, associate specialists and strategic partners — join T<span style="color:var(--teal)">i</span>NAAK's curated network and grow your reach across India."/>
+<meta name="twitter:image" content="https://tinaak.com/assets/og-image.png"/>
+<meta property="og:site_name" content="TiNAAK Integrated Services"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lato:wght@400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="shared.css"/>
+<style>
+/* ── TRACK CARDS ── */
+.tracks {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2px; margin-top: 56px;
+}
+.track-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 44px 36px;
+  display: flex; flex-direction: column;
+  position: relative; overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.track-card .btn-primary {
+  align-self: stretch; margin-top: auto;
+  text-align: center; justify-content: center;
+}
+.track-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(15,39,71,0.1); }
+.track-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+}
+.track-card.track-vendor::before { background: var(--teal); }
+.track-card.track-specialist::before { background: var(--navy); }
+.track-card.track-partner::before { background: linear-gradient(90deg, var(--teal), var(--navy)); }
+.track-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 16px;
+}
+.track-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: var(--navy); margin-bottom: 8px; line-height: 1.2;
+}
+.track-subtitle {
+  font-size: 13px; color: var(--teal);
+  font-weight: 600; margin-bottom: 20px;
+}
+.track-desc {
+  font-size: 15px; color: var(--steel);
+  line-height: 1.9; margin-bottom: 28px; flex: 1;
+}
+.track-list { list-style: none; margin-bottom: 32px; }
+.track-list li {
+  font-size: 13.5px; color: var(--steel);
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+}
+.track-list li::before {
+  content: '✓'; color: var(--teal);
+  font-weight: 700; font-size: 11px; margin-top: 2px; flex-shrink: 0;
+}
+
+/* ── PROCESS ── */
+#process { background: var(--navy); padding: 100px 5%; }
+#process .section-title { color: var(--white); }
+.process-steps {
+  display: grid; grid-template-columns: repeat(5,1fr);
+  gap: 2px; margin-top: 52px;
+}
+.process-step {
+  background: rgba(255,255,255,0.04);
+  padding: 32px 24px; position: relative;
+}
+.process-step-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px; font-weight: 900;
+  color: rgba(15,163,163,0.25); line-height: 1;
+  margin-bottom: 16px;
+}
+.process-step-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--white); margin-bottom: 8px;
+}
+.process-step-desc {
+  font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.75;
+}
+
+/* ── STANDARDS ── */
+#standards { padding: 100px 5%; background: var(--ice); }
+.standards-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+.standards-list { list-style: none; }
+.standards-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: 20px; align-items: flex-start;
+}
+.standards-list li:last-child { border-bottom: none; }
+.std-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px; font-weight: 700;
+  color: var(--teal); letter-spacing: 0.1em;
+  min-width: 24px; margin-top: 2px;
+}
+.std-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px; font-weight: 700;
+  color: var(--navy); margin-bottom: 4px;
+}
+.std-desc { font-size: 13px; color: var(--steel); line-height: 1.7; }
+.standards-note {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 36px; margin-top: 32px;
+}
+.standards-note p { font-size: 14px; color: var(--steel); line-height: 1.85; }
+
+/* ── CTA STRIP ── */
+#network-cta { background: var(--navy-deep); padding: 80px 5%; text-align: center; }
+#network-cta .section-title { color: var(--white); }
+#network-cta p { color: rgba(255,255,255,0.45); font-size: 16px; margin-bottom: 36px; }
+
+@media (max-width: 1024px) {
+  .process-steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .tracks { grid-template-columns: 1fr; }
+  .standards-inner { grid-template-columns: 1fr; gap: 40px; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .process-steps { grid-template-columns: 1fr; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "TiNAAK Strategic Alliance Network",
+  "description": "A curated programme for vetted vendors, associate specialists and business development partners across India.",
+  "provider": {
+    "@type": "Organization",
+    "name": "TiNAAK Integrated Services",
+    "url": "https://tinaak.com"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "serviceType": "Professional Network Empanelment"
+}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<div id="scroll-progress"></div>
+
+
+<nav id="site-nav"></nav>
+
+<!-- HERO -->
+<header class="page-hero">
+  <div class="page-hero-grid" aria-hidden="true"></div>
+  <div class="page-hero-glow" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="section-eyebrow">Strategic Alliance Network</div>
+    <h1>Partner with <span>T<span style="color:var(--teal)">i</span>NAAK</span></h1>
+    <p>We work with a select network of vetted suppliers, specialist professionals and strategic partners to extend our capabilities across India. If you meet our standards, we would like to hear from you.</p>
+  </div>
+</header>
+
+<!-- TRACKS -->
+<main id="main-content" style="display:contents">
+<section id="tracks" style="padding:100px 5%;">
+  <div class="reveal">
+    <div class="section-eyebrow">Three Ways to Partner</div>
+    <h2 class="section-title">Find Your Track</h2>
+    <p class="section-subtitle">Each track is a distinct relationship with T<span style="color:var(--teal)">i</span>NAAK — different scope, different engagement model, one consistent standard of quality and conduct.</p>
+  </div>
+  <div class="tracks">
+
+    <div class="track-card track-vendor tn-card">
+      <div class="tn-n-1 track-num">Track 01</div>
+      <div class="tn-n-2 track-title">Preferred Supplier Network</div>
+      <div class="tn-n-2 track-subtitle">For vendors &amp; service providers</div>
+      <p class="track-desc">Companies and firms that supply goods or services that T<span style="color:var(--teal)">i</span>NAAK deploys on behalf of clients — housekeeping consumables, security equipment, transport, pest control, signage, digitisation, AV, furniture, and more. Being on the Preferred Supplier Network means access to T<span style="color:var(--teal)">i</span>NAAK's growing client base with the backing of a vetted, contracted relationship.</p>
+      <ul class="track-list">
+        <li>Access to <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span>'s enterprise client engagements</li>
+        <li>Preferred status for qualifying categories</li>
+        <li>Clear payment terms and SLA framework</li>
+        <li>Performance-based tier progression</li>
+        <li>Portfolio and sample work accepted</li>
+      </ul>
+      <a href="enroll-form.html?track=supplier" class="btn-primary">Apply as Supplier</a>
+    </div>
+
+    <div class="track-card track-specialist tn-card">
+      <div class="tn-n-1 track-num">Track 02</div>
+      <div class="tn-n-2 track-title">Associate Specialists</div>
+      <div class="tn-n-2 track-subtitle">For freelance consultants &amp; professionals</div>
+      <p class="track-desc">Independent professionals — FM consultants, HR specialists, compliance advisors, trainers, designers, project managers and others — who want to work under T<span style="color:var(--teal)">i</span>NAAK's brand on client engagements. Suitable for those between full-time roles or seeking a structured second income with back-office support and brand credibility behind them.</p>
+      <ul class="track-list">
+        <li>Structured engagement agreements with clear scope</li>
+        <li><span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> brand and back-office support</li>
+        <li>Project-based or retainer arrangements</li>
+        <li>Access to cross-domain engagements</li>
+        <li>Professional development exposure</li>
+      </ul>
+      <a href="enroll-form.html?track=specialist" class="btn-primary">Apply as Specialist</a>
+    </div>
+
+    <div class="track-card track-partner tn-card">
+      <div class="tn-n-1 track-num">Track 03</div>
+      <div class="tn-n-2 track-title">Strategic Alliance Partners</div>
+      <div class="tn-n-2 track-subtitle">For business development professionals</div>
+      <p class="track-desc">Professionals with established networks in corporate real estate, HR, procurement or operations who can introduce T<span style="color:var(--teal)">i</span>NAAK to potential clients. Partners receive competitive commissions on converted engagements, T<span style="color:var(--teal)">i</span>NAAK's full credentials and pitch support, and a structured agreement that protects all parties. Ideal for professionals who are between roles or seeking a high-value parallel income stream.</p>
+      <ul class="track-list">
+        <li>Competitive commission on converted clients</li>
+        <li>Full <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span> pitch materials and support</li>
+        <li>Lead attribution and transparent tracking</li>
+        <li>Non-circumvention protection</li>
+        <li>Grow at your own pace, no targets</li>
+      </ul>
+      <a href="enroll-form.html?track=partner" class="btn-primary">Apply as Partner</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal">
+    <div class="section-eyebrow">How It Works</div>
+    <h2 class="section-title">From Application to<br>Active Engagement</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step tn-card">
+      <div class="process-step-num">01</div>
+      <div class="process-step-title">Apply</div>
+      <div class="process-step-desc">Complete the online enrollment form for your track. Upload relevant documents, credentials and portfolio work.</div>
+    </div>
+    <div class="process-step tn-card">
+      <div class="process-step-num">02</div>
+      <div class="process-step-title">Review</div>
+      <div class="process-step-desc">Our team reviews your application within 5 working days. We verify credentials, references and submitted materials.</div>
+    </div>
+    <div class="process-step tn-card">
+      <div class="process-step-num">03</div>
+      <div class="process-step-title">Interview</div>
+      <div class="process-step-desc">A focused conversation to understand your capabilities, geography, availability and expectations. For specialist tracks, a short domain assessment may follow.</div>
+    </div>
+    <div class="process-step tn-card">
+      <div class="process-step-num">04</div>
+      <div class="process-step-title">Agreement</div>
+      <div class="process-step-desc">Accepted partners sign the appropriate framework agreement — Vendor SLA, Associate Engagement or BD Partner Agreement.</div>
+    </div>
+    <div class="process-step tn-card">
+      <div class="process-step-num">05</div>
+      <div class="process-step-title">Active</div>
+      <div class="process-step-desc">You are onboarded to T<span style="color:var(--teal)">i</span>NAAK's network. Engagements are initiated as matching opportunities arise, with a probationary first assignment and performance rating.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STANDARDS -->
+<section id="standards">
+  <div class="standards-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">Our Standards</div>
+      <h2 class="section-title">What We Expect<br>from Every Partner</h2>
+      <p class="section-subtitle">The T<span style="color:var(--teal)">i</span>NAAK network is curated, not open. Every partner is held to the same baseline standards that protect our clients and our reputation.</p>
+      <div class="standards-note">
+        <p>Joining the T<span style="color:var(--teal)">i</span>NAAK network is not transactional. It is a professional relationship governed by a written agreement. Partners who consistently deliver above expectations are given priority on new engagements and elevated within the network tier structure. Those who do not meet standards are exited.</p>
+      </div>
+    </div>
+    <ul class="standards-list reveal">
+      <li>
+        <div class="std-num">01</div>
+        <div><div class="std-title">Verified Identity &amp; Registration</div><div class="std-desc">All partners must provide valid identity, GST/PAN and business registration where applicable. Individual specialists provide professional credentials and references.</div></div>
+      </li>
+      <li>
+        <div class="std-num">02</div>
+        <div><div class="std-title">Documented Capability</div><div class="std-desc">Portfolio, certifications and work samples are reviewed before acceptance. Creative and technical disciplines require sample submissions.</div></div>
+      </li>
+      <li>
+        <div class="std-num">03</div>
+        <div><div class="std-title">Code of Conduct Agreement</div><div class="std-desc">Every partner signs <span style="white-space:nowrap">T<span style="color:var(--teal)">i</span>NAAK</span>'s code of conduct — covering professional behaviour, confidentiality, client relationship conduct and escalation protocols.</div></div>
+      </li>
+      <li>
+        <div class="std-num">04</div>
+        <div><div class="std-title">SLA Commitment</div><div class="std-desc">Suppliers and specialists agree to specific service level commitments covering quality, timeliness and communication standards.</div></div>
+      </li>
+      <li>
+        <div class="std-num">05</div>
+        <div><div class="std-title">Performance Rating</div><div class="std-desc">Every engagement is rated. Partners with consistently high ratings receive priority matching, preferred tier status and enhanced commission rates over time.</div></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section id="network-cta">
+  <div class="section-eyebrow" style="justify-content:center;">
+    <span>Ready to Join?</span>
+  </div>
+  <h2 class="section-title">The Network Grows.<br>Your Opportunities Grow.</h2>
+  <p>Select the track that fits your profile and complete the enrollment form. Our team reviews every application personally.</p>
+  <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+    <a href="enroll-form.html?track=supplier" class="btn-teal">Apply as Supplier</a>
+    <a href="enroll-form.html?track=specialist" class="btn-outline" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);">Apply as Specialist</a>
+    <a href="enroll-form.html?track=partner" class="btn-outline" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);">Apply as Partner</a>
+  </div>
+</section>
+
+<a id="whatsapp-fab" href="https://wa.me/919999998522?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20TiNAAK%20services" target="_blank" rel="noopener noreferrer" aria-label="Chat with TiNAAK on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+<div id="mobile-cta-bar" role="complementary" aria-label="Quick contact">
+  <a href="contact.html" class="mcta-primary">Get In Touch</a>
+  <a href="tel:+919999998522" class="mcta-secondary">Call Now</a>
+</div>
+<footer id="site-footer"></footer>
+<script src="shared.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  injectNav('network.html'); injectFooter(); initReveal(); initScrollProgress(); initCardReveal(); initHeroParallax(); initWhatsAppFAB();
+});
+</script>
+</body>
+</html>
